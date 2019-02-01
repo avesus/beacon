@@ -1,0 +1,165 @@
+@charset "utf-8";
+/* CSS Document */ 
+
+.md-dialog-container {
+	z-index: 252 !important;
+}
+
+.md-dialog-backdrop {
+	z-index: 251 !important;
+}
+
+.modal-btn {
+	font-family: Arial, Verdana, Helvetica; 
+	font-size: 12px; 
+	font-weight: normal;
+	cursor: pointer;
+	text-align: center;
+	padding: 2px 8px;
+	margin-top:10px;
+}
+
+
+.modal-container {
+	z-index:251;
+	display:none;
+	padding-top:100px;
+	position:fixed;
+	left:0;top:0;
+	width:100%;
+	height:100%;
+	overflow:auto;
+	background-color:rgb(0,0,0);
+	background-color:rgba(0,0,0,0.5);
+	font-family: Arial, Verdana, Helvetica; 
+	font-size: 11px;
+}
+
+.modal-frame {
+	margin:auto;
+	padding: 5px 5px 20px;
+	background-color:#fff;
+	position:relative;
+	padding:0;
+	outline:0;
+	width:600px;
+}
+
+div.modal-frame {
+	padding: 10px 10px 20px;
+}
+
+.modal-title {
+	font-weight: bold; 
+	color: #007DDF; 
+	line-height: 100%; 
+	padding: 5px 5px 5px 5px; 
+	background: #F1F1F1; 
+	border: solid #CECFD6 1px;
+}
+
+.modal-content {
+	padding:5px;
+}
+
+.modal-content table {
+	font-size:11px; 
+	width:100%;
+}
+
+.modal-container .btnPane5 {
+	margin-top: 10px;
+}
+
+.md-selector {
+	width: 45% !important;
+	margin-right: 2%;
+	margin-bottom: 2px;
+	font-family: Arial, Verdana, Helvetica; 
+	font-size: 11px;
+	display:block;
+	float:left;
+}
+
+.md-selector select, .md-selector-single select {
+	width: 100% !important;
+	margin-bottom: 10px;
+}
+.md-selector-single {
+	width: 20% !important;
+	font-family: Arial, Verdana, Helvetica; 
+	font-size: 11px;
+	padding: 13px 30px 10px 0;
+}
+
+.selector-container {
+	display:block;
+	min-width:55%;
+	padding: 13px 10px 10px;
+}
+
+md-dialog md-dialog-content {
+	max-height: 500px !important;
+}
+
+md-dialog-actions {
+	border-top: 1px #C6C6C6 solid;
+}
+md-dialog-actions.md-search {
+	justify-content: left;
+}
+
+md-checkbox .md-icon {
+	border-color: #007DDF;
+}
+
+md-checkbox.md-checked .md-icon {
+    background-color: #007DDF;
+}
+
+md-checkbox .md-container {
+	height: 8px;
+	left: auto;
+	right: 0;
+}
+
+.md-footer button {
+	margin:0 10px;
+}
+
+
+
+.md-footer span, .md-footer select {
+	font-family: Arial, Verdana, Helvetica; 
+	font-size: 11px;
+	margin: 5px 10px;
+}
+
+.vender-table tbody tr:nth-child(even) {
+    background-color: #F8F8F8;
+	border-top: 1px solid #999;
+	border-bottom: 1px solid #999;
+}
+
+.vender-table thead tr th {
+	background-color: #F1F1F1;
+	font-weight:bold;
+}
+
+/* gCode dialog ITT-201707-0001 */
+
+.gcode-module select {
+	min-width: 100%;
+	margin:0 auto;
+	padding: 5px;
+	margin-bottom: 10px;
+}
+.gcode-module table {
+	width:100%;
+}
+.gcode-module md-dialog-actions {
+	padding:10px;
+}
+.gcode-inputs input {
+	margin-bottom: 10px;
+}

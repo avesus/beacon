@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN"
+          "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+<!--
+ $Header: /home/cvs/jakarta-struts/web/example/WEB-INF/struts-config-registration.xml,v 1.8 2004/09/02 03:43:15 niallp Exp $
+ $Revision: 1.8 $
+ $Date: 2004-09-02 04:43:16 +0100 (Thu, 02 Sep 2004) $
+-->
+<struts-config>
+  <display-name><![CDATA[
+     quoapprove
+  ]]>
+  </display-name>
+    <description><![CDATA[
+     This is the Struts configuration file for the quotation approve
+     using the wildcard syntax.
+  ]]>
+  </description>
+
+  <!-- ========== Form Bean Definitions =================================== -->
+  <form-beans>
+
+    <!-- form bean -->
+    <form-bean      name="QuoapproveForm"
+                    type="com.bureaueye.beacon.form.quotation.QuoapproveForm"/>
+
+    <!--  List form bean -->
+    <form-bean      name="ListQuoapproveForm"
+                    type="com.bureaueye.beacon.form.quotation.ListQuoapproveForm"/>
+                    
+  </form-beans>
+
+  <!-- ========== Global Forward Definitions ============================== -->
+  <global-forwards>
+    <forward name="Quoapprove" 		path="/pages/quotation/ListQuoapprove.jsp"/>
+  </global-forwards>
+
+  <!-- ========== Action Mapping Definitions ============================== -->
+  <action-mappings>
+
+    <!-- Matches all edit actions -->
+    <action path="/EditQuoapprove"
+            type="com.bureaueye.beacon.action.quotation.EditQuoapproveAction"
+            name="QuoapproveForm"
+            scope="request"
+           	validate="false">  
+		<forward name="failure"		path="/pages/quotation/ListQuoapprove.jsp"/>                      
+    	<forward name="success" 	path="/pages/quotation/ListQuoapprove.jsp"/>
+    </action>
+
+    <!-- Matches all save actions -->
+    <action path="/SaveQuoapprove"
+            type="com.bureaueye.beacon.action.quotation.SaveQuoapproveAction"
+            name="ListQuoapproveForm"
+            scope="session"
+			validate="false">                
+	    <forward name="success"		path="/pages/quotation/ListQuoapprove.jsp"/>               
+    </action>
+           
+       <!-- Matches all list actions -->
+	<action path="/ListQuoapprove"
+            type="com.bureaueye.beacon.action.quotation.ListQuoapproveAction"
+            name="ListQuoapproveForm"
+            scope="session"
+			validate="false">           
+		<forward name="success" 	path="/pages/quotation/ListQuoapprove.jsp"/>                 
+	</action>
+       
+  </action-mappings>
+
+</struts-config>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "file:///C:/BUREAUEYE/xml/struts-config_1_3.dtd">
+<struts-config>
+
+  <display-name>Order Header</display-name>
+  <description>This is the Struts configuration file for the Order Header.</description>
+  
+  <form-beans>
+    <form-bean name="OrderhdrForm" type="com.bureaueye.beacon.form.order.OrderhdrForm"/>
+    <form-bean name="ListOrderhdrForm" type="com.bureaueye.beacon.form.ListForm"/>
+    <form-bean name="ListForm" type="com.bureaueye.beacon.form.ListForm"/>       
+  </form-beans>
+  
+  <global-forwards>
+  </global-forwards>
+  
+  <action-mappings>
+  
+    <!-- Matches all edit actions -->
+    <action path="/EditOrderhdr" type="com.bureaueye.beacon.action.order.EditOrderhdrAction" name="OrderhdrForm" scope="session" validate="false">
+      		<forward name="failure" path="/pages/order/ListOrderhdrMain.jsp"/>
+			<forward name="success" path="/pages/order/Orderhdr1.jsp"/>      		
+    </action>
+    
+    <action path="/SaveOrderhdr" type="com.bureaueye.beacon.action.order.SaveOrderhdrAction" name="OrderhdrForm" scope="session" cancellable="true" input="orderhdr1">
+      		<forward name="success" path="/ListOrderhdr.do"/>
+			<forward name="orderhdr1" path="/pages/order/Orderhdr1.jsp"/>
+			<forward name="orderhdr2" path="/pages/order/Orderhdr2.jsp"/>
+			<forward name="orderhdr3" path="/pages/order/Orderhdr3.jsp"/>
+			<forward name="orderhdr4" path="/pages/order/Orderhdr4.jsp"/> 
+    </action>
+    
+    <action path="/ListOrderhdr" type="com.bureaueye.beacon.action.order.ListOrderhdrAction" name="ListOrderhdrForm" scope="session" validate="false">
+      		<forward name="success" path="/pages/order/ListOrderhdrMain.jsp"/>
+    </action> 
+      
+  </action-mappings>
+  
+</struts-config>

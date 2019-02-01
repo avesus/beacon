@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "file:///C:/BUREAUEYE/xml/struts-config_1_3.dtd">
+<struts-config>
+  <display-name>ordernote</display-name>
+  <description>This is the Struts configuration file for the order note</description>
+  <form-beans>
+    <form-bean name="OrdernoteForm" type="com.bureaueye.beacon.form.order.OrdernoteForm"/>
+    <form-bean name="ListOrdernoteForm" type="com.bureaueye.beacon.form.ListForm"/>
+  </form-beans>
+  <global-forwards>
+    <forward name="Ordernote" path="/pages/order/Ordernote.jsp"/>
+  </global-forwards>
+  <action-mappings>
+    <action path="/EditOrdernote" type="com.bureaueye.beacon.action.order.EditOrdernoteAction" name="OrdernoteForm" scope="request" validate="false" parameter="Ordernote">
+      <forward name="failure" path="/pages/order/ListOrdernote.jsp"/>
+      <forward name="success" path="/pages/order/Ordernote.jsp"/>
+    </action>
+    <action path="/SaveOrdernote" type="com.bureaueye.beacon.action.order.SaveOrdernoteAction" name="OrdernoteForm" scope="request" cancellable="true" input="Ordernote">
+      <forward name="success" path="/ListOrdernote.do"/>
+    </action>
+    <action path="/ListOrdernote" type="com.bureaueye.beacon.action.order.ListOrdernoteAction" name="ListOrdernoteForm" scope="session" validate="false" parameter="ListOrderhdrForm">
+      <forward name="success" path="/pages/order/ListOrdernote.jsp"/>
+    </action>
+  </action-mappings>
+</struts-config>

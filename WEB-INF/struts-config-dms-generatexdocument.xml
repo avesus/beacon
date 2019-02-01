@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "file:///C:/BUREAUEYE/xml/struts-config_1_3.dtd">
+<struts-config>
+  <display-name>Generate Xdocument</display-name>
+  <description>This is the Struts configuration file for the Generate Xdocument records</description>
+  <form-beans> 
+    <form-bean name="GenerateXdocumentForm" type="com.bureaueye.beacondms.form.dms.GenerateXdocumentForm"/>  
+  </form-beans>
+  
+  <global-forwards>
+    <forward name="GenerateXdocument" path="/pages/dms/GenerateXdocument.jsp"/>   
+  </global-forwards>
+  
+  <action-mappings>
+  
+    
+    <action path="/GenerateXdocument1" type="com.bureaueye.beacondms.action.dms.GenerateXdocument1Action" name="GenerateXdocumentForm" scope="session" validate="false">
+      <forward name="success" path="/pages/dms/GenerateXdocument.jsp"/>
+    </action>
+     <action path="/GenerateXdocument2" type="com.bureaueye.beacondms.action.dms.GenerateXdocument2Action" name="GenerateXdocumentForm" scope="session" validate="false" input="GenerateXdocument">
+      <forward name="success" path="/pages/dms/GenerateXdocument.jsp"/>
+    </action>          	
+    	
+
+    
+       	
+  </action-mappings>
+  
+</struts-config>

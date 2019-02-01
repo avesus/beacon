@@ -1,0 +1,655 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<!DOCTYPE form-validation PUBLIC
+         "-//Apache Software Foundation//DTD Commons Validator Rules Configuration 1.3.0//EN"
+         "http://jakarta.apache.org/commons/dtds/validator_1_3_0.dtd">
+
+<!--
+        $Id: validation.xml bureaueye ntankard $
+-->
+<form-validation>
+
+
+
+    <formset>
+
+        <form name="CcyexForm">
+            <field property="fromccykey"
+                    depends="required">
+              <arg     key="prompt.fromccykey"/>
+            </field>          
+            <field property="toccykey"
+                    depends="required">
+              <arg     key="prompt.toccykey"/>
+            </field>
+            <field property="exdatedd"
+                    depends="required">
+              <arg     key="prompt.exdatedd"/>
+            </field>
+            <field property="exdatemm"
+                    depends="required">
+              <arg     key="prompt.exdatemm"/>
+            </field>                        
+            <field property="exdateyyyy"
+                    depends="required">
+              <arg     key="prompt.exdateyyyy"/>
+            </field>
+            <field property="exrate"
+                    depends="double,required">
+              <arg     key="prompt.exrate"/>
+            </field>                            
+        </form>
+        
+
+        <form name="ProductForm">
+            <field property="productkey"
+                    depends="required">
+              <arg     key="prompt.product"/>
+            </field>          
+            <field property="tradname"
+                    depends="required">
+              <arg     key="prompt.tradname"/>
+            </field>                           
+            <field property="chemname"
+                    depends="required">
+              <arg     key="prompt.chemname"/>
+            </field>   
+        </form>
+        
+                
+        <form name="CustomertariffhdrForm">
+            <field property="custtarfhdrId"
+                    depends="required">
+              <arg     key="prompt.code"/>
+            </field>        
+            <field property="customeraddrkey"
+                    depends="required">
+              <arg     key="prompt.customer"/>
+            </field>
+            <field property="chargekey"
+                    depends="required">
+              <arg     key="prompt.charge"/>
+            </field>
+            <field property="ccykey"
+                    depends="required">
+              <arg     key="prompt.ccykey"/>
+            </field> 
+            <field property="validtodd"
+                    depends="required">
+              <arg     key="prompt.expirydatedd"/>
+            </field>
+            <field property="validtomm"
+                    depends="required">
+              <arg     key="prompt.expirydatemm"/>
+            </field>                        
+            <field property="validtoyyyy"
+                    depends="required">
+              <arg     key="prompt.expirydateyyyy"/>
+            </field> 
+            <field property="lumpsum"
+                    depends="double,required">
+              <arg     key="prompt.lumpsum"/>
+            </field>                                                          
+        </form>
+
+        
+        <form name="CustomertariffdtlForm">
+            <field property="fromvalue"
+                    depends="integer,required">
+              <arg     key="prompt.fromvalue"/>
+            </field>
+            <field property="tovalue"
+                    depends="integer,required">
+              <arg     key="prompt.tovalue"/>
+            </field>
+            <field property="unitrate"
+                    depends="double,required">
+              <arg     key="prompt.unitrate"/>
+            </field>
+            <field property="lumpsum"
+                    depends="double,required">
+              <arg     key="prompt.lumpsum"/>
+            </field>                                                                           
+        </form>        
+
+
+
+        <form name="VendortariffhdrForm">
+            <field property="vendtarfhdrId"
+                    depends="required">
+              <arg     key="prompt.code"/>
+            </field>          
+            <field property="vendoraddrkey"
+                    depends="required">
+              <arg     key="prompt.vendor"/>
+            </field>
+            <field property="costkey"
+                    depends="required">
+              <arg     key="prompt.cost"/>
+            </field>
+            <field property="ccykey"
+                    depends="required">
+              <arg     key="prompt.ccykey"/>
+            </field> 
+            <field property="validtodd"
+                    depends="required">
+              <arg     key="prompt.expirydatedd"/>
+            </field>
+            <field property="validtomm"
+                    depends="required">
+              <arg     key="prompt.expirydatemm"/>
+            </field>                        
+            <field property="validtoyyyy"
+                    depends="required">
+              <arg     key="prompt.expirydateyyyy"/>
+            </field>
+ 
+<!--s200900037-->            
+            <field property="validfromdd"
+                    depends="required">
+              <arg     key="prompt.validfromdd"/>
+            </field>
+            <field property="validfrommm"
+                    depends="required">
+              <arg     key="prompt.validfrommm"/>
+            </field>                        
+            <field property="validfromyyyy"
+                    depends="required">
+              <arg     key="prompt.validfromyyyy"/>
+            </field>
+<!--e200900037--> 
+            
+            <field property="lumpsum"
+                    depends="double,required">
+              <arg     key="prompt.lumpsum"/>
+            </field>                            
+        </form>
+        
+        
+        <form name="VendortariffdtlForm">
+            <field property="fromvalue"
+                    depends="integer,required">
+              <arg     key="prompt.fromvalue"/>
+            </field>
+            <field property="tovalue"
+                    depends="integer,required">
+              <arg     key="prompt.tovalue"/>
+            </field>
+            <field property="unitrate"
+                    depends="double,required">
+              <arg     key="prompt.unitrate"/>
+            </field>
+            <field property="lumpsum"
+                    depends="double,required">
+              <arg     key="prompt.lumpsum"/>
+            </field>                                                                           
+        </form>      
+        
+ 
+        <form name="QuoprodForm">            
+            <field property="ldgtemp"
+                    depends="double,required">
+              <arg     key="prompt.ldgtemp"/>
+            </field>
+            <field property="lqdtemp"
+                    depends="double,required">
+              <arg     key="prompt.lqdtemp"/>
+            </field>                                                                         
+            <field property="dchtemp"
+                    depends="double,required">
+              <arg     key="prompt.dchtemp"/>
+            </field>             
+            <field property="surftemp"
+                    depends="double,required">
+              <arg     key="prompt.surftemp"/>
+            </field>             
+            <field property="weight"
+                    depends="double,required">
+              <arg     key="prompt.weight"/>
+            </field>
+            <field property="volume"
+                    depends="double,required">
+              <arg     key="prompt.volume"/>
+            </field>
+            <field property="comprt"
+                    depends="integer,required">
+              <arg     key="prompt.comprt"/>
+            </field>                                    
+        </form>
+       
+               
+        <form name="QuochargeForm">            
+            <field property="chargetype"
+                    depends="required">
+              <arg     key="prompt.chargetype"/>
+            </field>           
+            <field property="ccykey"
+                    depends="required">
+              <arg     key="prompt.ccy"/>
+            </field>             
+            <field property="invoiceccykey"
+                    depends="required">
+              <arg     key="prompt.invoiceccy"/>
+            </field>             
+            <field property="xratebase"
+                    depends="double,required">
+              <arg     key="prompt.xratebase"/>
+            </field>
+            <field property="xrateinv"
+                    depends="double,required">
+              <arg     key="prompt.xrateinv"/>
+            </field>            
+            <field property="rate"
+                    depends="double,required">
+              <arg     key="prompt.rate"/>
+            </field>    
+            <field property="chgamt"
+                    depends="double,required">
+              <arg     key="prompt.chgamt"/>
+            </field>                      
+            <field property="units"
+                    depends="double,required">
+              <arg     key="prompt.unit"/>
+            </field>                                    
+        </form>
+        
+
+
+
+        <form name="OrderprodForm">            
+            <field property="ldgtemp"
+                    depends="double,required">
+              <arg     key="prompt.ldgtemp"/>
+            </field>
+            <field property="lqdtemp"
+                    depends="double,required">
+              <arg     key="prompt.lqdtemp"/>
+            </field>                                                                         
+            <field property="dchtemp"
+                    depends="double,required">
+              <arg     key="prompt.dchtemp"/>
+            </field>             
+            <field property="surftemp"
+                    depends="double,required">
+              <arg     key="prompt.surftemp"/>
+            </field>             
+            <field property="weight"
+                    depends="double,required">
+              <arg     key="prompt.weight"/>
+            </field>
+            <field property="volume"
+                    depends="double,required">
+              <arg     key="prompt.volume"/>
+            </field>
+            <field property="comprt"
+                    depends="integer,required">
+              <arg     key="prompt.comprt"/>
+            </field>                                    
+        </form>
+        
+                       
+        <form name="OrderchargeForm">            
+            <field property="chargetype"
+                    depends="required">
+              <arg     key="prompt.chargetype"/>
+            </field>           
+            <field property="ccykey"
+                    depends="required">
+              <arg     key="prompt.ccy"/>
+            </field>             
+            <field property="invoiceccykey"
+                    depends="required">
+              <arg     key="prompt.invoiceccy"/>
+            </field>             
+            <field property="xratebase"
+                    depends="double,required">
+              <arg     key="prompt.xratebase"/>
+            </field>
+            <field property="xrateinv"
+                    depends="double,required">
+              <arg     key="prompt.xrateinv"/>
+            </field>            
+            <field property="rate"
+                    depends="double,required">
+              <arg     key="prompt.rate"/>
+            </field>    
+            <field property="chgamt"
+                    depends="double,required">
+              <arg     key="prompt.chgamt"/>
+            </field>                      
+            <field property="units"
+                    depends="double,required">
+              <arg     key="prompt.unit"/>
+            </field>                                    
+        </form>
+             
+                       
+        <form name="QuocostForm">            
+            <field property="costtype"
+                    depends="required">
+              <arg     key="prompt.costtype"/>
+            </field>           
+            <field property="ccykey"
+                    depends="required">
+              <arg     key="prompt.ccy"/>
+            </field>                         
+            <field property="xrate"
+                    depends="double,required">
+              <arg     key="prompt.xrate"/>
+            </field>           
+            <field property="rate"
+                    depends="double,required">
+              <arg     key="prompt.rate"/>
+            </field>    
+            <field property="cstamt"
+                    depends="double,required">
+              <arg     key="prompt.cstamt"/>
+            </field>                      
+            <field property="units"
+                    depends="double,required">
+              <arg     key="prompt.unit"/>
+            </field>                                    
+        </form>
+        
+
+        <form name="QuomovForm"> 
+            <field property="seqno"
+                    depends="integer,required">
+              <arg     key="prompt.sequence"/>
+            </field>                                 
+            <field property="fromdayno"
+                    depends="integer,required">
+              <arg     key="prompt.fromdayno"/>
+            </field>                                    
+            <field property="todayno"
+                    depends="integer,required">
+              <arg     key="prompt.todayno"/>
+            </field>              
+        </form>
+
+        <form name="QuomovcostForm">            
+            <field property="costtype"
+                    depends="required">
+              <arg     key="prompt.costtype"/>
+            </field>           
+            <field property="ccykey"
+                    depends="required">
+              <arg     key="prompt.ccy"/>
+            </field>                         
+            <field property="xrate"
+                    depends="double,required">
+              <arg     key="prompt.xrate"/>
+            </field>           
+            <field property="rate"
+                    depends="double,required">
+              <arg     key="prompt.rate"/>
+            </field>    
+            <field property="cstamt"
+                    depends="double,required">
+              <arg     key="prompt.cstamt"/>
+            </field>                      
+            <field property="units"
+                    depends="double,required">
+              <arg     key="prompt.unit"/>
+            </field>                                    
+        </form>
+		        
+        <form name="JobhdrcostForm">            
+            <field property="costtype"
+                    depends="required">
+              <arg     key="prompt.costtype"/>
+            </field>           
+            <field property="ccykey"
+                    depends="required">
+              <arg     key="prompt.ccy"/>
+            </field>                         
+            <field property="xrate"
+                    depends="double,required">
+              <arg     key="prompt.xrate"/>
+            </field>           
+            <field property="rate"
+                    depends="double,required">
+              <arg     key="prompt.rate"/>
+            </field>    
+            <field property="cstamt"
+                    depends="double,required">
+              <arg     key="prompt.cstamt"/>
+            </field>                      
+            <field property="units"
+                    depends="double,required">
+              <arg     key="prompt.unit"/>
+            </field>                                    
+        </form>
+
+        <form name="OrdermovcostForm">            
+            <field property="costtype"
+                    depends="required">
+              <arg     key="prompt.costtype"/>
+            </field>           
+            <field property="ccykey"
+                    depends="required">
+              <arg     key="prompt.ccy"/>
+            </field>                         
+            <field property="xrate"
+                    depends="double,required">
+              <arg     key="prompt.xrate"/>
+            </field>           
+            <field property="rate"
+                    depends="double,required">
+              <arg     key="prompt.rate"/>
+            </field>    
+            <field property="cstamt"
+                    depends="double,required">
+              <arg     key="prompt.cstamt"/>
+            </field>                      
+            <field property="units"
+                    depends="double,required">
+              <arg     key="prompt.unit"/>
+            </field>                                    
+        </form>
+        
+        <form name="OrdercostForm">            
+            <field property="costtype"
+                    depends="required">
+              <arg     key="prompt.costtype"/>
+            </field>           
+            <field property="ccykey"
+                    depends="required">
+              <arg     key="prompt.ccy"/>
+            </field>                         
+            <field property="xrate"
+                    depends="double,required">
+              <arg     key="prompt.xrate"/>
+            </field>           
+            <field property="rate"
+                    depends="double,required">
+              <arg     key="prompt.rate"/>
+            </field>    
+            <field property="cstamt"
+                    depends="double,required">
+              <arg     key="prompt.cstamt"/>
+            </field>                      
+            <field property="units"
+                    depends="double,required">
+              <arg     key="prompt.unit"/>
+            </field>                                    
+        </form>
+        
+        <form name="JobcostForm">            
+            <field property="costtype"
+                    depends="required">
+              <arg     key="prompt.costtype"/>
+            </field>           
+            <field property="ccykey"
+                    depends="required">
+              <arg     key="prompt.ccy"/>
+            </field>                         
+            <field property="xrate"
+                    depends="double,required">
+              <arg     key="prompt.xrate"/>
+            </field>           
+            <field property="rate"
+                    depends="double,required">
+              <arg     key="prompt.rate"/>
+            </field>    
+            <field property="cstamt"
+                    depends="double,required">
+              <arg     key="prompt.cstamt"/>
+            </field>                      
+            <field property="units"
+                    depends="double,required">
+              <arg     key="prompt.unit"/>
+            </field>                                    
+        </form>
+               
+               
+               
+        <form name="JobhdrForm">            
+            <field property="weightactual"
+                    depends="double,required">
+              <arg     key="prompt.weight"/>
+            </field>                                   
+        </form>
+        
+
+        <form name="SidtlForm">            
+            <field property="chargetype"
+                    depends="required">
+              <arg     key="prompt.chargetype"/>
+            </field>           
+            <field property="ccykey"
+                    depends="required">
+              <arg     key="prompt.ccy"/>
+            </field>             
+            <field property="invoiceccykey"
+                    depends="required">
+              <arg     key="prompt.invoiceccy"/>
+            </field>             
+            <field property="xratebase"
+                    depends="double,required">
+              <arg     key="prompt.xratebase"/>
+            </field>
+            <field property="xrateinv"
+                    depends="double,required">
+              <arg     key="prompt.xrateinv"/>
+            </field>            
+            <field property="rate"
+                    depends="double,required">
+              <arg     key="prompt.rate"/>
+            </field>    
+            <field property="chgamt"
+                    depends="double,required">
+              <arg     key="prompt.chgamt"/>
+            </field>                      
+            <field property="units"
+                    depends="double,required">
+              <arg     key="prompt.unit"/>
+            </field>                                    
+        </form>
+        
+
+        <form name="Podtlrcvd1Form">
+            <field property="shipmentno"
+                    depends="required">
+              <arg     key="prompt.shipmentno"/>
+            </field>                                                                    
+        </form>
+        
+        <form name="Podtlrcvd2Form">
+            <field property="unitkeyprefix"
+                    depends="required">
+              <arg     key="prompt.unitstartprefix"/>
+            </field>         
+            <field property="unitkeysuffix"
+                    depends="integer,required">
+              <arg     key="prompt.unitstartsuffix"/>
+            </field>  
+            <field property="qtytogenerate"
+                    depends="integer,required">
+              <arg     key="prompt.qtytogenerate"/>
+            </field> 
+            <field property="unitkey"
+                    depends="required">
+              <arg     key="prompt.unitnumbertemplate"/>
+            </field>                                                            
+        </form>
+
+
+        <form name="OnhireeqpotcForm">                      
+            <field property="chargeamt"
+                    depends="double,required">
+              <arg     key="prompt.chgamt"/>
+            </field>                                                        
+        </form>
+
+
+        <form name="PihdrForm">                      
+            <field property="grossamt"
+                    depends="double">
+              <arg     key="prompt.grossamt"/>
+            </field>                                       
+            <field property="netamt"
+                    depends="double">
+              <arg     key="prompt.netamt"/>
+            </field>             
+            <field property="taxamt"
+                    depends="double">
+              <arg     key="prompt.taxamt"/>
+            </field>
+        </form>
+                
+ 
+        <form name="PidtlForm">                      
+            <field property="invoiceamt"
+                    depends="double">
+              <arg     key="prompt.invoiceamt"/>
+            </field>                                       
+        </form>
+                                
+
+
+<!--
+unit maintenance and repair validation
+-->
+       <form name="UnitmandrForm">
+            <field property="mandrref"
+                    depends="required">
+              <arg     key="prompt.reference"/>
+            </field>          
+            <field property="mandrdatedd"
+                    depends="required">
+              <arg     key="prompt.mandrdatedd"/>
+            </field>
+            <field property="mandrdatemm"
+                    depends="required">
+              <arg     key="prompt.mandrdatemm"/>
+            </field>                        
+            <field property="mandrdateyyyy"
+                    depends="required">
+              <arg     key="prompt.mandrdateyyyy"/>
+            </field>
+            <field property="locationkey"
+                    depends="required">
+              <arg     key="prompt.location"/>
+            </field> 
+            <field property="ccykey"
+                    depends="required">
+              <arg     key="prompt.ccykey"/>
+            </field>                        
+            <field property="labouramt"
+                    depends="double">
+              <arg     key="prompt.labouramt"/>
+            </field> 
+            <field property="materialamt"
+                    depends="double">
+              <arg     key="prompt.materialamt"/>
+            </field>                                       
+        </form>
+        
+
+                        
+                                                                                        
+    </formset>
+       
+    
+</form-validation>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "file:///C:/BUREAUEYE/xml/struts-config_1_3.dtd">
+<struts-config>
+	<display-name>product</display-name>
+	<description>This is the Struts configuration file for the product</description>
+	<form-beans>
+		<form-bean name="ProductForm" type="com.bureaueye.beacon.form.standard.ProductForm"/>
+		<form-bean name="ListProductForm" type="com.bureaueye.beacon.form.ListForm"/>
+	</form-beans>
+	<global-forwards>	
+	</global-forwards>
+	<action-mappings>
+		<action path="/EditProduct" type="com.bureaueye.beacon.action.standard.EditProductAction" name="ProductForm" scope="session" validate="false">
+			<forward name="failure" path="/pages/standard/ListProduct.jsp"/>
+			<forward name="success" path="/pages/standard/Product1.jsp"/>
+		</action>
+		<action path="/SaveProduct" type="com.bureaueye.beacon.action.standard.SaveProductAction" name="ProductForm" scope="session" cancellable="true" input="product1">
+			<forward name="success" path="/ListProduct.do"/>
+			<forward name="product1" path="/pages/standard/Product1.jsp"/>
+			<forward name="product2" path="/pages/standard/Product2.jsp"/>
+			<forward name="product3" path="/pages/standard/Product3.jsp"/>
+			<forward name="product4" path="/pages/standard/Product4.jsp"/>	
+		</action>
+		<action path="/ListProduct" type="com.bureaueye.beacon.action.standard.ListProductAction" name="ListProductForm" scope="session" validate="false">
+			<forward name="success" path="/pages/standard/ListProduct.jsp"/>
+		</action>
+	</action-mappings>
+</struts-config>

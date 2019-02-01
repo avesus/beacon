@@ -1,0 +1,429 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<!DOCTYPE taglib
+
+  PUBLIC "-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.1//EN"
+
+  "http://java.sun.com/j2ee/dtds/web-jsptaglibrary_1_1.dtd">
+
+
+
+<taglib>
+
+
+
+  <tlibversion>1.0</tlibversion>
+
+  <jspversion>1.1</jspversion>
+
+  <shortname>Application Tag Library</shortname>
+
+  <uri>http://jakarta.apache.org/taglibs/struts-example-1.0</uri>
+
+  <info>
+
+    This tag library contains functionality specific to the Beacon Order application
+
+  </info>
+
+
+
+     
+<!-- order taglibs -->
+  <tag>
+    <name>linkOrderhdrLineItem</name>
+    <tagclass>com.bureaueye.beacon.taglib.order.LinkOrderhdrLineItemTag</tagclass>
+    <info>
+      Generate a URL-encoded hyperlink to the a URL made up of the
+      specified base value, plus optional query parameters that
+      select the specified object.
+      name     - Name of the attribute containing the specified object.
+                 [orderhdr]
+      href     - Context-relative URL of the generated link
+    </info>
+    <attribute>
+      <name>name</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>page</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+  
+  <tag>
+    <name>linkOrderhdr</name>
+    <tagclass>com.bureaueye.beacon.taglib.order.LinkOrderhdrTag</tagclass>
+    <info>
+      Generate a URL-encoded hyperlink to the a URL made up of the
+      specified base value, plus optional query parameters that
+      select the specified object.
+      name     - Name of the attribute containing the specified object.
+                 [orderhdr]
+      href     - Context-relative URL of the generated link
+    </info>
+    <attribute>
+      <name>name</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>page</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+
+  <tag>
+    <name>linkOrderprodLineItem</name>
+    <tagclass>com.bureaueye.beacon.taglib.order.LinkOrderprodLineItemTag</tagclass>
+    <info>
+      Generate a URL-encoded hyperlink to the a URL made up of the
+      specified base value, plus optional query parameters that
+      select the specified object.
+      name     - Name of the attribute containing the specified object.
+                 [orderprod]
+      href     - Context-relative URL of the generated link
+    </info>
+    <attribute>
+      <name>name</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>page</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+  <tag>
+    <name>linkOrderprodCreate</name>
+    <tagclass>com.bureaueye.beacon.taglib.order.LinkOrderprodCreateTag</tagclass>
+    <info>
+      Generate a URL-encoded hyperlink to the a URL made up of the
+      specified base value, plus optional query parameters that
+      select the specified object.
+      name     - Name of the attribute containing the specified object.
+                 [orderprod]
+      href     - Context-relative URL of the generated link
+    </info>
+    <attribute>
+      <name>name</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>page</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+  
+  <tag>
+    <name>linkOrderchargeLineItem</name>
+    <tagclass>com.bureaueye.beacon.taglib.order.LinkOrderchargeLineItemTag</tagclass>
+    <info>
+      Generate a URL-encoded hyperlink to the a URL made up of the
+      specified base value, plus optional query parameters that
+      select the specified object.
+      name     - Name of the attribute containing the specified object.
+                 [ordercharge]
+      href     - Context-relative URL of the generated link
+    </info>
+    <attribute>
+      <name>name</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>page</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+  <tag>
+    <name>linkOrderchargeCreate</name>
+    <tagclass>com.bureaueye.beacon.taglib.order.LinkOrderchargeCreateTag</tagclass>
+    <info>
+      Generate a URL-encoded hyperlink to the a URL made up of the
+      specified base value, plus optional query parameters that
+      select the specified object.
+      name     - Name of the attribute containing the specified object.
+                 [ordercharge]
+      href     - Context-relative URL of the generated link
+    </info>
+    <attribute>
+      <name>name</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>page</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+  
+    <tag>
+    <name>linkOrdernoteLineItem</name>
+    <tagclass>com.bureaueye.beacon.taglib.order.LinkOrdernoteLineItemTag</tagclass>
+    <info>
+      Generate a URL-encoded hyperlink to the a URL made up of the
+      specified base value, plus optional query parameters that
+      select the specified object.
+      name     - Name of the attribute containing the specified object.
+                 [ordernote]
+      href     - Context-relative URL of the generated link
+    </info>
+    <attribute>
+      <name>name</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>page</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+  <tag>
+    <name>linkOrdernoteCreate</name>
+    <tagclass>com.bureaueye.beacon.taglib.order.LinkOrdernoteCreateTag</tagclass>
+    <info>
+      Generate a URL-encoded hyperlink to the a URL made up of the
+      specified base value, plus optional query parameters that
+      select the specified object.
+      name     - Name of the attribute containing the specified object.
+                 [ordernote]
+      href     - Context-relative URL of the generated link
+    </info>
+    <attribute>
+      <name>name</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>page</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+  
+  
+      <tag>
+    <name>linkOrdermovLineItem</name>
+    <tagclass>com.bureaueye.beacon.taglib.order.LinkOrdermovLineItemTag</tagclass>
+    <info>
+      Generate a URL-encoded hyperlink to the a URL made up of the
+      specified base value, plus optional query parameters that
+      select the specified object.
+      name     - Name of the attribute containing the specified object.
+                 [ordermov]
+      href     - Context-relative URL of the generated link
+    </info>
+    <attribute>
+      <name>name</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>page</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+  <tag>
+    <name>linkOrdermovCreate</name>
+    <tagclass>com.bureaueye.beacon.taglib.order.LinkOrdermovCreateTag</tagclass>
+    <info>
+      Generate a URL-encoded hyperlink to the a URL made up of the
+      specified base value, plus optional query parameters that
+      select the specified object.
+      name     - Name of the attribute containing the specified object.
+                 [ordermov]
+      href     - Context-relative URL of the generated link
+    </info>
+    <attribute>
+      <name>name</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>page</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+  
+  
+  <tag>
+    <name>linkOrdermovOrdercostLineItem</name>
+    <tagclass>com.bureaueye.beacon.taglib.order.LinkOrdermovOrdercostLineItemTag</tagclass>
+    <info>
+      Generate a URL-encoded hyperlink to the a URL made up of the
+      specified base value, plus optional query parameters that
+      select the specified object.
+      name     - Name of the attribute containing the specified object.
+                 [Ordermov to Ordercost]
+      href     - Context-relative URL of the generated link
+    </info>
+    <attribute>
+      <name>name</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>page</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+    
+  
+           
+      <tag>
+    <name>linkOrdercostLineItem</name>
+    <tagclass>com.bureaueye.beacon.taglib.order.LinkOrdercostLineItemTag</tagclass>
+    <info>
+      Generate a URL-encoded hyperlink to the a URL made up of the
+      specified base value, plus optional query parameters that
+      select the specified object.
+      name     - Name of the attribute containing the specified object.
+                 [ordercost]
+      href     - Context-relative URL of the generated link
+    </info>
+    <attribute>
+      <name>name</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>page</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+  <tag>
+    <name>linkOrdercostCreate</name>
+    <tagclass>com.bureaueye.beacon.taglib.order.LinkOrdercostCreateTag</tagclass>
+    <info>
+      Generate a URL-encoded hyperlink to the a URL made up of the
+      specified base value, plus optional query parameters that
+      select the specified object.
+      name     - Name of the attribute containing the specified object.
+                 [ordercost]
+      href     - Context-relative URL of the generated link
+    </info>
+    <attribute>
+      <name>name</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>page</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+  
+  
+        <tag>
+    <name>linkOrdermovcostLineItem</name>
+    <tagclass>com.bureaueye.beacon.taglib.order.LinkOrdermovcostLineItemTag</tagclass>
+    <info>
+      Generate a URL-encoded hyperlink to the a URL made up of the
+      specified base value, plus optional query parameters that
+      select the specified object.
+      name     - Name of the attribute containing the specified object.
+                 [ordermovcost]
+      href     - Context-relative URL of the generated link
+    </info>
+    <attribute>
+      <name>name</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>page</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+  <tag>
+    <name>linkOrdermovcostCreate</name>
+    <tagclass>com.bureaueye.beacon.taglib.order.LinkOrdermovcostCreateTag</tagclass>
+    <info>
+      Generate a URL-encoded hyperlink to the a URL made up of the
+      specified base value, plus optional query parameters that
+      select the specified object.
+      name     - Name of the attribute containing the specified object.
+                 [ordermovcost]
+      href     - Context-relative URL of the generated link
+    </info>
+    <attribute>
+      <name>name</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>page</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+  
+ 
+
+    <tag>
+    <name>linkOrderfileLineItem</name>
+    <tagclass>com.bureaueye.beacon.taglib.order.LinkOrderfileLineItemTag</tagclass>
+    <info>
+      Generate a URL-encoded hyperlink to the a URL made up of the
+      specified base value, plus optional query parameters that
+      select the specified object.
+      name     - Name of the attribute containing the specified object.
+                 [orderfile]
+      href     - Context-relative URL of the generated link
+    </info>
+    <attribute>
+      <name>name</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>page</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+  <tag>
+    <name>linkOrderfileCreate</name>
+    <tagclass>com.bureaueye.beacon.taglib.order.LinkOrderfileCreateTag</tagclass>
+    <info>
+      Generate a URL-encoded hyperlink to the a URL made up of the
+      specified base value, plus optional query parameters that
+      select the specified object.
+      name     - Name of the attribute containing the specified object.
+                 [orderfile]
+      href     - Context-relative URL of the generated link
+    </info>
+    <attribute>
+      <name>name</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>page</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+  
+
+
+ 
+                          
+</taglib>
+

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "file:///C:/BUREAUEYE/xml/struts-config_1_3.dtd">
+<struts-config>
+  <display-name>sidtl</display-name>
+  <description>This is the Struts configuration file for the sales invoice detail</description>
+  <form-beans>
+    <form-bean name="SidtlForm" type="com.bureaueye.beacon.form.salesinvoice.SidtlForm"/>
+    <form-bean name="ListSidtlForm" type="com.bureaueye.beacon.form.ListForm"/>
+  </form-beans>
+  <global-forwards>
+    <forward name="Sidtl" path="/pages/salesinvoice/Sidtl.jsp"/>
+  </global-forwards>
+  <action-mappings>
+    <action path="/EditSidtl" type="com.bureaueye.beacon.action.salesinvoice.EditSidtlAction" name="SidtlForm" scope="request" validate="false">
+      <forward name="failure" path="/pages/salesinvoice/ListSidtl.jsp"/>
+      <forward name="success" path="/pages/salesinvoice/Sidtl.jsp"/>
+    </action>
+    <action path="/SaveSidtl" type="com.bureaueye.beacon.action.salesinvoice.SaveSidtlAction" name="SidtlForm" scope="request" cancellable="true" input="Sidtl">
+      <forward name="success" path="/ListSidtl.do"/>
+    </action>
+    <action path="/ListSidtl" type="com.bureaueye.beacon.action.salesinvoice.ListSidtlAction" name="ListSidtlForm" scope="session" validate="false" parameter="ListSihdrForm">
+      <forward name="success" path="/pages/salesinvoice/ListSidtl.jsp"/>
+    </action>
+  </action-mappings>
+</struts-config>

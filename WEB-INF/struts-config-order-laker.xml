@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "file:///C:/BUREAUEYE/xml/struts-config_1_3.dtd">
+<struts-config>
+
+  <display-name>Laker Order Module</display-name>
+  <description>This is the Struts configuration file for the Laker Order Module</description>
+  
+   
+  <form-beans>
+    <form-bean name="OrderhdrFormLaker" type="com.bureaueye.beacon.form.order.laker.OrderhdrForm"/>
+    <form-bean name="ListOrderhdrFormLaker" type="com.bureaueye.beacon.form.ListForm"/>    
+    <form-bean name="OrdercostForm" type="com.bureaueye.beacon.form.order.OrdercostForm"/>
+    <form-bean name="ListOrdercostForm" type="com.bureaueye.beacon.form.ListForm"/>
+    <form-bean name="OrderchargeForm" type="com.bureaueye.beacon.form.order.OrderchargeForm"/>
+    <form-bean name="ListOrderchargeForm" type="com.bureaueye.beacon.form.ListForm"/> 
+    <form-bean name="ListOrdersummaryForm" type="com.bureaueye.beacon.form.order.ListOrdersummaryForm"/> 
+    <form-bean name="GenerateXdocumentForm" type="com.bureaueye.beacondms.form.dms.GenerateXdocumentForm"/> 
+    <form-bean name="OrderfileForm" type="com.bureaueye.beacon.form.order.OrderfileForm"/>
+    <form-bean name="ListOrderfileForm" type="com.bureaueye.beacon.form.ListForm"/>
+    <form-bean name="VesselmanifestImportForm" type="com.bureaueye.beacon.form.finance.laker.VesselmanifestImportForm"/>  
+  </form-beans>
+  
+  
+  <global-forwards>
+    <forward name="OrderchargeLaker" path="/pages/order/laker/Ordercharge.jsp"/>  
+    <forward name="OrdercostLaker" path="/pages/order/laker/Ordercost.jsp"/>
+    <forward name="OrderfileLaker" path="/pages/order/laker/Orderfile.jsp"/>      
+    <forward name="GenerateXdocumentLaker" path="/pages/dms/laker/GenerateXdocument.jsp"/>             
+  </global-forwards>
+  
+  
+  <action-mappings>
+  
+  
+    <action path="/EditOrderhdrLaker" type="com.bureaueye.beacon.action.order.laker.EditOrderhdrAction" name="OrderhdrFormLaker" scope="session" validate="false">
+      		<forward name="failure" path="/pages/order/laker/ListOrderhdrMain.jsp"/>
+			<forward name="success" path="/pages/order/laker/Orderhdr1.jsp"/>      		
+    </action>   
+    <action path="/SaveOrderhdrLaker" type="com.bureaueye.beacon.action.order.laker.SaveOrderhdrAction" name="OrderhdrFormLaker" scope="session" cancellable="true" input="orderhdr1">
+      		<forward name="success" path="/ListOrderhdrLaker.do"/>
+			<forward name="orderhdr1" path="/pages/order/laker/Orderhdr1.jsp"/>
+    </action>  
+    <action path="/ListOrderhdrLaker" type="com.bureaueye.beacon.action.order.laker.ListOrderhdrAction" name="ListOrderhdrFormLaker" scope="session" validate="false">
+      		<forward name="success" path="/pages/order/laker/ListOrderhdrMain.jsp"/>
+    </action> 
+
+
+    <action path="/EditOrderchargeLaker" type="com.bureaueye.beacon.action.order.EditOrderchargeAction" name="OrderchargeForm" scope="session" validate="false" parameter="Ordercharge">
+      <forward name="failure" path="/pages/order/laker/ListOrdercharge.jsp"/>
+      <forward name="success" path="/pages/order/laker/Ordercharge.jsp"/>
+    </action>
+    <action path="/SaveOrderchargeLaker" type="com.bureaueye.beacon.action.order.SaveOrderchargeAction" name="OrderchargeForm" scope="session" cancellable="true" input="OrderchargeLaker">
+      <forward name="success" path="/ListOrderchargeLaker.do"/>
+    </action>
+    <action path="/ListOrderchargeLaker" type="com.bureaueye.beacon.action.order.ListOrderchargeAction" name="ListOrderchargeForm" scope="session" validate="false" parameter="ListOrderhdrForm">
+      <forward name="success" path="/pages/order/laker/ListOrdercharge.jsp"/>
+    </action>
+
+
+    <action path="/EditOrdercostLaker" type="com.bureaueye.beacon.action.order.EditOrdercostAction" name="OrdercostForm" scope="request" validate="false" parameter="Ordercost">
+      <forward name="failure" path="/pages/order/laker/ListOrdercost.jsp"/>
+      <forward name="success" path="/pages/order/laker/Ordercost.jsp"/>
+    </action>
+    <action path="/SaveOrdercostLaker" type="com.bureaueye.beacon.action.order.laker.SaveOrdercostAction" name="OrdercostForm" scope="request" cancellable="true" input="OrdercostLaker">
+      <forward name="success" path="/ListOrdercostLaker.do"/>
+    </action>
+    <action path="/ListOrdercostLaker" type="com.bureaueye.beacon.action.order.ListOrdercostAction" name="ListOrdercostForm" scope="session" validate="false" parameter="ListOrderhdrForm">
+      <forward name="success" path="/pages/order/laker/ListOrdercost.jsp"/>
+    </action>
+
+
+    <action path="/EditOrderfileLaker" type="com.bureaueye.beacon.action.order.EditOrderfileAction" name="OrderfileForm" scope="request" validate="false" parameter="Orderfile">
+      <forward name="failure" path="/pages/order/laker/ListOrderfile.jsp"/>
+      <forward name="success" path="/pages/order/laker/Orderfile.jsp"/>
+    </action>
+    <action path="/SaveOrderfileLaker" type="com.bureaueye.beacon.action.order.SaveOrderfileAction" name="OrderfileForm" scope="request" cancellable="true" input="OrderfileLaker">
+      <forward name="success" path="/ListOrderfileLaker.do"/>
+    </action>
+    <action path="/ListOrderfileLaker" type="com.bureaueye.beacon.action.order.ListOrderfileAction" name="ListOrderfileForm" scope="session" validate="false" parameter="ListOrderhdrForm">
+      <forward name="success" path="/pages/order/laker/ListOrderfile.jsp"/>
+    </action>
+     
+ 
+    <action path="/ListOrdersummaryLaker" type="com.bureaueye.beacon.action.order.ListOrdersummaryAction" name="ListOrdersummaryForm" scope="session" validate="false" parameter="ListOrderhdrForm">
+      <forward name="success" path="/pages/order/laker/ListOrdersummary.jsp"/>
+    </action> 
+    <action path="/SaveOrdersummaryLaker" type="com.bureaueye.beacon.action.order.SaveOrdersummaryAction" name="ListOrdersummaryForm" scope="session" validate="false" input="ListOrderhdrLaker">
+      <forward name="success" path="/ListOrdersummaryLaker.do"/>
+    </action>    
+
+
+    <action path="/GenerateXdocument1Laker" type="com.bureaueye.beacondms.action.dms.GenerateXdocument1Action" name="GenerateXdocumentForm" scope="session" validate="false">
+      <forward name="success" path="/pages/dms/laker/GenerateXdocument.jsp"/>
+    </action>
+     <action path="/GenerateXdocument2Laker" type="com.bureaueye.beacondms.action.dms.GenerateXdocument2Action" name="GenerateXdocumentForm" scope="session" validate="false" input="GenerateXdocumentLaker">
+      <forward name="success" path="/pages/dms/laker/GenerateXdocument.jsp"/>
+    </action>   
+   
+   
+        
+    <action path="/ReportSalesLaker" type="com.bureaueye.beacon.action.report.laker.ReportSalesAction" name="ListReportForm" scope="request" validate="false">
+          <forward name="success" path="/pages/report/laker/ReportSales.jsp"/>
+          <forward name="failure" path="/pages/report/laker/ReportSales.jsp"/>
+    </action>
+    
+   
+    <action path="/VesselmanifestImportLaker" type="com.bureaueye.beacon.action.finance.laker.VesselmanifestImportAction" name="VesselmanifestImportForm" scope="session" validate="false">
+      <forward name="success" path="/pages/finance/laker/VesselmanifestImport.jsp"/>
+    </action> 
+        
+                
+  </action-mappings>
+  
+</struts-config>

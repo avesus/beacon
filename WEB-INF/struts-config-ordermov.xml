@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "file:///C:/BUREAUEYE/xml/struts-config_1_3.dtd">
+<struts-config>
+  <display-name>ordermov</display-name>
+  <description>This is the Struts configuration file for the order movement</description>
+  <form-beans>
+    <form-bean name="OrdermovForm" type="com.bureaueye.beacon.form.order.OrdermovForm"/>
+    <form-bean name="ListOrdermovForm" type="com.bureaueye.beacon.form.ListForm"/>
+  </form-beans>
+  <global-forwards>
+    <forward name="Ordermov" path="/pages/order/Ordermov.jsp"/>
+  </global-forwards>
+  <action-mappings>
+    <action path="/EditOrdermov" type="com.bureaueye.beacon.action.order.EditOrdermovAction" name="OrdermovForm" scope="request" validate="false" parameter="Ordermov">
+      <forward name="failure" path="/pages/order/ListOrdermov.jsp"/>
+      <forward name="success" path="/pages/order/Ordermov.jsp"/>
+    </action>
+    <action path="/SaveOrdermov" type="com.bureaueye.beacon.action.order.SaveOrdermovAction" name="OrdermovForm" scope="request" cancellable="true" input="Ordermov">
+      <forward name="success" path="/ListOrdermov.do"/>
+    </action>
+    <action path="/ListOrdermov" type="com.bureaueye.beacon.action.order.ListOrdermovAction" name="ListOrdermovForm" scope="session" validate="false" parameter="ListOrderhdrForm">
+      <forward name="success" path="/pages/order/ListOrdermov.jsp"/>
+    </action>
+  </action-mappings>
+</struts-config>

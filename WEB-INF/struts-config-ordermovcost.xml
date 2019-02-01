@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "file:///C:/BUREAUEYE/xml/struts-config_1_3.dtd">
+<struts-config>
+  <display-name>ordermovcost</display-name>
+  <description>This is the Struts configuration file for the order movement costs</description>
+  <form-beans>
+    <form-bean name="OrdermovcostForm" type="com.bureaueye.beacon.form.order.OrdermovcostForm"/>
+    <form-bean name="ListOrdermovcostForm" type="com.bureaueye.beacon.form.ListForm"/>
+  </form-beans>
+  <global-forwards>
+    <forward name="Ordermovcost" path="/pages/order/Ordermovcost.jsp"/>
+  </global-forwards>
+  <action-mappings>
+    <action path="/EditOrdermovcost" type="com.bureaueye.beacon.action.order.EditOrdermovcostAction" name="OrdermovcostForm" scope="session" validate="false" parameter="Ordermovcost">
+      <forward name="failure" path="/pages/order/ListOrdermovcost.jsp"/>
+      <forward name="success" path="/pages/order/Ordermovcost.jsp"/>
+    </action>
+    <action path="/SaveOrdermovcost" type="com.bureaueye.beacon.action.order.SaveOrdermovcostAction" name="OrdermovcostForm" scope="session" cancellable="true" input="Ordermovcost">
+      <forward name="success" path="/ListOrdermovcost.do"/>
+    </action>
+    <action path="/ListOrdermovcost" type="com.bureaueye.beacon.action.order.ListOrdermovcostAction" name="ListOrdermovcostForm" scope="session" validate="false" parameter="ListOrderhdrForm,ListOrdermovForm">
+      <forward name="success" path="/pages/order/ListOrdermovcost.jsp"/>
+    </action>   
+  </action-mappings>
+</struts-config>

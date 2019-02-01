@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN"
+	"hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.bureaueye.beacon.model.standard">
+	<class name="Location" table="location" lazy="false">
+<meta attribute="sync-DAO">true</meta>	
+		<id column="Locationkey" name="Locationkey" type="string">
+			<generator class="assigned"/>
+		</id>
+		<property column="xprog" length="50" name="Xprog" not-null="false" type="string"/>
+		<property column="Description2" length="30" name="Description2" not-null="false" type="string"/>
+		<property column="City" length="30" name="City" not-null="false" type="string"/>
+		<property column="xdate" length="10" name="Xdate" not-null="false" type="date"/>
+		<property column="xtime" length="10" name="Xtime" not-null="false" type="string"/>
+		<property column="xinactive" name="Xinactive" not-null="false" type="yes_no"/>
+		<property column="xaction" length="10" name="Xaction" not-null="false" type="string"/>
+		<property column="Fax" length="20" name="Fax" not-null="false" type="string"/>
+		<property column="createdate" length="10" name="Createdate" not-null="false" type="date"/>
+		<property column="PortUnicon" length="5" name="PortUnicon" not-null="false" type="string"/>
+		<property column="PostalCode" length="20" name="PostalCode" not-null="false" type="string"/>
+		<property column="Description3" length="30" name="Description3" not-null="false" type="string"/>
+		<property column="State" length="20" name="State" not-null="false" type="string"/>
+		<property column="Address1" length="50" name="Address1" not-null="false" type="string"/>
+		<property column="createuserid" length="10" name="Createuserid" not-null="false" type="string"/>
+		<property column="LocationName" length="50" name="LocationName" not-null="false" type="string"/>
+		<property column="ShortName" length="20" name="ShortName" not-null="false" type="string"/>		
+		<property column="Phone" length="20" name="Phone" not-null="false" type="string"/>
+		<property column="Description1" length="30" name="Description1" not-null="false" type="string"/>
+		<property column="PlantCode" length="5" name="PlantCode" not-null="false" type="string"/>
+		<property column="LocationType" length="10" name="LocationType" not-null="false" type="string"/>
+		<property column="Address3" length="50" name="Address3" not-null="false" type="string"/>
+		<property column="Contact" length="30" name="Contact" not-null="false" type="string"/>
+		<property column="rowid" length="11" name="Rowid" not-null="false" type="integer"/>
+		<property column="xuserid" length="10" name="Xuserid" not-null="false" type="string"/>
+		<property column="Country" length="30" name="Country" not-null="false" type="string"/>
+		<property column="createtime" length="30" name="Createtime" not-null="false" type="string"/>
+		<property column="Address2" length="50" name="Address2" not-null="false" type="string"/>
+		<property column="xlock" length="20" name="Xlock" not-null="false" type="string"/>
+		<property
+			column="countrykey"
+			length="10"
+			name="Countrykey"
+			not-null="false"
+			type="string"
+		 />
+		<property
+			column="locationcode"
+			length="10"
+			name="Locationcode"
+			not-null="false"
+			type="string"
+		 />	
+		 
+		 <property name="Locationtypelist" column="locationtypelist" type="string" not-null="false" length="250"/>
+
+		 <property name="G1codekey" column="g1codekey" type="string" not-null="false" length="10"/>
+		 <property name="G2codekey" column="g2codekey" type="string" not-null="false" length="10"/>
+		 <property name="G3codekey" column="g3codekey" type="string" not-null="false" length="10"/>
+		 <property name="G4codekey" column="g4codekey" type="string" not-null="false" length="10"/>
+		 		 		 		 		 			 		
+	</class>
+	
+	
+
+
+		
+	
+</hibernate-mapping>

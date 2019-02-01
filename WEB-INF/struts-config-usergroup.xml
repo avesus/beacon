@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "file:///C:/BUREAUEYE/xml/struts-config_1_3.dtd">
+<struts-config>
+	<display-name>usergroup</display-name>
+	<description>This is the Struts configuration file for the usergroup</description>
+	<form-beans>
+		<form-bean name="UsergroupForm" type="com.bureaueye.beacon.form.standard.UsergroupForm"/>
+		<form-bean name="ListUsergroupForm" type="com.bureaueye.beacon.form.ListForm"/>		
+	</form-beans>
+
+	<global-forwards>
+		<forward name="Usergroup" path="/pages/standard/Usergroup.jsp"/>
+	</global-forwards>
+
+	<action-mappings>
+
+		<action path="/EditUsergroup" type="com.bureaueye.beacon.action.standard.EditUsergroupAction" name="UsergroupForm" scope="request" validate="false">
+			<forward name="failure" path="/pages/standard/ListUsergroup.jsp"/>
+			<forward name="success" path="/pages/standard/Usergroup.jsp"/>
+		</action>
+		<action path="/SaveUsergroup" type="com.bureaueye.beacon.action.standard.SaveUsergroupAction" name="UsergroupForm" scope="request" cancellable="true" input="Usergroup">
+			<forward name="success" path="/ListUsergroup.do"/>
+		</action>
+		<action path="/ListUsergroup" type="com.bureaueye.beacon.action.standard.ListUsergroupAction" name="ListUsergroupForm" scope="session" validate="false">
+			<forward name="success" path="/pages/standard/ListUsergroup.jsp"/>
+		</action>
+
+	</action-mappings>
+</struts-config>

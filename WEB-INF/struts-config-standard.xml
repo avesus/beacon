@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "file:///C:/BUREAUEYE/xml/struts-config_1_3.dtd">
+          
+<struts-config>
+
+  <display-name>standard</display-name> 
+  <description>This is the Struts configuration file for standard tables.</description>
+  
+  
+  <form-beans>
+  
+    <form-bean name="ListShipmethodForm" type="com.bureaueye.beacon.form.ListForm"/>
+  
+    <form-bean name="SectiontemplateForm" type="com.bureaueye.beacon.form.standard.SectiontemplateForm"/>
+    <form-bean name="ListSectiontemplateForm" type="com.bureaueye.beacon.form.ListForm"/>    
+
+    <form-bean name="CosttemplateForm" type="com.bureaueye.beacon.form.standard.CosttemplateForm"/>
+    <form-bean name="ListCosttemplateForm" type="com.bureaueye.beacon.form.ListForm"/> 
+      
+  </form-beans>
+
+
+  <global-forwards>
+  
+    <forward name="Sectiontemplate" path="/pages/standard/Sectiontemplate.jsp"/>
+    
+    <forward name="Costtemplate" path="/pages/standard/Costtemplate.jsp"/>    
+    
+  </global-forwards>
+    
+  
+  <action-mappings>
+  
+    <action path="/ListShipmethod" type="com.bureaueye.beacon.action.standard.ListShipmethodAction" name="ListShipmethodForm" scope="session" validate="false">
+      <forward name="success" path="/pages/standard/ListShipmethod.jsp"/>
+    </action>   
+  
+    <action path="/EditSectiontemplate" type="com.bureaueye.beacon.action.standard.EditSectiontemplateAction" name="SectiontemplateForm" scope="request" validate="false">
+      <forward name="failure" path="/pages/standard/ListSectiontemplate.jsp"/>
+      <forward name="success" path="/pages/standard/Sectiontemplate.jsp"/>
+    </action>
+    <action path="/SaveSectiontemplate" type="com.bureaueye.beacon.action.standard.SaveSectiontemplateAction" name="SectiontemplateForm" scope="request" input="Sectiontemplate" cancellable="true">
+      <forward name="success" path="/ListSectiontemplate.do"/>
+    </action>
+    <action path="/ListSectiontemplate" type="com.bureaueye.beacon.action.standard.ListSectiontemplateAction" name="ListSectiontemplateForm" scope="session" validate="false">
+      <forward name="success" path="/pages/standard/ListSectiontemplate.jsp"/>
+    </action>
+
+    <action path="/EditCosttemplate" type="com.bureaueye.beacon.action.standard.EditCosttemplateAction" name="CosttemplateForm" scope="request" validate="false">
+      <forward name="failure" path="/pages/standard/ListCosttemplate.jsp"/>
+      <forward name="success" path="/pages/standard/Costtemplate.jsp"/>
+    </action>
+    <action path="/SaveCosttemplate" type="com.bureaueye.beacon.action.standard.SaveCosttemplateAction" name="CosttemplateForm" scope="request" input="Costtemplate" cancellable="true">
+      <forward name="success" path="/ListCosttemplate.do"/>
+    </action>
+    <action path="/ListCosttemplate" type="com.bureaueye.beacon.action.standard.ListCosttemplateAction" name="ListCosttemplateForm" scope="session" validate="false">
+      <forward name="success" path="/pages/standard/ListCosttemplate.jsp"/>
+    </action>
+      
+  </action-mappings>
+  
+        
+</struts-config>

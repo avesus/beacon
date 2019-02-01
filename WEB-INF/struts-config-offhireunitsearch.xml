@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "file:///C:/BUREAUEYE/xml/struts-config_1_3.dtd">
+<struts-config>
+  <display-name>unit search for offhire</display-name>
+  <description>This is the Struts configuration file for the unit search for offhire</description>
+  <form-beans>
+    <form-bean name="ListUnitSearchForm" type="com.bureaueye.beacon.form.ListForm"/>
+  </form-beans>
+  <action-mappings>
+    <action path="/EditUnitSearchOffhire" type="com.bureaueye.genesys.action.offhire.EditUnitSearchAction" name="ListUnitSearchForm" scope="session" validate="false">
+       <forward name="success" path="/pages/offhire/UnitSearch.jsp"/>
+     </action>
+    <action path="/ListUnitSearchOffhire" type="com.bureaueye.genesys.action.offhire.ListUnitSearchAction" name="ListUnitSearchForm" scope="session" validate="false">
+      <forward name="success" path="/pages/offhire/ListUnitSearch.jsp"/>
+    </action>
+  </action-mappings>
+</struts-config>

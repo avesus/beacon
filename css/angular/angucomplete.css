@@ -1,0 +1,63 @@
+.form-control {
+    outline: 0;
+    border-color: rgb(169, 169, 169);
+    border-style: solid;
+    border-width: 1px;
+    width: 100%;
+	padding: 2px 0;
+    background-color: #ffffff;
+	font-family: Arial, Verdana, Helvetica;
+    font-size: 11px;
+    font-weight: normal;
+    color: black;
+}
+
+.angucomplete-holder {
+    position: relative;
+}
+
+.angucomplete-dropdown {
+    border-color: #007DDF;
+    border-width: 1px;
+    border-style: solid;
+    width: 270px;
+	max-height: 550px;
+	overflow:auto;
+    padding: 0;
+    cursor: pointer;
+    z-index: 9999;
+    position: absolute;
+    margin-top: -1;
+    background-color: #ffffff;
+}
+
+.angucomplete-searching {
+    color: #007DDF;
+    font-size: 11px;
+    padding: 0 3px 1px 5px;
+}
+
+.highlight {
+    color: #007DDF;
+}
+
+.angucomplete-description {
+    font-size: 11px;
+    padding: 0;
+}
+
+.angucomplete-row {
+    color: #000000;
+	font-family: Arial, Verdana, Helvetica;
+    margin-bottom: 0;
+	line-height:115%;
+}
+
+.angucomplete-row div {
+    padding: 2px 3px 1px 5px;
+}
+
+.angucomplete-selected-row, .angucomplete-row:hover, .angucomplete-row:hover .highlight  {
+    background-color: #007DDF;
+    color: #ffffff;
+}

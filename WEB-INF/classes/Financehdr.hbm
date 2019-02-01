@@ -1,0 +1,306 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.bureaueye.genesys.model.finance">
+	<class name="Financehdr" table="financehdr">
+<meta attribute="sync-DAO">true</meta>	
+		<id
+			column="FINANCEHDR_ID"
+			name="FinancehdrId"
+			type="integer"
+		>
+			<generator class="native" />
+		</id>
+		<property
+			column="departmentkey"
+			length="10"
+			name="Departmentkey"
+			not-null="false"
+			type="string"
+		 />
+	  
+		<property
+			column="systemlogdate"
+			length="10"
+			name="Systemlogdate"
+			not-null="false"
+			type="date"
+		 />
+		<property
+			column="contractno"
+			length="20"
+			name="Contractno"
+			not-null="false"
+			type="string"
+		 />
+		<property
+			column="activitykey"
+			length="10"
+			name="Activitykey"
+			not-null="false"
+			type="string"
+		 />
+		<property
+			column="netamount"
+			length="18"
+			name="Netamount"
+			not-null="false"
+			type="big_decimal"
+		 />
+		<property
+			column="ccykey"
+			length="10"
+			name="Ccykey"
+			not-null="false"
+			type="string"
+		 />
+		<property
+			column="xlock"
+			length="20"
+			name="Xlock"
+			not-null="false"
+			type="string"
+		 />
+		<property
+			column="createdate"
+			length="10"
+			name="Createdate"
+			not-null="false"
+			type="date"
+		 />
+		<property
+			column="doctypekey"
+			length="10"
+			name="Doctypekey"
+			not-null="false"
+			type="string"
+		 />
+		<property
+			column="systemlogaction"
+			length="10"
+			name="Systemlogaction"
+			not-null="false"
+			type="string"
+		 />
+		<property
+			column="createtime"
+			length="8"
+			name="Createtime"
+			not-null="false"
+			type="string"
+		 />
+		<property
+			column="billdate"
+			length="10"
+			name="Billdate"
+			not-null="false"
+			type="date"
+		 />
+		<property
+			column="systemlogtime"
+			length="10"
+			name="Systemlogtime"
+			not-null="false"
+			type="string"
+		 />
+		<property
+			column="xinactive"
+			name="Xinactive"
+			not-null="false"
+			type="yes_no"
+		 />
+		<property
+			column="manualflag"
+			name="Manualflag"
+			not-null="false"
+			type="yes_no"
+		 />
+		<property
+			column="cashalloctotal"
+			length="18"
+			name="Cashalloctotal"
+			not-null="false"
+			type="big_decimal"
+		 />
+		<property
+			column="leasetypekey"
+			length="10"
+			name="Leasetypekey"
+			not-null="false"
+			type="string"
+		 />
+		<property
+			column="CONTRACT_ID"
+			length="11"
+			name="ContractId"
+			not-null="false"
+			type="integer"
+		 />
+		<property
+			column="postdate"
+			length="10"
+			name="Postdate"
+			not-null="false"
+			type="date"
+		 />
+		<property
+			column="docdate"
+			length="10"
+			name="Docdate"
+			not-null="false"
+			type="date"
+		 />
+		<property
+			column="printdate"
+			length="10"
+			name="Printdate"
+			not-null="false"
+			type="date"
+		 />		 
+		<property
+			column="grossamount"
+			length="18"
+			name="Grossamount"
+			not-null="false"
+			type="big_decimal"
+		 />
+		<property
+			column="companykey"
+			length="10"
+			name="Companykey"
+			not-null="false"
+			type="string"
+		 />
+		<property
+			column="systemlogprogram"
+			length="50"
+			name="Systemlogprogram"
+			not-null="false"
+			type="string"
+		 />
+		<property
+			column="cashallocpayout"
+			length="18"
+			name="Cashallocpayout"
+			not-null="false"
+			type="big_decimal"
+		 />
+		<property
+			column="dockey"
+			length="10"
+			name="Dockey"
+			not-null="false"
+			type="string"
+		 />
+		<property
+			column="vatamount"
+			length="18"
+			name="Vatamount"
+			not-null="false"
+			type="big_decimal"
+		 />
+		<property
+			column="pyodoneflag"
+			name="Pyodoneflag"
+			not-null="false"
+			type="yes_no"
+		 />
+		<property
+			column="printedflag"
+			name="Printedflag"
+			not-null="false"
+			type="yes_no"
+		 />		 
+		<property
+			column="payoutamount"
+			length="18"
+			name="Payoutamount"
+			not-null="false"
+			type="big_decimal"
+		 />
+		<property
+			column="createuserid"
+			length="10"
+			name="Createuserid"
+			not-null="false"
+			type="string"
+		 />
+		<property
+			column="systemloguserid"
+			length="10"
+			name="Systemloguserid"
+			not-null="false"
+			type="string"
+		 />
+
+
+		<property
+			column="lesseeaddrkey"
+			length="10"
+			name="Lesseeaddrkey"
+			not-null="false"
+			type="string"
+		 />
+		 
+
+		<property
+			column="invoiceref"
+			length="50"
+			name="Invoiceref"
+			not-null="false"
+			type="string"
+		 />		
+		<property
+			column="taxcode"
+			length="10"
+			name="Taxcode"
+			not-null="false"
+			type="string"
+		 />		
+		 
+		<property
+			column="printtime"
+			length="8"
+			name="Printtime"
+			not-null="false"
+			type="string"
+		 />
+		 		 
+	</class>
+	
+	<query name="findFinancehdrsTotalResultsNotManual">
+		<![CDATA[
+			select count(*) from Financehdr financehdr where 			
+				financehdr.Docdate between :date1 and :date2 and
+				financehdr.Manualflag = :id1				
+		]]>
+	</query>
+	<query name="findFinancehdrsTotalResultsByDockey">
+		<![CDATA[
+			select count(*) from Financehdr financehdr where 
+				financehdr.Dockey = :id1 
+		]]>
+	</query>
+		<query name="findFinancehdrsTotalResultsManual">
+		<![CDATA[
+			select count(*) from Financehdr financehdr where
+				financehdr.Lesseeaddrkey like :id1 and
+				financehdr.Createdate between :date1 and :date2 and
+				financehdr.Companykey like :id2 and
+				financehdr.Departmentkey like :id3 and
+				financehdr.Activitykey like :id4 and
+				financehdr.Manualflag = :id5
+		]]>
+	</query>
+		
+	<query name="findFinancehdrsTotalResultsByFinancehdrId">
+		<![CDATA[
+			select count(*) from Financehdr financehdr where 
+				financehdr.FinancehdrId = :id1 
+		]]>
+	</query>
+		
+		
+</hibernate-mapping>

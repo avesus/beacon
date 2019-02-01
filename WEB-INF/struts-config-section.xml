@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "file:///C:/BUREAUEYE/xml/struts-config_1_3.dtd">
+<struts-config>
+	<display-name>section</display-name>
+	<description>This is the Struts configuration file for the section</description>
+	<form-beans>
+		<form-bean name="SectionForm" type="com.bureaueye.beacon.form.standard.SectionForm"/>
+		<form-bean name="ListSectionForm" type="com.bureaueye.beacon.form.ListForm"/>
+	</form-beans>
+	<global-forwards>
+		<forward name="Section" path="/pages/standard/Section.jsp"/>
+	</global-forwards>
+	<action-mappings>
+		<action path="/EditSection" type="com.bureaueye.beacon.action.standard.EditSectionAction" name="SectionForm" scope="request" validate="false">
+			<forward name="failure" path="/pages/standard/ListSection.jsp"/>
+			<forward name="success" path="/pages/standard/Section.jsp"/>
+		</action>
+		<action path="/SaveSection" type="com.bureaueye.beacon.action.standard.SaveSectionAction" name="SectionForm" scope="request" cancellable="true" input="Section">
+			<forward name="success" path="/ListSection.do"/>
+		</action>
+		<action path="/ListSection" type="com.bureaueye.beacon.action.standard.ListSectionAction" name="ListSectionForm" scope="session" validate="false">
+			<forward name="success" path="/pages/standard/ListSection.jsp"/>
+		</action>	
+	</action-mappings>
+</struts-config>

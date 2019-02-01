@@ -1,0 +1,551 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!DOCTYPE web-app
+  PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.2//EN"
+  "file:///C:/BUREAUEYE/xml/web-app_2_2.dtd">
+
+<web-app>
+	<display-name>BEACON APPLICATION</display-name>
+
+  <listener>
+	<listener-class>
+		com.bureaueye.beacon.action.tool.UserCounter
+	</listener-class>
+  </listener>
+  
+  <listener>
+	<listener-class>
+		com.bureaueye.beacon.action.tool.SessionListener
+	</listener-class>
+  </listener>
+  
+   <!-- task definition -->  
+  <listener>
+	<listener-class>
+		com.bureaueye.beacon.action.system.SystemTaskAgent
+	</listener-class>
+  </listener>  
+	
+  <!-- Action Servlet Configuration -->
+  <servlet>
+    <servlet-name>action</servlet-name>
+    <servlet-class>org.apache.struts.action.ActionServlet</servlet-class>
+    <init-param>
+      <param-name>config</param-name>
+      	<param-value>
+/WEB-INF/struts-config.xml, 
+/WEB-INF/struts-config-registration.xml, 
+/WEB-INF/struts-config-city.xml, 
+/WEB-INF/struts-config-country.xml, 
+/WEB-INF/struts-config-ccy.xml, 
+/WEB-INF/struts-config-ccyex.xml, 
+/WEB-INF/struts-config-address.xml, 
+/WEB-INF/struts-config-location.xml, 
+/WEB-INF/struts-config-addresscontact.xml,
+/WEB-INF/struts-config-charge.xml,
+/WEB-INF/struts-config-cost.xml,
+/WEB-INF/struts-config-section.xml,
+/WEB-INF/struts-config-vessel.xml,
+/WEB-INF/struts-config-customertariffhdr.xml,
+/WEB-INF/struts-config-customertariffdtl.xml,
+/WEB-INF/struts-config-vendortariffhdr.xml,
+/WEB-INF/struts-config-vendortariffdtl.xml,
+/WEB-INF/struts-config-quohdr.xml,
+/WEB-INF/struts-config-quoprod.xml,
+/WEB-INF/struts-config-quocharge.xml,
+/WEB-INF/struts-config-quomov.xml,
+/WEB-INF/struts-config-quocost.xml,
+/WEB-INF/struts-config-quomovcost.xml,
+/WEB-INF/struts-config-quonote.xml,
+/WEB-INF/struts-config-quofile.xml,
+/WEB-INF/struts-config-quosummary.xml,
+/WEB-INF/struts-config-quoapprove.xml,
+/WEB-INF/struts-config-quoapproverequest.xml,
+/WEB-INF/struts-config-workflow.xml,
+/WEB-INF/struts-config-addresssearch.xml,
+/WEB-INF/struts-config-addresscontactsearch.xml,
+/WEB-INF/struts-config-locationsearch.xml,
+/WEB-INF/struts-config-locationcodesearch.xml,
+/WEB-INF/struts-config-quotationvendortariffsearch.xml,
+/WEB-INF/struts-config-quotationcustomertariffsearch.xml, 
+/WEB-INF/struts-config-ordervendortariffsearch.xml,
+/WEB-INF/struts-config-ordercustomertariffsearch.xml, 
+/WEB-INF/struts-config-edioutbound.xml,
+/WEB-INF/struts-config-ediinbound.xml,
+/WEB-INF/struts-config-edibatch.xml,
+/WEB-INF/struts-config-reportquotation.xml,
+/WEB-INF/struts-config-reportorder.xml,
+/WEB-INF/struts-config-orderhdr.xml,
+/WEB-INF/struts-config-orderprod.xml,
+/WEB-INF/struts-config-ordercharge.xml,
+/WEB-INF/struts-config-ordernote.xml,
+/WEB-INF/struts-config-orderfile.xml,
+/WEB-INF/struts-config-ordermov.xml,
+/WEB-INF/struts-config-ordermovcost.xml,
+/WEB-INF/struts-config-ordercost.xml,
+/WEB-INF/struts-config-ordersummary.xml,
+/WEB-INF/struts-config-jobhdr.xml,
+/WEB-INF/struts-config-jobmov.xml,
+/WEB-INF/struts-config-jobcost.xml,
+/WEB-INF/struts-config-jobhdrcost.xml,
+/WEB-INF/struts-config-jobvendortariffsearch.xml,
+/WEB-INF/struts-config-unitsearch.xml,
+/WEB-INF/struts-config-unit.xml,
+/WEB-INF/struts-config-unittest.xml,
+/WEB-INF/struts-config-unitfit.xml,
+/WEB-INF/struts-config-unitmandr.xml,
+/WEB-INF/struts-config-movement.xml,
+/WEB-INF/struts-config-product.xml,
+/WEB-INF/struts-config-loadingconfirmation.xml,
+/WEB-INF/struts-config-prints.xml,
+/WEB-INF/struts-config-salesinvoicebuild.xml,
+/WEB-INF/struts-config-sihdr.xml,
+/WEB-INF/struts-config-sidtl.xml,
+/WEB-INF/struts-config-report.xml,
+/WEB-INF/struts-config-user.xml,
+/WEB-INF/struts-config-usermenu.xml,
+/WEB-INF/struts-config-usergroup.xml,
+/WEB-INF/struts-config-usergroupmenu.xml,
+/WEB-INF/struts-config-contract.xml,
+/WEB-INF/struts-config-contractagent.xml,
+/WEB-INF/struts-config-contracteqp.xml,
+/WEB-INF/struts-config-contracteqploc.xml,
+/WEB-INF/struts-config-pohdr.xml,
+/WEB-INF/struts-config-podtl.xml,
+/WEB-INF/struts-config-podtlrcvd.xml,
+/WEB-INF/struts-config-onhire.xml,
+/WEB-INF/struts-config-onhireeqp.xml,
+/WEB-INF/struts-config-onhireeqpotc.xml,
+/WEB-INF/struts-config-onhireunitsearch.xml,
+/WEB-INF/struts-config-offhire.xml,
+/WEB-INF/struts-config-offhireeqp.xml,
+/WEB-INF/struts-config-offhireeqpotc.xml,
+/WEB-INF/struts-config-offhireunitsearch.xml,
+/WEB-INF/struts-config-billingrun.xml,
+/WEB-INF/struts-config-financehdr.xml,
+/WEB-INF/struts-config-financedtl.xml,
+/WEB-INF/struts-config-pihdr.xml,
+/WEB-INF/struts-config-pidtl.xml,
+/WEB-INF/struts-config-pidtlcost.xml,
+/WEB-INF/struts-config-quotationaddresscreate.xml,
+/WEB-INF/struts-config-genesys-report.xml,
+/WEB-INF/struts-config-genesys-print.xml,
+/WEB-INF/struts-config-demurrageinvoicebuild.xml,
+/WEB-INF/struts-config-incoterm.xml,
+/WEB-INF/struts-config-agent.xml,
+/WEB-INF/struts-config-mandr.xml,
+/WEB-INF/struts-config-useraccess.xml,
+/WEB-INF/struts-config-userdashboard.xml,
+/WEB-INF/struts-config-account.xml,
+/WEB-INF/struts-config-quonotecust.xml,
+/WEB-INF/struts-config-gcode.xml,
+/WEB-INF/struts-config-dsactivity.xml,
+/WEB-INF/struts-config-jobmovalert.xml,
+/WEB-INF/struts-config-ordernotecust.xml,
+/WEB-INF/struts-config-systemtask.xml,
+/WEB-INF/struts-config-systemcode.xml,
+/WEB-INF/struts-config-dms-track.xml,
+/WEB-INF/struts-config-documenttype.xml,
+/WEB-INF/struts-config-category.xml,
+/WEB-INF/struts-config-docno.xml,
+/WEB-INF/struts-config-sidocno.xml,
+/WEB-INF/struts-config-dms-generatexdocument.xml,
+/WEB-INF/struts-config-dashboard.xml,
+/WEB-INF/struts-config-order-laker.xml,
+/WEB-INF/struts-config-account-mas500.xml,
+/WEB-INF/struts-config-standard.xml,
+/WEB-INF/struts-config-quote-generatextemplate.xml
+	</param-value>
+    </init-param>   
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+
+ 
+	<!-- Data Pool definition -->
+   	<servlet>
+    	<servlet-name>DataPoolServlet</servlet-name>
+      	<servlet-class>com.bureaueye.beacon.action.standard.DataPoolServlet</servlet-class>
+	  	<load-on-startup>2</load-on-startup>
+   	</servlet>  
+  <servlet-mapping>
+    <servlet-name>DataPoolServlet</servlet-name>
+    <url-pattern>/DataPoolServlet</url-pattern>
+  </servlet-mapping>
+
+   	   
+   
+  <!-- Action Servlet Mapping -->
+  <servlet-mapping>
+    <servlet-name>action</servlet-name>
+    <url-pattern>*.do</url-pattern>
+  </servlet-mapping>
+
+
+  <!-- The Welcome File List -->
+  <welcome-file-list>
+    <welcome-file>\pages\index.jsp</welcome-file>
+  </welcome-file-list>
+
+  <!-- The default error page -->
+  <error-page>
+   <exception-type>java.lang.Exception</exception-type>
+   <location>\pages\Error.jsp</location>
+  </error-page>
+
+  <!-- Application Tag Library Descriptor -->
+  <taglib>
+    <taglib-uri>/tags/app</taglib-uri>
+    <taglib-location>/WEB-INF/app.tld</taglib-location>
+  </taglib>
+
+  <taglib>
+    <taglib-uri>/tags/job-app</taglib-uri>
+    <taglib-location>/WEB-INF/job-app.tld</taglib-location>
+  </taglib>
+  
+  <taglib>
+    <taglib-uri>/tags/order-app</taglib-uri>
+    <taglib-location>/WEB-INF/order-app.tld</taglib-location>
+  </taglib>
+
+  <!-- genesys Tag Library Descriptors -->  
+  <taglib>
+    <taglib-uri>/tags/genesys-app</taglib-uri>
+    <taglib-location>/WEB-INF/genesys-app.tld</taglib-location>
+  </taglib>
+  
+  <!-- Purchase Order Tag Library Descriptors -->
+  <taglib>
+    <taglib-uri>/tags/purchaseorder-app</taglib-uri>
+    <taglib-location>/WEB-INF/purchaseorder-app.tld</taglib-location>
+  </taglib>
+
+  <!-- Purchase Invoice Tag Library Descriptors -->
+  <taglib>
+    <taglib-uri>/tags/purchaseinvoice-app</taglib-uri>
+    <taglib-location>/WEB-INF/purchaseinvoice-app.tld</taglib-location>
+  </taglib>
+    
+  
+      
+      
+<!-- Struts Tag Library Descriptors -->
+  <taglib>
+    <taglib-uri>/tags/struts-bean</taglib-uri>
+    <taglib-location>/WEB-INF/struts-bean.tld</taglib-location>
+  </taglib>
+  <taglib>
+    <taglib-uri>/tags/struts-html</taglib-uri>
+    <taglib-location>/WEB-INF/struts-html.tld</taglib-location>
+  </taglib>
+  <taglib>
+    <taglib-uri>/tags/struts-logic</taglib-uri>
+    <taglib-location>/WEB-INF/struts-logic.tld</taglib-location>
+  </taglib>
+  <taglib>
+    <taglib-uri>/tags/struts-nested</taglib-uri>
+    <taglib-location>/WEB-INF/struts-nested.tld</taglib-location>
+  </taglib>
+
+
+<!-- SUN MICROSYSTEMS Tag Library Descriptors --> 
+    <taglib>
+        <taglib-uri>/tags/jstl-core</taglib-uri>
+        <taglib-location>/WEB-INF/c.tld</taglib-location>
+    </taglib>
+	<taglib>
+        <taglib-uri>/tags/jstl-fmt</taglib-uri>
+        <taglib-location>/WEB-INF/fmt.tld</taglib-location>
+    </taglib>
+	
+
+    <taglib>
+        <taglib-uri>/WEB-INF/rssutils.tld</taglib-uri>
+        <taglib-location>/WEB-INF/rssutils.tld</taglib-location>
+    </taglib>
+
+
+	<resource-ref>
+        <description>beacon DB Connection Pool</description>
+        <res-ref-name>jdbc/beacon</res-ref-name>
+        <res-type>javax.sql.Datasource</res-type>
+        <res-auth>Container</res-auth>
+    </resource-ref>
+      
+       
+  <servlet>
+    <servlet-name>RefreshLocationListServlet</servlet-name>
+    <servlet-class>com.bureaueye.beacon.ajax.RefreshLocationListServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RefreshLocationListServlet</servlet-name>
+    <url-pattern>/RefreshLocationList</url-pattern>
+  </servlet-mapping>
+     
+  <servlet>
+    <servlet-name>RefreshCustomerToObjectServlet</servlet-name>
+    <servlet-class>com.bureaueye.beacon.ajax.RefreshCustomerToObjectServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RefreshCustomerToObjectServlet</servlet-name>
+    <url-pattern>/RefreshCustomerToObject</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>RefreshLocationcodeListServlet</servlet-name>
+    <servlet-class>com.bureaueye.beacon.ajax.RefreshLocationcodeListServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RefreshLocationcodeListServlet</servlet-name>
+    <url-pattern>/RefreshLocationcodeList</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>RefreshCcyexServlet</servlet-name>
+    <servlet-class>com.bureaueye.beacon.ajax.standard.RefreshCcyexServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RefreshCcyexServlet</servlet-name>
+    <url-pattern>/RefreshCcyex</url-pattern>
+  </servlet-mapping>
+
+
+  <servlet>
+    <servlet-name>LookupAddressServlet</servlet-name>
+    <servlet-class>com.bureaueye.beacon.ajax.standard.LookupAddressServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LookupAddressServlet</servlet-name>
+    <url-pattern>/LookupAddress</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>LookupLocationServlet</servlet-name>
+    <servlet-class>com.bureaueye.beacon.ajax.standard.LookupLocationServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LookupLocationServlet</servlet-name>
+    <url-pattern>/LookupLocation</url-pattern>
+  </servlet-mapping>
+
+
+
+  <servlet>
+    <servlet-name>ListVendorjobsServlet</servlet-name>
+    <servlet-class>com.bureaueye.beacon.ajax.purchaseinvoice.ListVendorjobsServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ListVendorjobsServlet</servlet-name>
+    <url-pattern>/ListVendorjobs</url-pattern>
+  </servlet-mapping>
+
+
+
+  <servlet>
+    <servlet-name>RefreshOrderCcyexServlet</servlet-name>
+    <servlet-class>com.bureaueye.beacon.ajax.order.RefreshOrderCcyexServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RefreshOrderCcyexServlet</servlet-name>
+    <url-pattern>/RefreshOrderCcyex</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>RefreshQuotationCcyexServlet</servlet-name>
+    <servlet-class>com.bureaueye.beacon.ajax.quotation.RefreshQuotationCcyexServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RefreshQuotationCcyexServlet</servlet-name>
+    <url-pattern>/RefreshQuotationCcyex</url-pattern>
+  </servlet-mapping>
+ 
+   <servlet>
+    <servlet-name>RefreshMandrCcyexServlet</servlet-name>
+    <servlet-class>com.bureaueye.beacon.ajax.mandr.RefreshMandrCcyexServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RefreshMandrCcyexServlet</servlet-name>
+    <url-pattern>/RefreshMandrCcyex</url-pattern>
+  </servlet-mapping>
+  
+   
+
+<!-- CONTRACT AJAX Servlet Descriptors -->
+  <servlet>
+    <servlet-name>ListContractServlet</servlet-name>
+    <servlet-class>com.bureaueye.genesys.ajax.contract.ListContractServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ListContractServlet</servlet-name>
+    <url-pattern>/ListContract</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>ListContracteqpServlet</servlet-name>
+    <servlet-class>com.bureaueye.genesys.ajax.contract.ListContracteqpServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ListContracteqpServlet</servlet-name>
+    <url-pattern>/ListContracteqp</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>ListContracteqplocServlet</servlet-name>
+    <servlet-class>com.bureaueye.genesys.ajax.contract.ListContracteqplocServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ListContracteqplocServlet</servlet-name>
+    <url-pattern>/ListContracteqploc</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>FindContracteqpbyidServlet</servlet-name>
+    <servlet-class>com.bureaueye.genesys.ajax.contract.FindContracteqpbyidServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>FindContracteqpbyidServlet</servlet-name>
+    <url-pattern>/FindContracteqpbyid</url-pattern>
+  </servlet-mapping>
+<!-- CONTRACT AJAX Servlet Descriptors -->
+  
+
+  
+  <servlet>
+    <servlet-name>FindImdgByIdAjax</servlet-name>
+    <servlet-class>com.bureaueye.beacon.ajax.standard.FindImdgByIdAjax</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>FindImdgByIdAjax</servlet-name>
+    <url-pattern>/findimdgbyidajax.do</url-pattern>
+  </servlet-mapping>
+  
+
+        
+<!-- RSS AJAX Servlet Descriptors -->      
+  <servlet>
+    <servlet-name>RSSRefreshListServlet</servlet-name>
+    <servlet-class>com.bureaueye.beacon.ajax.rss.RefreshListServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RSSRefreshListServlet</servlet-name>
+    <url-pattern>/RSSRefreshList</url-pattern>
+  </servlet-mapping>
+  
+
+<!-- AJAX REPORT Servlet Descriptors -->      
+  <servlet>
+    <servlet-name>ListMovrefAjax</servlet-name>
+    <servlet-class>com.bureaueye.beacon.ajax.report.ListMovrefAjax</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ListMovrefAjax</servlet-name>
+    <url-pattern>/listmovref.do</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>ListSectionkeyAjax</servlet-name>
+    <servlet-class>com.bureaueye.beacon.ajax.report.ListSectionkeyAjax</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ListSectionkeyAjax</servlet-name>
+    <url-pattern>/listsectionkey.do</url-pattern>
+  </servlet-mapping>
+  
+  
+<!-- AJAX STANDARD Servlet Descriptors -->      
+  <servlet>
+    <servlet-name>ListG2codeAjax</servlet-name>
+    <servlet-class>com.bureaueye.beacon.ajax.standard.ListG2codeAjax</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ListG2codeAjax</servlet-name>
+    <url-pattern>/listg2code.do</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>ListG3codeAjax</servlet-name>
+    <servlet-class>com.bureaueye.beacon.ajax.standard.ListG3codeAjax</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ListG3codeAjax</servlet-name>
+    <url-pattern>/listg3code.do</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>ListG4codeAjax</servlet-name>
+    <servlet-class>com.bureaueye.beacon.ajax.standard.ListG4codeAjax</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ListG4codeAjax</servlet-name>
+    <url-pattern>/listg4code.do</url-pattern>
+  </servlet-mapping>
+  
+  
+    
+       
+   
+<!-- WEB SERVICE Servlet Descriptors -->      
+  <servlet>
+    <servlet-name>LogonWebservice</servlet-name>
+    <servlet-class>com.bureaueye.beacon.webservice.standard.LogonWebservice</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LogonWebservice</servlet-name>
+    <url-pattern>/logonws.do</url-pattern>
+  </servlet-mapping>
+    
+  <servlet>
+    <servlet-name>ListQuoapproveWebservice</servlet-name>
+    <servlet-class>com.bureaueye.beacon.webservice.quotation.ListQuoapproveWebservice</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ListQuoapproveWebservice</servlet-name>
+    <url-pattern>/listquoapprovews.do</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>UpdateQuoapproveWebservice</servlet-name>
+    <servlet-class>com.bureaueye.beacon.webservice.quotation.UpdateQuoapproveWebservice</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UpdateQuoapproveWebservice</servlet-name>
+    <url-pattern>/updatequoapprovews.do</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>ListQuoapproveNotificationWebservice</servlet-name>
+    <servlet-class>com.bureaueye.beacon.webservice.quotation.ListQuoapproveNotificationWebservice</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ListQuoapproveNotificationWebservice</servlet-name>
+    <url-pattern>/listquoapprovenotificationws.do</url-pattern>
+  </servlet-mapping>
+        
+  
+<servlet>
+    <servlet-name>SelectQuosummaryWebservice</servlet-name>
+    <servlet-class>com.bureaueye.beacon.webservice.quotation.SelectQuosummaryWebservice</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SelectQuosummaryWebservice</servlet-name>
+    <url-pattern>/selectquosummaryws.do</url-pattern>
+  </servlet-mapping>
+
+
+<servlet>
+    <servlet-name>SelectOrdersummaryWebservice</servlet-name>
+    <servlet-class>com.bureaueye.beacon.webservice.order.SelectOrdersummaryWebservice</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SelectOrdersummaryWebservice</servlet-name>
+    <url-pattern>/selectordersummaryws.do</url-pattern>
+  </servlet-mapping>
+  
+     
+     
+  <session-config>
+    <session-timeout>60</session-timeout>
+  </session-config>
+          
+       
+</web-app>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "file:///C:/BUREAUEYE/xml/struts-config_1_3.dtd"> 
+<struts-config>
+  <display-name>address search</display-name>
+  <description>This is the Struts configuration file for the address search</description>
+  <form-beans>
+    <form-bean name="ListAddressSearchForm" type="com.bureaueye.beacon.form.ListForm"/>
+  </form-beans>
+  <action-mappings>
+    <action path="/EditAddressSearch" type="com.bureaueye.beacon.action.standard.EditAddressSearchAction" name="ListAddressSearchForm" scope="session" validate="false">
+       <forward name="success" path="/pages/standard/AddressSearch.jsp"/>
+     </action>
+    <action path="/ListAddressSearch" type="com.bureaueye.beacon.action.standard.ListAddressSearchAction" name="ListAddressSearchForm" scope="session" validate="false">
+      <forward name="success" path="/pages/standard/ListAddressSearch.jsp"/>
+    </action>
+  </action-mappings>
+</struts-config>

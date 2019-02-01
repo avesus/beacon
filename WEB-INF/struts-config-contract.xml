@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "file:///C:/BUREAUEYE/xml/struts-config_1_3.dtd">
+<struts-config>
+  <display-name>contract</display-name>
+  <description>This is the Struts configuration file for the Contract Header.</description>
+  
+  <form-beans>
+    <form-bean name="ListContractForm" type="com.bureaueye.beacon.form.ListForm"/>
+    <form-bean name="ContractForm" type="com.bureaueye.genesys.form.contract.ContractForm"/>     
+  </form-beans>
+  
+  <global-forwards>
+    <forward name="Contract" path="/pages/contract/Contract.jsp"/>
+  </global-forwards>
+  
+  <action-mappings> 
+  
+    <action path="/EditContract" type="com.bureaueye.genesys.action.contract.EditContractAction" name="ContractForm" scope="request" validate="false">
+      <forward name="failure" path="/pages/contract/ListContractMain.jsp"/>
+      <forward name="success" path="/pages/contract/Contract.jsp"/>
+    </action>
+ 
+    <action path="/SaveContract" type="com.bureaueye.genesys.action.contract.SaveContractAction" name="ContractForm" scope="request" cancellable="true" input="Contract">
+      <forward name="success" path="/ListContract.do"/>
+    </action>  
+
+    <action path="/ListContract" type="com.bureaueye.genesys.action.contract.ListContractAction" name="ListContractForm" scope="session" validate="false">
+      <forward name="success" path="/pages/contract/ListContractMain.jsp"/>
+    </action>           
+
+    <action 
+    	path="/PrintCustomerContract" 
+    	type="com.bureaueye.genesys.action.contract.print.PrintCustomerContractAction" 
+    	name="ListForm" 
+    	scope="session" 
+    	validate="false" 
+    	parameter="ListContractForm">
+      <forward name="success" path="/ListContract.do"/>
+    </action>
+        
+  </action-mappings>
+  
+</struts-config>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "file:///C:/BUREAUEYE/xml/struts-config_1_3.dtd">
+<struts-config>
+  <display-name>location</display-name>
+  <description>This is the Struts configuration file for the location</description>
+  <form-beans>
+    <form-bean name="LocationForm" type="com.bureaueye.beacon.form.standard.LocationForm"/>
+    <form-bean name="ListLocationForm" type="com.bureaueye.beacon.form.ListForm"/>
+  </form-beans>
+  <global-forwards>
+    <forward name="Location" path="/pages/standard/Location.jsp"/>
+  </global-forwards>
+  <action-mappings>
+    <action path="/EditLocation" type="com.bureaueye.beacon.action.standard.EditLocationAction" name="LocationForm" scope="request" validate="false">
+      <forward name="failure" path="/pages/standard/ListLocation.jsp"/>
+      <forward name="success" path="/pages/standard/Location.jsp"/>
+    </action>
+    <action path="/SaveLocation" type="com.bureaueye.beacon.action.standard.SaveLocationAction" name="LocationForm" scope="request" cancellable="true" input="Location">
+      <forward name="success" path="/ListLocation.do"/>
+    </action>
+    <action path="/ListLocation" type="com.bureaueye.beacon.action.standard.ListLocationAction" name="ListLocationForm" scope="session" validate="false">
+      <forward name="success" path="/pages/standard/ListLocation.jsp"/>
+    </action>
+  </action-mappings>
+</struts-config>

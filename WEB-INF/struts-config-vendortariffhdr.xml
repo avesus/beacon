@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "file:///C:/BUREAUEYE/xml/struts-config_1_3.dtd">
+<struts-config>
+	<display-name>vendor header</display-name>
+	<description>This is the Struts configuration file for the vendor tariff</description>
+	<form-beans>
+		<form-bean name="VendortariffhdrForm" type="com.bureaueye.beacon.form.standard.VendortariffhdrForm"/>
+		<form-bean name="ListVendortariffhdrForm" type="com.bureaueye.beacon.form.standard.ListVendortariffhdrForm"/>
+    	<form-bean name="ListVendortariffavgForm" type="com.bureaueye.beacon.form.ListForm"/>  		
+	</form-beans>
+	<global-forwards>
+		<forward name="Vendortariffhdr" path="/pages/standard/Vendortariffhdr.jsp"/>		
+	</global-forwards>
+	<action-mappings>
+		<action path="/EditVendortariffhdr" type="com.bureaueye.beacon.action.standard.EditVendortariffhdrAction" name="VendortariffhdrForm" scope="request" validate="false">
+			<forward name="failure" path="/pages/standard/ListVendortariffhdr.jsp"/>
+			<forward name="success" path="/pages/standard/Vendortariffhdr.jsp"/>
+		</action>
+		<action path="/SaveVendortariffhdr" type="com.bureaueye.beacon.action.standard.SaveVendortariffhdrAction" name="VendortariffhdrForm" scope="request" cancellable="true" input="Vendortariffhdr">
+			<forward name="success" path="/ListVendortariffhdr.do"/>
+		</action>
+		<action path="/ListVendortariffhdr" type="com.bureaueye.beacon.action.standard.ListVendortariffhdrAction" name="ListVendortariffhdrForm" scope="session" validate="false">
+			<forward name="success" path="/pages/standard/ListVendortariffhdr.jsp"/>
+		</action>	
+		
+    <action path="/ListVendortariffavg" type="com.bureaueye.beacon.action.standard.ListVendortariffavgAction" name="ListVendortariffavgForm" scope="session" validate="false">
+      <forward name="success" path="/pages/standard/ListVendortariffavg.jsp"/>
+    </action> 
+    			
+	</action-mappings>
+</struts-config>

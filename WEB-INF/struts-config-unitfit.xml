@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "file:///C:/BUREAUEYE/xml/struts-config_1_3.dtd">
+<struts-config>
+
+  <display-name>unitfit</display-name>
+  
+  <description>This is the Struts configuration file for the unit fitting</description>
+  
+  <form-beans>
+    <form-bean name="UnitfitForm" type="com.bureaueye.beacon.form.standard.UnitfitForm"/>
+    <form-bean name="ListUnitfitForm" type="com.bureaueye.beacon.form.ListForm"/>
+  </form-beans>
+
+  <global-forwards>
+    <forward name="Unitfit" path="/pages/standard/Unitfit.jsp"/>
+  </global-forwards>
+  
+  <action-mappings>
+    <action path="/EditUnitfit" type="com.bureaueye.beacon.action.standard.EditUnitfitAction" name="UnitfitForm" scope="session" validate="false">
+      <forward name="failure" path="/pages/standard/ListUnitfit.jsp"/>
+      <forward name="success" path="/pages/standard/Unitfit.jsp"/>
+    </action>
+    <action path="/SaveUnitfit" type="com.bureaueye.beacon.action.standard.SaveUnitfitAction" name="UnitfitForm" scope="session" cancellable="true" input="Unitfit">
+      <forward name="success" path="/ListUnitfit.do"/>
+    </action>
+    <action path="/ListUnitfit" type="com.bureaueye.beacon.action.standard.ListUnitfitAction" name="ListUnitfitForm" scope="session" validate="false" parameter="ListUnitForm">
+      <forward name="success" path="/pages/standard/ListUnitfit.jsp"/>
+    </action>
+    <action path="/ReportUnitfit" type="com.bureaueye.beacon.action.report.ReportUnitfitAction" name="ListForm" scope="request" validate="false">
+          <forward name="success" path="/pages/report/ReportUnitfit.jsp"/>
+          <forward name="failure" path="/pages/report/ReportUnitfit.jsp"/>
+    </action>     
+  </action-mappings>
+  
+</struts-config>

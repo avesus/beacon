@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "file:///C:/BUREAUEYE/xml/struts-config_1_3.dtd">
+<struts-config>
+  <display-name>cost</display-name>
+  <description>This is the Struts configuration file for the cost.</description>
+  <form-beans>
+    <form-bean name="CostForm" type="com.bureaueye.beacon.form.standard.CostForm"/>
+    <form-bean name="ListCostForm" type="com.bureaueye.beacon.form.ListForm"/>
+  </form-beans>
+  <global-forwards>
+    <forward name="Cost" path="/pages/standard/Cost.jsp"/>
+  </global-forwards>
+  <action-mappings>
+    <action 
+    	path="/EditCost" 
+    	type="com.bureaueye.beacon.action.standard.EditCostAction" 
+    	name="CostForm" 
+    	scope="request" 
+    	validate="false">
+      <forward name="failure" path="/pages/standard/ListCost.jsp"/>
+      <forward name="success" path="/pages/standard/Cost.jsp"/>
+    </action>
+    <action path="/SaveCost" 
+    	type="com.bureaueye.beacon.action.standard.SaveCostAction" 
+    	name="CostForm" 
+    	scope="request" 
+    	input="Cost"
+    	cancellable="true">
+      <forward name="success" path="/ListCost.do"/>
+    </action>
+    <action path="/ListCost" type="com.bureaueye.beacon.action.standard.ListCostAction" name="ListCostForm" scope="session" validate="false">
+      <forward name="success" path="/pages/standard/ListCost.jsp"/>
+    </action>
+  </action-mappings>
+</struts-config>

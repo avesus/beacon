@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "file:///C:/BUREAUEYE/xml/struts-config_1_3.dtd">
+<struts-config>
+  <display-name>salesinvoicebuild</display-name>
+  <description>This is the Struts configuration file for the sales Invoice Build.</description>
+  <form-beans>
+    <form-bean name="ListSalesinvoicebuildForm" type="com.bureaueye.beacon.form.ListForm"/>
+  </form-beans>
+  <global-forwards>
+  </global-forwards>
+  <action-mappings>
+    <action path="/ListSibuild" type="com.bureaueye.beacon.action.salesinvoice.ListSalesinvoicebuildAction" name="ListSalesinvoicebuildForm" scope="session" validate="false">
+      <forward name="success" path="/pages/salesinvoice/ListSibuildMain.jsp"/>
+    </action> 
+    <action path="/SaveSalesinvoicebuild" type="com.bureaueye.beacon.action.salesinvoice.SaveSalesinvoicebuildAction" name="ListSalesinvoicebuildForm" scope="session" validate="false">
+      <forward name="success" path="/ListSibuild.do"/>
+    </action>         
+  </action-mappings>
+</struts-config>

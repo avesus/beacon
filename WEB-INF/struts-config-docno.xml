@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "file:///C:/BUREAUEYE/xml/struts-config_1_3.dtd">
+<struts-config>
+  <display-name>docno</display-name>
+  <description>This is the Struts configuration file for the docno.</description>
+  <form-beans>
+    <form-bean name="DocnoForm" type="com.bureaueye.beacon.form.standard.DocnoForm"/>
+    <form-bean name="ListDocnoForm" type="com.bureaueye.beacon.form.ListForm"/>
+  </form-beans>
+  <global-forwards>
+    <forward name="Docno" path="/pages/standard/Docno.jsp"/>   
+  </global-forwards>
+  <action-mappings>
+  
+    <action path="/EditDocno" type="com.bureaueye.beacon.action.standard.EditDocnoAction" name="DocnoForm" scope="request" validate="false">
+      <forward name="failure" path="/pages/standard/ListDocno.jsp"/>
+      <forward name="success" path="/pages/standard/Docno.jsp"/>
+    </action>
+    <action path="/SaveDocno" type="com.bureaueye.beacon.action.standard.SaveDocnoAction" name="DocnoForm" scope="request"  cancellable="true" input="Docno">
+      <forward name="success" path="/ListDocno.do"/>
+    </action>
+    <action path="/ListDocno" type="com.bureaueye.beacon.action.standard.ListDocnoAction" name="ListDocnoForm" scope="session" validate="false">
+      <forward name="success" path="/pages/standard/ListDocno.jsp"/>
+    </action>
+    
+            
+  </action-mappings>
+</struts-config>

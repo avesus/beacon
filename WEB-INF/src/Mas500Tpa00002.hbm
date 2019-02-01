@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.bureaueye.beacon.model.mas500">
+	<class name="Tpa00002" table="tpa00002">
+		<id
+			column="intPhaseKey"
+			name="IntPhaseKey"
+			type="integer"
+		>
+			<generator class="native" />
+		</id>
+		<property
+			column="chrPhaseName"
+			length="41"
+			name="ChrPhaseName"
+			not-null="false"
+			type="string"
+		 />
+		<property
+			column="CompanyID"
+			length="3"
+			name="CompanyID"
+			not-null="false"
+			type="string"
+		 />
+		<property
+			column="siCstClsificatnDDL"
+			length="6"
+			name="SiCstClsificatnDDL"
+			not-null="false"
+			type="java.lang.Short"
+		 />
+		<property
+			column="UpdateCounter"
+			length="11"
+			name="UpdateCounter"
+			not-null="false"
+			type="integer"
+		 />
+		<property
+			column="chrPhaseNumber"
+			length="11"
+			name="ChrPhaseNumber"
+			not-null="false"
+			type="string"
+		 />
+	</class>
+</hibernate-mapping>

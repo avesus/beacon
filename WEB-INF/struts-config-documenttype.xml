@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "file:///C:/BUREAUEYE/xml/struts-config_1_3.dtd">
+<struts-config>
+  <display-name>documenttype</display-name>
+  <description>This is the Struts configuration file for the documenttype.</description>
+  <form-beans>
+    <form-bean name="DocumenttypeForm" type="com.bureaueye.beacondms.form.dms.DocumenttypeForm"/>
+    <form-bean name="ListDocumenttypeForm" type="com.bureaueye.beacon.form.ListForm"/>
+  </form-beans>
+  <global-forwards>
+    <forward name="Documenttype" path="/pages/dms/Documenttype.jsp"/>
+  </global-forwards>
+  <action-mappings>
+  
+    <action path="/EditDocumenttype" type="com.bureaueye.beacondms.action.dms.EditDocumenttypeAction" name="DocumenttypeForm" scope="request" validate="false">
+      <forward name="failure" path="/pages/dms/ListDocumenttype.jsp"/>
+      <forward name="success" path="/pages/dms/Documenttype.jsp"/>
+    </action>
+    <action path="/SaveDocumenttype" type="com.bureaueye.beacondms.action.dms.SaveDocumenttypeAction" name="DocumenttypeForm" scope="request"  cancellable="true" input="Documenttype">
+      <forward name="success" path="/ListDocumenttype.do"/>
+    </action>
+    <action path="/ListDocumenttype" type="com.bureaueye.beacondms.action.dms.ListDocumenttypeAction" name="ListDocumenttypeForm" scope="session" validate="false">
+      <forward name="success" path="/pages/dms/ListDocumenttype.jsp"/>
+    </action>
+     
+            
+  </action-mappings>
+</struts-config>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "file:///C:/BUREAUEYE/xml/struts-config_1_3.dtd">
+<struts-config>
+	<display-name>registration</display-name>
+	<description>This is the Struts configuration file for the registration</description>
+	<form-beans>
+		<form-bean name="RegistrationForm" type="com.bureaueye.beacon.form.standard.RegistrationForm"/>
+	</form-beans>
+	<global-forwards>
+		<forward name="Registration" path="/pages/standard/Registration.jsp"/>
+	</global-forwards>
+	<action-mappings>
+		<action path="/EditRegistration" type="com.bureaueye.beacon.action.standard.EditRegistrationAction" name="RegistrationForm" scope="request" validate="false">
+			<forward name="success" path="/pages/standard/Registration.jsp"/>
+		</action>
+		<action path="/SaveRegistration" type="com.bureaueye.beacon.action.standard.SaveRegistrationAction" name="RegistrationForm" scope="request" cancellable="true" input="Registration">
+			<forward name="success" path="/EditRegistration.do"/>
+		</action>
+	</action-mappings>
+</struts-config>

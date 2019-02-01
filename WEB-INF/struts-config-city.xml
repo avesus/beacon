@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "file:///C:/BUREAUEYE/xml/struts-config_1_3.dtd">
+<struts-config>
+	<display-name>city</display-name>
+	<description>This is the Struts configuration file for the city</description>
+	<form-beans>
+		<form-bean name="CityForm" type="com.bureaueye.beacon.form.standard.CityForm"/>
+		<form-bean name="ListCityForm" type="com.bureaueye.beacon.form.ListForm"/>
+	</form-beans>
+	<global-forwards>
+		<forward name="City" path="/pages/standard/City.jsp"/>
+	</global-forwards>
+	<action-mappings>
+		<action path="/EditCity" type="com.bureaueye.beacon.action.standard.EditCityAction" name="CityForm" scope="request" validate="false">
+			<forward name="failure" path="/pages/standard/ListCity.jsp"/>
+			<forward name="success" path="/pages/standard/City.jsp"/>
+		</action>
+		<action path="/SaveCity" type="com.bureaueye.beacon.action.standard.SaveCityAction" name="CityForm" scope="request" cancellable="true" input="City">
+			<forward name="success" path="/ListCity.do"/>
+		</action>
+		<action path="/ListCity" type="com.bureaueye.beacon.action.standard.ListCityAction" name="ListCityForm" scope="session" validate="false">
+			<forward name="success" path="/pages/standard/ListCity.jsp"/>
+		</action>
+	</action-mappings>
+</struts-config>

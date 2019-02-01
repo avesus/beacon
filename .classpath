@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="WEB-INF/src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/ant.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/antlr-2.7.2.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/asm-attrs.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/asm.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/astranslator-1.5.9.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/axis.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/bfopdf.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/bsf-2.3.0.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/cglib-2.1.3.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/commons-beanutils-1.7.0.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/commons-chain-1.1.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/commons-codec-1.3.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/commons-collections-3.1.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/commons-digester-1.8.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/commons-discovery.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/commons-fileupload-1.1.1.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/commons-httpclient-3.0.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/commons-io-1.1.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/commons-lang-2.1.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/commons-logging-1.0.4.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/commons-validator-1.3.1.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/datedFileAppender-1.0.2.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/dom.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/dom4j-1.6.1.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/ehcache-0.9.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/hibernate3.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/hsqldb.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/itext-1.2.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/itextpdf-5.1.3.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/jaxen-full.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/jcs-1.0-dev.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/jdbc2_0-stdext.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/jdom.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/jstl-1.0.2.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/jta.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/junit-3.8.1.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/kxml-min.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/log4j-1.2.14.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/mail.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/odmg-3.0.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/ojb-msg-res.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/oro-2.0.8.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/rssutils.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/saaj.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/saxpath.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/standard-1.0.2.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/struts-core-1.3.8.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/struts-el-1.3.8.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/struts-extras-1.3.8.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/struts-taglib-1.3.8.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/TreeGrid.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/xstream-1.1.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/poi-3.9-20121203.jar"/>
+	<classpathentry kind="lib" path="C:/Tomcat 6.0.36_64/lib/servlet-api.jar"/>
+	<classpathentry kind="lib" path="C:/Tomcat 6.0.36_64/lib/mysql-connector-java-3.1.10-bin.jar"/>
+	<classpathentry kind="lib" path="C:/Tomcat 6.0.36_64/lib/jsp-api.jar"/>
+	<classpathentry kind="output" path="WEB-INF/classes"/>
+</classpath>

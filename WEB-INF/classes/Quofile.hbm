@@ -1,0 +1,151 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.bureaueye.beacon.model.quotation">
+	<class
+		name="Quofile"
+		table="quofile"
+	>
+<meta attribute="sync-DAO">true</meta>	
+		<id
+			name="QuofileId"
+			type="integer"
+			column="QUOFILE_ID"
+		>
+			<generator class="native"/>
+		</id>
+			
+
+		<property
+			name="Filename"
+			column="filename"
+			type="string"
+			not-null="false"
+		/>
+		<property
+			name="Description"
+			column="description"
+			type="string"
+			not-null="false"
+		/>		
+		<property
+			name="Contenttype"
+			column="contenttype"
+			type="string"
+			not-null="false"
+			length="100"
+		/>
+		<!-- please tell Joe Hudson that the type 'longblob' could not be resolved.. defaulting to java.lang.String -->
+		<property
+			name="Filebin"
+			column="filebin"
+			type="blob"
+			not-null="false"
+		/>
+		<property
+			name="Filesize"
+			column="filesize"
+			type="integer"
+			not-null="false"
+			length="11"
+		/>
+		<property
+			name="Createuserid"
+			column="CREATEUSERID"
+			type="string"
+			not-null="false"
+			length="10"
+		/>
+		<property
+			name="Createdate"
+			column="CREATEDATE"
+			type="date"
+			not-null="false"
+			length="10"
+		/>
+		<property
+			name="Createtime"
+			column="CREATETIME"
+			type="string"
+			not-null="false"
+			length="8"
+		/>
+		<property
+			name="Systemlogaction"
+			column="systemlogaction"
+			type="string"
+			not-null="false"
+			length="10"
+		/>
+		<property
+			name="Systemlogdate"
+			column="systemlogdate"
+			type="date"
+			not-null="false"
+			length="10"
+		/>
+		<property
+			name="Systemlogprogram"
+			column="systemlogprogram"
+			type="string"
+			not-null="false"
+			length="50"
+		/>
+		<property
+			name="Systemlogtime"
+			column="systemlogtime"
+			type="string"
+			not-null="false"
+			length="8"
+		/>
+		<property
+			name="Systemloguserid"
+			column="systemloguserid"
+			type="string"
+			not-null="false"
+			length="10"
+		/>
+		<property
+			name="Xlock"
+			column="xlock"
+			type="string"
+			not-null="false"
+			length="20"
+		/>
+		<property
+			name="Xinactive"
+			column="xinactive"
+			type="string"
+			not-null="false"
+			length="1"
+		/>
+		<property
+			name="Rowid"
+			column="rowid"
+			type="integer"
+			not-null="false"
+			length="11"
+		/>
+		<property
+			name="QuonoteId"
+			column="QUONOTE_ID"
+			type="integer"
+			not-null="false"
+			length="11"
+		/>
+		<property
+			name="QuohdrId"
+			column="QUOHDR_ID"
+			type="integer"
+			not-null="false"
+			length="11"
+		/>
+		
+  
+	</class>	
+	
+		<query name="findQuofilesTotalResults">select count(*) from Quofile quofile where quofile.QuohdrId = :id</query>
+	
+</hibernate-mapping>

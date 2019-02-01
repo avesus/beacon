@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "file:///C:/BUREAUEYE/xml/struts-config_1_3.dtd">
+<struts-config>
+
+  <display-name>unitmandr</display-name>
+  
+  <description>This is the Struts configuration file for the unit maintenance and repair</description>
+  
+  <form-beans>
+    <form-bean name="UnitmandrForm" type="com.bureaueye.beacon.form.standard.UnitmandrForm"/>
+    <form-bean name="ListUnitmandrForm" type="com.bureaueye.beacon.form.ListForm"/>
+  </form-beans>
+
+  <global-forwards>
+    <forward name="Unitmandr" path="/pages/standard/Unitmandr.jsp"/>
+  </global-forwards>
+  
+  <action-mappings>
+    <action path="/EditUnitmandr" type="com.bureaueye.beacon.action.standard.EditUnitmandrAction" name="UnitmandrForm" scope="session" validate="false">
+      <forward name="failure" path="/pages/standard/ListUnitmandr.jsp"/>
+      <forward name="success" path="/pages/standard/Unitmandr.jsp"/>
+    </action>
+    <action path="/SaveUnitmandr" type="com.bureaueye.beacon.action.standard.SaveUnitmandrAction" name="UnitmandrForm" scope="session" cancellable="true" input="Unitmandr">
+      <forward name="success" path="/ListUnitmandr.do"/>
+    </action>
+    <action path="/ListUnitmandr" type="com.bureaueye.beacon.action.standard.ListUnitmandrAction" name="ListUnitmandrForm" scope="session" validate="false" parameter="ListUnitForm">
+      <forward name="success" path="/pages/standard/ListUnitmandr.jsp"/>
+    </action>
+    <action path="/ReportUnitmandr" type="com.bureaueye.beacon.action.report.ReportUnitmandrAction" name="ListForm" scope="request" validate="false">
+          <forward name="success" path="/pages/report/ReportUnitmandr.jsp"/>
+          <forward name="failure" path="/pages/report/ReportUnitmandr.jsp"/>
+    </action>     
+  </action-mappings>
+  
+</struts-config>

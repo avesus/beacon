@@ -1,0 +1,264 @@
+.btnPane{text-align:right;padding:3px 17px;margin-left:5px;margin-right:5px;overflow:hidden;}
+.btn{padding:2px 10px 2px 8px;cursor:pointer;min-width:5.5em;height:2.1em;text-align:center;overflow:visible;}
+.btn{border:transparent 1px solid;color:#0066cc;background-color:transparent;margin:0px;}
+.btn > img{margin-right:4px;}
+.btnFF > img{margin-bottom:3px;}.baseFrm .hdrTxt{color:#000000;font-size:120%;}.baseFrm .highLightedText{font-size:110%;}
+
+/*.btn:Hover{background-color:#fbdb2e;border-color:#edbf0e;color:#000000;} *YELLOW-SAME AS OWA*/
+.btn:Hover{background-color:#E3E6E8;border-color:#C6C6C6;color:#000000;} /*GREY-BLUE*/
+/*.btn:Hover{background-color:#5DB742;border-color:#186337;color:#000000;} *GREEN*/
+
+.baseFrm .img{color:#0066cc;}
+
+.btn[disabled],.btn[disabled]:Hover{border:transparent 1px solid;color:#999999;background-color:transparent;cursor:default;}.btnWithRightBorder,.btnWithRightBorder[disabled]{border-right:1px solid #c6c6c6;}
+.btnPane{border-top:#c6c6c6 1px solid;}
+
+.btnPane2{text-align:left;padding:3px 17px;margin-left:5px;margin-right:5px;overflow:hidden;}
+.btnPane3{text-align:left;padding:0px 0px;margin-left:0px;margin-right:0px;overflow:hidden;}
+
+
+.btnBG2{padding:2px 10px 2px 8px;cursor:pointer;min-width:5.5em;height:2.1em;text-align:center;overflow:visible;}
+.btnBG2{border:transparent 1px solid;color:#0066cc;background-color:transparent;margin:0px;}
+.btnBG2 > img{margin-right:4px;}
+.btnBG2:Hover{background-color:#fbdb2e;border-color:#edbf0e;color:#000000;} 
+
+
+.column-header-btn1{padding:2px 5px 2px 0px;cursor:pointer;min-width:5.5em;height:2.1em;text-align:center;overflow:visible;}
+.column-header-btn1{border:transparent 1px solid;color:#0066cc;background-color:transparent;margin:0px;}
+
+
+
+
+a.ms-cui-ctl-medium .ms-cui-ctl-iconContainer,span.ms-cui-ctl .ms-cui-ctl-a1Internal .ms-cui-img-16by16{
+margin-right:3px;
+vertical-align:middle;
+display:inline-block;
+}
+.ms-cui-disabled *{
+color:#5b626c !important;
+cursor:default !important;
+}
+.ms-cui-disabled .ms-cui-img-container,.ms-cui-disabled .ms-cui-img-cont-float,.ms-cui-disabled .ms-cui-jewel-left,.ms-cui-disabled .ms-cui-jewel-middle,.ms-cui-disabled .ms-cui-jewel-right{
+filter:gray(enabled=true) alpha(opacity=50);
+-ms-filter:"gray(enabled=true) alpha(opacity=50)";
+background-color:#fff !important;
+opacity:0.3;
+}
+.ms-cui-img-16by16
+{
+width:16px;
+height:16px;
+}
+.ms-cui-img-container,.ms-cui-img-cont-float
+{
+margin-left:auto;
+margin-right:auto;
+position:relative;
+overflow:hidden;
+text-align:left;
+z-index:10;
+}
+.ms-cui-img-container img,.ms-cui-img-cont-float img
+{
+position:absolute;
+z-index:5;
+}
+.ms-cui-img-cont-float
+{
+display:inline-block;
+}
+span.ms-cui-ctl a.ms-cui-ctl-a2 > span > span.ms-cui-img-cont-float,
+span.ms-cui-ctl a.ms-cui-ctl-a2 > span > span.ms-cui-img-container{
+margin-top:9px;
+}
+span.ms-cui-ctl-large > a.ms-cui-ctl-a2 > span.ms-cui-img-cont-float,
+span.ms-cui-ctl-large > a.ms-cui-ctl-a2 > span.ms-cui-img-container{
+vertical-align:top;
+margin-top:3px;
+}
+
+
+
+
+
+.IM { overflow:hidden; background-image:url('/beacon/images/buttons/iconmap1.png'); vertical-align:middle; }
+.IM2 { overflow:hidden; background-image:url('/beacon/images/buttons/iconmap2.png'); vertical-align:middle; }
+
+
+.Storedocument-IM2 { background-position:-128px -176px; width: 16px; height: 16px; }
+.Generatedocument-IM2 { background-position:-112px -176px; width: 16px; height: 16px; }
+
+.Searchadd-IM2 { background-position:-56px -16px; width: 16px; height: 16px; }
+
+.Checkout-IM2 { background-position:0px -224px; width: 16px; height: 16px; }
+.Checkin-IM2 { background-position:-32px -104px; width: 16px; height: 16px; }
+.Discard-IM2 { background-position:-48px -112px; width: 16px; height: 16px; }
+.Sortdown-IM2 { background-position:-240px -96px; width: 16px; height: 16px; }
+.Spacer-IM2 { background-position:-240px -112px; width: 16px; height: 16px; }
+
+.Expand-IM2 { background-position:-160px -32px; width: 16px; height: 16px; }
+.Collapse-IM2 { background-position:-176px -128px; width: 16px; height: 16px; }
+
+.Post-IM2 { background-position:-48px -48px; width: 16px; height: 16px; }
+
+
+
+.Tick-IM { background-position:-272px -64px; width: 16px; height: 16px; }
+.Cross-IM { background-position:-192px -64px; width: 16px; height: 16px; }
+
+
+.A-IM { background-position:0px 0px; width: 32px; height: 32px; }
+.B-IM { background-position:-32px 0px; width: 28px; height: 28px; }
+.C-IM { background-position:-60px 0px; width: 28px; height: 28px; }
+.D-IM { background-position:-88px 0px; width: 24px; height: 24px; }
+.search-default { background-position:-112px 0px; width: 20px; height: 20px; }
+.clear-default { background-position:-132px 0px; width: 20px; height: 20px; }
+.DisabledArrow { background-position:-152px 0px; width: 10px; height: 20px; }
+.EnabledArrow { background-position:-162px 0px; width: 10px; height: 20px; }
+.ChoiceButton { background-position:-172px 0px; width: 17px; height: 17px; }
+.E-IM { background-position:-189px 0px; width: 24px; height: 16px; }
+.F-IM { background-position:-213px 0px; width: 24px; height: 16px; }
+.G-IM { background-position:-237px 0px; width: 24px; height: 16px; }
+.H-IM { background-position:-261px 0px; width: 24px; height: 16px; }
+.I-IM { background-position:-285px 0px; width: 24px; height: 16px; }
+.J-IM { background-position:-309px 0px; width: 24px; height: 16px; }
+.K-IM { background-position:-333px 0px; width: 16px; height: 16px; }
+.L-IM { background-position:0px -32px; width: 16px; height: 16px; }
+.M-IM { background-position:-16px -32px; width: 16px; height: 16px; }
+.N-IM { background-position:-32px -32px; width: 16px; height: 16px; }
+.O-IM { background-position:-48px -32px; width: 16px; height: 16px; }
+.P-IM { background-position:-64px -32px; width: 16px; height: 16px; }
+.Q-IM { background-position:-80px -32px; width: 16px; height: 16px; }
+.R-IM { background-position:-96px -32px; width: 16px; height: 16px; }
+.S-IM { background-position:-112px -32px; width: 16px; height: 16px; }
+.T-IM { background-position:-128px -32px; width: 16px; height: 16px; }
+.U-IM { background-position:-144px -32px; width: 16px; height: 16px; }
+.V-IM { background-position:-160px -32px; width: 16px; height: 16px; }
+.W-IM { background-position:-176px -32px; width: 16px; height: 16px; }
+.X-IM { background-position:-192px -32px; width: 16px; height: 16px; }
+.Y-IM { background-position:-208px -32px; width: 16px; height: 16px; }
+.Z-IM { background-position:-224px -32px; width: 16px; height: 16px; }
+.AA-IM { background-position:-240px -32px; width: 16px; height: 16px; }
+.AB-IM { background-position:-256px -32px; width: 16px; height: 16px; }
+.NewFolder { background-position:-272px -32px; width: 16px; height: 16px; }
+.AC-IM { background-position:-288px -32px; width: 16px; height: 16px; }
+.AD-IM { background-position:-304px -32px; width: 16px; height: 16px; }
+.AE-IM { background-position:-320px -32px; width: 16px; height: 16px; }
+.AF-IM { background-position:-336px -32px; width: 16px; height: 16px; }
+.AG-IM { background-position:0px -48px; width: 16px; height: 16px; }
+.AH-IM { background-position:-16px -48px; width: 16px; height: 16px; }
+.AI-IM { background-position:-32px -48px; width: 16px; height: 16px; }
+.AJ-IM { background-position:-48px -48px; width: 16px; height: 16px; }
+.AK-IM { background-position:-64px -48px; width: 16px; height: 16px; }
+.AL-IM { background-position:-80px -48px; width: 16px; height: 16px; }
+.AM-IM { background-position:-96px -48px; width: 16px; height: 16px; }
+.AN-IM { background-position:-112px -48px; width: 16px; height: 16px; }
+.AO-IM { background-position:-128px -48px; width: 16px; height: 16px; }
+.AP-IM { background-position:-144px -48px; width: 16px; height: 16px; }
+.AQ-IM { background-position:-160px -48px; width: 16px; height: 16px; }
+.AR-IM { background-position:-176px -48px; width: 16px; height: 16px; }
+.AS-IM { background-position:-192px -48px; width: 16px; height: 16px; }
+.AT-IM { background-position:-208px -48px; width: 16px; height: 16px; }
+.AU-IM { background-position:-224px -48px; width: 16px; height: 16px; }
+.AV-IM { background-position:-240px -48px; width: 16px; height: 16px; }
+.AW-IM { background-position:-256px -48px; width: 16px; height: 16px; }
+.AX-IM { background-position:-272px -48px; width: 16px; height: 16px; }
+.AY-IM { background-position:-288px -48px; width: 16px; height: 16px; }
+.AZ-IM { background-position:-304px -48px; width: 16px; height: 16px; }
+.BA-IM { background-position:-320px -48px; width: 16px; height: 16px; }
+.BB-IM { background-position:-336px -48px; width: 16px; height: 16px; }
+.BC-IM { background-position:0px -64px; width: 16px; height: 16px; }
+.BD-IM { background-position:-16px -64px; width: 16px; height: 16px; }
+.BE-IM { background-position:-32px -64px; width: 16px; height: 16px; }
+.BF-IM { background-position:-48px -64px; width: 16px; height: 16px; }
+.BG-IM { background-position:-64px -64px; width: 16px; height: 16px; }
+.BH-IM { background-position:-80px -64px; width: 16px; height: 16px; }
+.BI-IM { background-position:-96px -64px; width: 16px; height: 16px; }
+.BJ-IM { background-position:-112px -64px; width: 16px; height: 16px; }
+.BK-IM { background-position:-128px -64px; width: 16px; height: 16px; }
+.BL-IM { background-position:-144px -64px; width: 16px; height: 16px; }
+.BM-IM { background-position:-160px -64px; width: 16px; height: 16px; }
+.BN-IM { background-position:-176px -64px; width: 16px; height: 16px; }
+.BO-IM { background-position:-192px -64px; width: 16px; height: 16px; }
+.BP-IM { background-position:-208px -64px; width: 16px; height: 16px; }
+.BQ-IM { background-position:-224px -64px; width: 16px; height: 16px; }
+.BR-IM { background-position:-240px -64px; width: 16px; height: 16px; }
+.BS-IM { background-position:-256px -64px; width: 16px; height: 16px; }
+.CommitButton { background-position:-272px -64px; width: 16px; height: 16px; }
+.BT-IM { background-position:-288px -64px; width: 16px; height: 16px; }
+.Copy { background-position:-304px -64px; width: 16px; height: 16px; }
+.BU-IM { background-position:-320px -64px; width: 16px; height: 16px; }
+.BV-IM { background-position:-336px -64px; width: 16px; height: 16px; }
+.ClearSearch { background-position:0px -80px; width: 16px; height: 16px; }
+.BW-IM { background-position:-16px -80px; width: 16px; height: 16px; }
+.BX-IM { background-position:-32px -80px; width: 16px; height: 16px; }
+.BY-IM { background-position:-48px -80px; width: 16px; height: 16px; }
+.BZ-IM { background-position:-64px -80px; width: 16px; height: 16px; }
+.CA-IM { background-position:-80px -80px; width: 16px; height: 16px; }
+.CB-IM { background-position:-96px -80px; width: 16px; height: 16px; }
+.CC-IM { background-position:-112px -80px; width: 16px; height: 16px; }
+.CD-IM { background-position:-128px -80px; width: 16px; height: 16px; }
+.CE-IM { background-position:-144px -80px; width: 16px; height: 16px; }
+.CF-IM { background-position:-160px -80px; width: 16px; height: 16px; }
+.CG-IM { background-position:-176px -80px; width: 16px; height: 16px; }
+.CH-IM { background-position:-192px -80px; width: 16px; height: 16px; }
+.CI-IM { background-position:-208px -80px; width: 16px; height: 16px; }
+.CJ-IM { background-position:-224px -80px; width: 16px; height: 16px; }
+.CK-IM { background-position:-240px -80px; width: 16px; height: 16px; }
+.CL-IM { background-position:-256px -80px; width: 16px; height: 16px; }
+.CM-IM { background-position:-272px -80px; width: 16px; height: 16px; }
+.CN-IM { background-position:-288px -80px; width: 16px; height: 16px; }
+.CO-IM { background-position:-304px -80px; width: 16px; height: 16px; }
+.CP-IM { background-position:-320px -80px; width: 16px; height: 16px; }
+.CQ-IM { background-position:-336px -80px; width: 16px; height: 16px; }
+.CR-IM { background-position:0px -96px; width: 16px; height: 16px; }
+.CS-IM { background-position:-16px -96px; width: 16px; height: 15px; }
+.DeleteButtonSmall { background-position:-32px -96px; width: 9px; height: 10px; }
+.CT-IM { background-position:-41px -96px; width: 5px; height: 5px; }
+.CU-IM { background-position:-46px -96px; width: 8px; height: 4px; }
+.CV-IM { background-position:-54px -96px; width: 8px; height: 4px; }
+.NavigationSprite { overflow:hidden; background-image:url('/beacon/images/buttons/navigationmap.png'); vertical-align:middle; }
+.fvaArrow { background-position:0px 0px; width: 18px; height: 37px; }
+.Warning32 { background-position:-18px 0px; width: 32px; height: 32px; }
+.A-NI { background-position:-50px 0px; width: 32px; height: 32px; }
+.Expand { background-position:-82px 0px; width: 15px; height: 17px; }
+.Collapse { background-position:-97px 0px; width: 15px; height: 17px; }
+.MailFolder { background-position:-112px 0px; width: 16px; height: 16px; }
+.JunkEmail { background-position:-128px 0px; width: 16px; height: 16px; }
+.Warning { background-position:-144px 0px; width: 16px; height: 16px; }
+.SentItems { background-position:-160px 0px; width: 16px; height: 16px; }
+.Root { background-position:-176px 0px; width: 16px; height: 16px; }
+.Rss { background-position:-192px 0px; width: 16px; height: 16px; }
+.Plus { background-position:-208px 0px; width: 16px; height: 16px; }
+.Minus { background-position:-224px 0px; width: 16px; height: 16px; }
+.Shared { background-position:-240px 0px; width: 16px; height: 16px; }
+.Inbox { background-position:-256px 0px; width: 16px; height: 16px; }
+.BreadcrumNext { background-position:-272px 0px; width: 16px; height: 16px; }
+.Deleted { background-position:-288px 0px; width: 16px; height: 16px; }
+.ArrowExpand { background-position:-304px 0px; width: 16px; height: 16px; }
+.Blank { background-position:-320px 0px; width: 16px; height: 16px; }
+.Drafts { background-position:-336px 0px; width: 16px; height: 16px; }
+.B-NI { background-position:0px -37px; width: 16px; height: 16px; }
+.Information { background-position:-16px -37px; width: 16px; height: 16px; }
+.Error { background-position:-32px -37px; width: 16px; height: 16px; }
+.ArrowDown { background-position:-48px -37px; width: 15px; height: 15px; }
+.FvaBottom { background-position:-63px -37px; width: 165px; height: 12px; }
+.FvaTop { background-position:0px -53px; width: 165px; height: 10px; }
+.ItmChk { background-position:-165px -53px; width: 9px; height: 9px; }
+.cbItmDisabled > .cbChkCol > .ItmChk { background-position:-174px -53px; width: 9px; height: 9px; }
+.Next { background-position:-183px -53px; width: 6px; height: 9px; }
+.Previous { background-position:-189px -53px; width: 6px; height: 9px; }
+.formletClose { background-position:-195px -53px; width: 9px; height: 8px; }
+.HorizontalSprite { background-image:url('/beacon/images/buttons/horizontal.png'); }
+.SecNavBg { background-position:0px 0px; height: 80px; }
+.A-HS { background-position:0px -80px; height: 29px; }
+
+
+
+
+
+/*
+.btn:Hover{background-color:#fbdb2e;border-color:#edbf0e;color:#000000;}
+.choiceBtnBox>.btn{text-align:left;min-height:2.7em;}
+.btn[disabled]>img{opacity:.25;filter:alpha(opacity=25);}
+*/

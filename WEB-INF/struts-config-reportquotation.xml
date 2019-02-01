@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "file:///C:/BUREAUEYE/xml/struts-config_1_3.dtd">
+<struts-config>
+  <display-name>report quotation</display-name>
+  <description></description> 
+  <form-beans>
+    <form-bean name="ListReportForm" type="com.bureaueye.beacon.form.ListForm"/>       
+  </form-beans>
+  <action-mappings>  
+    <action path="/ReportQuotationExpiry" type="com.bureaueye.beacon.action.quotation.report.ReportQuotationExpiryAction" name="ListReportForm" scope="request" validate="false">
+          <forward name="success" path="/pages/quotation/ReportQuotationExpiry.jsp"/>
+          <forward name="failure" path="/pages/quotation/ReportQuotationExpiry.jsp"/>
+    </action>          
+    <action path="/ReportQuotationTakeup" type="com.bureaueye.beacon.action.quotation.report.ReportQuotationTakeupAction" name="ListReportForm" scope="request" validate="false">
+          <forward name="success" path="/pages/quotation/ReportQuotationTakeup.jsp"/>
+          <forward name="failure" path="/pages/quotation/ReportQuotationTakeup.jsp"/>
+    </action> 
+    <action path="/ReportQuotationApproveReject" type="com.bureaueye.beacon.action.quotation.report.ReportQuotationApproveRejectAction" name="ListReportForm" scope="request" validate="false">
+          <forward name="success" path="/pages/quotation/ReportQuotationApproveReject.jsp"/>
+          <forward name="failure" path="/pages/quotation/ReportQuotationApproveReject.jsp"/>
+    </action> 
+
+    <action path="/ReportQuotationList" type="com.bureaueye.beacon.action.quotation.report.ReportQuotationListAction" name="ListReportForm" scope="request" validate="false">
+          <forward name="success" path="/pages/quotation/ReportQuotationList.jsp"/>
+          <forward name="failure" path="/pages/quotation/ReportQuotationList.jsp"/>
+    </action> 
+ 
+    <action path="/ReportQuotationMatrix" type="com.bureaueye.beacon.action.quotation.report.ReportQuotationMatrixAction" name="ListReportForm" scope="request" validate="false">
+          <forward name="success" path="/pages/quotation/ReportQuotationMatrix.jsp"/>
+          <forward name="failure" path="/pages/quotation/ReportQuotationMatrix.jsp"/>
+    </action>
+    
+  </action-mappings>
+</struts-config>

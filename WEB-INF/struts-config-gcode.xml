@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "file:///C:/BUREAUEYE/xml/struts-config_1_3.dtd">
+<struts-config>
+	<display-name>gcode</display-name>
+	<description>This is the Struts configuration file for the geographic codes</description>
+	<form-beans>
+		<form-bean name="G1codeForm" type="com.bureaueye.beacon.form.standard.G1codeForm"/>
+		<form-bean name="ListG1codeForm" type="com.bureaueye.beacon.form.ListForm"/>		
+		<form-bean name="G2codeForm" type="com.bureaueye.beacon.form.standard.G2codeForm"/>
+		<form-bean name="ListG2codeForm" type="com.bureaueye.beacon.form.ListForm"/>	
+		<form-bean name="G3codeForm" type="com.bureaueye.beacon.form.standard.G3codeForm"/>
+		<form-bean name="ListG3codeForm" type="com.bureaueye.beacon.form.ListForm"/>
+		<form-bean name="G4codeForm" type="com.bureaueye.beacon.form.standard.G4codeForm"/>
+		<form-bean name="ListG4codeForm" type="com.bureaueye.beacon.form.ListForm"/>
+	</form-beans>
+
+	<global-forwards>
+		<forward name="G1code" path="/pages/standard/G1code.jsp"/>
+		<forward name="G2code" path="/pages/standard/G2code.jsp"/>
+		<forward name="G3code" path="/pages/standard/G3code.jsp"/>
+		<forward name="G4code" path="/pages/standard/G4code.jsp"/>	
+	</global-forwards>
+
+	<action-mappings>
+
+		<action path="/EditG1code" type="com.bureaueye.beacon.action.standard.EditG1codeAction" name="G1codeForm" scope="request" validate="false">
+			<forward name="failure" path="/pages/standard/ListG1code.jsp"/>
+			<forward name="success" path="/pages/standard/G1code.jsp"/>
+		</action>
+		<action path="/SaveG1code" type="com.bureaueye.beacon.action.standard.SaveG1codeAction" name="G1codeForm" scope="request" cancellable="true" input="G1code">
+			<forward name="success" path="/ListG1code.do"/>
+		</action>
+		<action path="/ListG1code" type="com.bureaueye.beacon.action.standard.ListG1codeAction" name="ListG1codeForm" scope="session" validate="false">
+			<forward name="success" path="/pages/standard/ListG1code.jsp"/>
+		</action>
+
+		<action path="/EditG2code" type="com.bureaueye.beacon.action.standard.EditG2codeAction" name="G2codeForm" scope="request" validate="false">
+			<forward name="failure" path="/pages/standard/ListG2code.jsp"/>
+			<forward name="success" path="/pages/standard/G2code.jsp"/>
+		</action>
+		<action path="/SaveG2code" type="com.bureaueye.beacon.action.standard.SaveG2codeAction" name="G2codeForm" scope="request" cancellable="true" input="G2code">
+			<forward name="success" path="/ListG2code.do"/>
+		</action>
+		<action path="/ListG2code" type="com.bureaueye.beacon.action.standard.ListG2codeAction" name="ListG2codeForm" scope="session" validate="false">
+			<forward name="success" path="/pages/standard/ListG2code.jsp"/>
+		</action>
+
+		<action path="/EditG3code" type="com.bureaueye.beacon.action.standard.EditG3codeAction" name="G3codeForm" scope="request" validate="false">
+			<forward name="failure" path="/pages/standard/ListG3code.jsp"/>
+			<forward name="success" path="/pages/standard/G3code.jsp"/>
+		</action>
+		<action path="/SaveG3code" type="com.bureaueye.beacon.action.standard.SaveG3codeAction" name="G3codeForm" scope="request" cancellable="true" input="G3code">
+			<forward name="success" path="/ListG3code.do"/>
+		</action>
+		<action path="/ListG3code" type="com.bureaueye.beacon.action.standard.ListG3codeAction" name="ListG3codeForm" scope="session" validate="false">
+			<forward name="success" path="/pages/standard/ListG3code.jsp"/>
+		</action>
+
+		<action path="/EditG4code" type="com.bureaueye.beacon.action.standard.EditG4codeAction" name="G4codeForm" scope="request" validate="false">
+			<forward name="failure" path="/pages/standard/ListG4code.jsp"/>
+			<forward name="success" path="/pages/standard/G4code.jsp"/>
+		</action>
+		<action path="/SaveG4code" type="com.bureaueye.beacon.action.standard.SaveG4codeAction" name="G4codeForm" scope="request" cancellable="true" input="G4code">
+			<forward name="success" path="/ListG4code.do"/>
+		</action>
+		<action path="/ListG4code" type="com.bureaueye.beacon.action.standard.ListG4codeAction" name="ListG4codeForm" scope="session" validate="false">
+			<forward name="success" path="/pages/standard/ListG4code.jsp"/>
+		</action>
+						
+	</action-mappings>
+</struts-config>

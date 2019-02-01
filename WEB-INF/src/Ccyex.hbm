@@ -1,0 +1,117 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.bureaueye.beacon.model.standard">
+	<class
+		name="Ccyex"
+		table="ccyex"
+	>
+<meta attribute="sync-DAO">true</meta>
+		<id
+			name="CcyexId"
+			type="integer"
+			column="CCYEX_ID"
+		>
+			<generator class="native" />
+		</id>
+
+		<property
+			name="Fromccykey"
+			column="fromccykey"
+			type="string"
+			not-null="false"
+			length="10"
+		/>
+		<property
+			name="Toccykey"
+			column="toccykey"
+			type="string"
+			not-null="false"
+			length="10"
+		/>
+		<property
+			name="Exdate"
+			column="exdate"
+			type="date"
+			not-null="false"
+			length="10"
+		/>
+		<property
+			name="Exrate"
+			column="exrate"
+			type="big_decimal"
+			not-null="false"
+			length="9"
+		/>
+		<property
+			name="Createuserid"
+			column="createuserid"
+			type="string"
+			not-null="false"
+			length="10"
+		/>
+		<property
+			name="Createdate"
+			column="createdate"
+			type="date"
+			not-null="false"
+			length="10"
+		/>
+		<property
+			name="Createtime"
+			column="createtime"
+			type="string"
+			not-null="false"
+			length="8"
+		/>
+		<property
+			name="Systemloguserid"
+			column="systemloguserid"
+			type="string"
+			not-null="false"
+			length="10"
+		/>
+		<property
+			name="Systemlogdate"
+			column="systemlogdate"
+			type="date"
+			not-null="false"
+			length="10"
+		/>
+		<property
+			name="Systemlogtime"
+			column="systemlogtime"
+			type="string"
+			not-null="false"
+			length="10"
+		/>
+		<property
+			name="Systemlogprogram"
+			column="systemlogprogram"
+			type="string"
+			not-null="false"
+			length="50"
+		/>
+		<property
+			name="Systemlogaction"
+			column="systemlogaction"
+			type="string"
+			not-null="false"
+			length="10"
+		/>
+
+
+	</class>
+	
+			<query name="findCcyexsTotalResults">
+		<![CDATA[
+			select count(*) from Ccyex ccyex where 
+				ccyex.Fromccykey like :id1 and 
+				ccyex.Toccykey like :id2 and
+				ccyex.Exdate between :date1 and :date2
+		]]>
+	</query>
+		
+</hibernate-mapping>

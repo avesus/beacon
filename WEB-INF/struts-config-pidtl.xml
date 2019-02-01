@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "file:///C:/BUREAUEYE/xml/struts-config_1_3.dtd">
+<struts-config>
+
+  <display-name>pidtl</display-name>
+  <description>This is the Struts configuration file for the purchase invoice detail</description>
+  
+  <form-beans>
+    <form-bean name="PidtlForm" type="com.bureaueye.beacon.form.purchaseinvoice.PidtlForm"/>
+    <form-bean name="ListPidtlForm" type="com.bureaueye.beacon.form.ListForm"/>
+  </form-beans>
+  
+  <global-forwards>
+    <forward name="Pidtl" path="/pages/purchaseinvoice/Pidtl.jsp"/>
+  </global-forwards>
+  
+  <action-mappings>
+  
+    <action path="/EditPidtl" type="com.bureaueye.beacon.action.purchaseinvoice.EditPidtlAction" name="PidtlForm" scope="session" validate="false">
+      <forward name="failure" path="/pages/purchaseinvoice/ListPidtl.jsp"/>
+      <forward name="success" path="/pages/purchaseinvoice/Pidtl.jsp"/>
+    </action>
+    
+    <action path="/SavePidtl" type="com.bureaueye.beacon.action.purchaseinvoice.SavePidtlAction" name="PidtlForm" scope="session" cancellable="true" input="Pidtl">
+      <forward name="success" path="/ListPidtl.do"/>
+    </action>
+    
+    <action path="/ListPidtl" type="com.bureaueye.beacon.action.purchaseinvoice.ListPidtlAction" name="ListPidtlForm" scope="session" validate="false" parameter="ListPihdrForm">
+      <forward name="success" path="/pages/purchaseinvoice/ListPidtl.jsp"/>
+    </action>
+    
+  </action-mappings>
+  
+</struts-config>

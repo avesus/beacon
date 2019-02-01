@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "file:///C:/BUREAUEYE/xml/struts-config_1_3.dtd">
+<struts-config>
+
+  <display-name>podtlrcvd</display-name>
+  <description>This is the Struts configuration file for the shipment received</description>
+  
+  <form-beans>
+    <form-bean name="Podtlrcvd1Form" type="com.bureaueye.beacon.form.purchaseorder.Podtlrcvd1Form"/>
+    <form-bean name="Podtlrcvd2Form" type="com.bureaueye.beacon.form.purchaseorder.Podtlrcvd2Form"/>    
+    <form-bean name="ListPodtlrcvdForm" type="com.bureaueye.beacon.form.ListForm"/>
+  </form-beans>
+  
+  <global-forwards>
+    <forward name="Podtlrcvd1" path="/pages/purchaseorder/Podtlrcvd1.jsp"/>
+	<forward name="Podtlrcvd2" path="/pages/purchaseorder/Podtlrcvd2.jsp"/>    
+  </global-forwards>
+  
+  <action-mappings>
+  
+    <action path="/EditPodtlrcvd1" type="com.bureaueye.beacon.action.purchaseorder.EditPodtlrcvd1Action" name="Podtlrcvd1Form" scope="request" validate="false">
+      <forward name="failure" path="/pages/purchaseorder/ListPodtlrcvd.jsp"/>
+      <forward name="success" path="/pages/purchaseorder/Podtlrcvd1.jsp"/>
+    </action>
+
+    <action path="/EditPodtlrcvd2" type="com.bureaueye.beacon.action.purchaseorder.EditPodtlrcvd2Action" name="Podtlrcvd2Form" scope="request" validate="false">
+      <forward name="failure" path="/pages/purchaseorder/ListPodtlrcvd.jsp"/>
+      <forward name="success" path="/pages/purchaseorder/Podtlrcvd2.jsp"/>
+    </action>
+        
+    <action path="/SavePodtlrcvd1" type="com.bureaueye.beacon.action.purchaseorder.SavePodtlrcvd1Action" name="Podtlrcvd1Form" scope="request" cancellable="true" input="Podtlrcvd1">
+      <forward name="success" path="/ListPodtlrcvd.do"/>
+    </action>
+
+    <action path="/SavePodtlrcvd2" type="com.bureaueye.beacon.action.purchaseorder.SavePodtlrcvd2Action" name="Podtlrcvd2Form" scope="request" cancellable="true" input="Podtlrcvd2">
+      <forward name="failure" path="/ListPodtlrcvd.do"/>  
+      <forward name="success" path="/EditPodtlrcvd2.do"/>    
+    </action>
+        
+    <action path="/ListPodtlrcvd" type="com.bureaueye.beacon.action.purchaseorder.ListPodtlrcvdAction" name="ListPodtlrcvdForm" scope="session" validate="false" parameter="ListPohdrForm,ListPodtlForm">
+      <forward name="success" path="/pages/purchaseorder/ListPodtlrcvd.jsp"/>
+    </action>
+    
+  </action-mappings>
+  
+</struts-config>

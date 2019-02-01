@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "file:///C:/BUREAUEYE/xml/struts-config_1_3.dtd">
+<struts-config>
+	<display-name>country</display-name>
+	<description>This is the Struts configuration file for the country</description>
+	<form-beans>
+		<form-bean name="CountryForm" type="com.bureaueye.beacon.form.standard.CountryForm"/>
+		<form-bean name="ListCountryForm" type="com.bureaueye.beacon.form.ListForm"/>
+	</form-beans>
+	<global-forwards>
+		<forward name="Country" path="/pages/standard/Country.jsp"/>
+	</global-forwards>
+	<action-mappings>
+		<action path="/EditCountry" type="com.bureaueye.beacon.action.standard.EditCountryAction" name="CountryForm" scope="request" validate="false">
+			<forward name="failure" path="/pages/standard/ListCountry.jsp"/>
+			<forward name="success" path="/pages/standard/Country.jsp"/>
+		</action>
+		<action path="/SaveCountry" type="com.bureaueye.beacon.action.standard.SaveCountryAction" name="CountryForm" scope="request" cancellable="true" input="Country">
+			<forward name="success" path="/ListCountry.do"/>
+		</action>
+		<action path="/ListCountry" type="com.bureaueye.beacon.action.standard.ListCountryAction" name="ListCountryForm" scope="session" validate="false">
+			<forward name="success" path="/pages/standard/ListCountry.jsp"/>
+		</action>
+	</action-mappings>
+</struts-config>

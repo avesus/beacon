@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "file:///C:/BUREAUEYE/xml/struts-config_1_3.dtd">
+<struts-config>
+  <display-name>jobhdr</display-name>
+  <description>This is the Struts configuration file for the job header</description>
+  <form-beans>
+    <form-bean name="JobhdrForm" type="com.bureaueye.beacon.form.job.JobhdrForm"/>
+    <form-bean name="ListJobhdrForm" type="com.bureaueye.beacon.form.ListForm"/>
+  </form-beans>
+  <global-forwards>
+    <forward name="Jobhdr" path="/pages/job/Jobhdr.jsp"/>
+  </global-forwards>
+  <action-mappings>
+    <action path="/EditJobhdr" type="com.bureaueye.beacon.action.job.EditJobhdrAction" name="JobhdrForm" scope="session" validate="false">
+      <forward name="failure" path="/pages/job/ListJobhdr.jsp"/>
+      <forward name="success" path="/pages/job/Jobhdr.jsp"/>
+    </action>
+    <action path="/SaveJobhdr" type="com.bureaueye.beacon.action.job.SaveJobhdrAction" name="JobhdrForm" scope="session" cancellable="true" input="Jobhdr">
+      <forward name="success" path="/ListJobhdr.do"/>
+    </action>
+    <action path="/ListJobhdr" type="com.bureaueye.beacon.action.job.ListJobhdrAction" name="ListJobhdrForm" scope="session" validate="false" parameter="ListOrderhdrForm">
+      <forward name="success" path="/pages/job/ListJobhdr.jsp"/>
+    </action>
+  </action-mappings>
+</struts-config>

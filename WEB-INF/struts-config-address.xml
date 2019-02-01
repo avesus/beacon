@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "file:///C:/BUREAUEYE/xml/struts-config_1_3.dtd">
+<struts-config>
+  <display-name>address</display-name>
+  <description>This is the Struts configuration file for the address</description>
+  <form-beans>
+    <form-bean name="AddressForm" type="com.bureaueye.beacon.form.standard.AddressForm"/>
+    <form-bean name="ListAddressForm" type="com.bureaueye.beacon.form.ListForm"/>
+  </form-beans>
+  <global-forwards>
+    <forward name="Address" path="/pages/standard/Address.jsp"/>
+  </global-forwards>
+  <action-mappings>
+    <action path="/EditAddress" type="com.bureaueye.beacon.action.standard.EditAddressAction" name="AddressForm" scope="request" validate="false">
+      <forward name="failure" path="/pages/standard/ListAddress.jsp"/>
+      <forward name="success" path="/pages/standard/Address.jsp"/>
+    </action>
+    <action path="/SaveAddress" type="com.bureaueye.beacon.action.standard.SaveAddressAction" name="AddressForm" scope="request" cancellable="true" input="Address">
+      <forward name="success" path="/ListAddress.do"/>
+    </action>
+    <action path="/ListAddress" type="com.bureaueye.beacon.action.standard.ListAddressAction" name="ListAddressForm" scope="session" validate="false">
+      <forward name="success" path="/pages/standard/ListAddress.jsp"/>
+    </action>
+  </action-mappings>
+</struts-config>

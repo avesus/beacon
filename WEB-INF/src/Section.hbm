@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN"
+	"hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.bureaueye.beacon.model.standard">
+	<class name="Section" table="section">
+<meta attribute="sync-DAO">true</meta>	
+		<id name="Sectionkey" type="string" column="sectionkey">
+			<generator class="assigned"/>
+		</id> 
+		<property name="Systemlogprogram" column="systemlogprogram" type="string" not-null="false" length="50"/>
+		<property name="Systemloguserid" column="systemloguserid" type="string" not-null="false" length="10"/>
+		<property name="Systemlogaction" column="systemlogaction" type="string" not-null="false" length="10"/>
+		<property name="Systemlogdate" column="systemlogdate" type="date" not-null="false" length="10"/>
+		<property name="Deleted" column="DELETED" type="string" not-null="false" length="1"/>
+		<property name="Cstcode3" column="CSTCODE__3" type="string" not-null="false" length="10"/>
+		<property name="Avlstat" column="AVLSTAT" type="string" not-null="false" length="2"/>
+		<property name="Descr" column="DESCR" type="string" not-null="false" length="30"/>
+		<property name="Cstcode10" column="CSTCODE__10" type="string" not-null="false" length="10"/>
+		<property name="Cost" column="COST" type="string" not-null="false"/>
+		<property name="Cstcode8" column="CSTCODE__8" type="string" not-null="false" length="10"/>
+		<property name="Xinactive" column="xinactive" type="string" not-null="false" length="1"/>
+		<property name="Cstcode4" column="CSTCODE__4" type="string" not-null="false" length="10"/>
+		<property name="Cstcode9" column="CSTCODE__9" type="string" not-null="false" length="10"/>
+		<property name="Systemlogtime" column="systemlogtime" type="string" not-null="false" length="8"/>
+		<property name="Cstcode2" column="CSTCODE__2" type="string" not-null="false" length="10"/>
+		<property name="Cstcode7" column="CSTCODE__7" type="string" not-null="false" length="10"/>
+		<property name="Mandrflag" column="MANDRFLAG" type="yes_no" not-null="false" length="1"/>
+		<property name="Cstcode1" column="CSTCODE__1" type="string" not-null="false" length="10"/>
+		<property name="Fromlocationtype" column="fromlocationtype" type="string" not-null="false" length="250"/>
+		<property name="Tolocationtype" column="tolocationtype" type="string" not-null="false" length="250"/>
+		<property name="Createuserid" column="CREATEUSERID" type="string" not-null="false" length="10"/>
+		<property name="Createdate" column="CREATEDATE" type="date" not-null="false" length="10"/>
+		<property name="Rowid" column="rowid" type="integer" not-null="false" length="11"/>
+		<property name="Createtime" column="CREATETIME" type="string" not-null="false" length="8"/>
+		<property name="Cstcode5" column="CSTCODE__5" type="string" not-null="false" length="10"/>
+		<property name="Activitykey" column="activitykey" type="string" not-null="false" length="10"/>
+		<property name="Invsts" column="INVSTS" type="string" not-null="false" length="10"/>
+		<property name="Movests" column="movests" type="string" not-null="false" length="10"/>		
+		<property name="Cstcode6" column="CSTCODE__6" type="string" not-null="false" length="10"/>
+		<property name="Trtype" column="TRTYPE" type="string" not-null="false" length="1"/>
+		<property name="Xlock" column="xlock" type="string" not-null="false" length="20"/>
+		
+		<property name="Transportmode" column="transportmode" type="string" not-null="false" length="10"/>
+				
+	</class>
+	<query name="findSectionsTotalResults">
+			select count(*) from Section section where section.Sectionkey LIKE :sectionkey
+	</query>
+</hibernate-mapping>

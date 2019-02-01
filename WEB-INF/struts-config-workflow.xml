@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "file:///C:/BUREAUEYE/xml/struts-config_1_3.dtd">
+<struts-config>
+  <display-name>workflow</display-name>
+  <description>This is the Struts configuration file for the workflow using the wildcard syntax.</description>
+  <form-beans>
+    <form-bean name="ListWorkflowForm" type="com.bureaueye.beacon.form.ListForm"/>
+    <form-bean name="ListQuoapproveForm" type="com.bureaueye.beacon.form.quotation.ListQuoapproveForm"/>    
+  </form-beans>
+  <global-forwards>
+    <forward name="Workflow" path="/pages/quotation/Workflow.jsp"/>
+  </global-forwards>
+  <action-mappings>
+    <action path="/ListWorkflow" type="com.bureaueye.beacon.action.quotation.ListWorkflowAction" name="ListWorkflowForm" scope="session" validate="false">
+      <forward name="success" path="/pages/quotation/ListWorkflowMain.jsp"/>
+    </action> 
+    <action path="/SaveQuoapprove"
+            type="com.bureaueye.beacon.action.quotation.SaveQuoapproveAction"
+            name="ListQuoapproveForm"
+            scope="session"
+			validate="false"
+			cancellable="true">                
+	    <forward name="success"		path="/ListWorkflow.do"/>               
+    </action>
+    <action path="/ListQuoapprove" type="com.bureaueye.beacon.action.quotation.ListQuoapproveAction" name="ListQuoapproveForm" scope="session" validate="false" parameter="ListWorkflowForm">
+      <forward name="success" path="/pages/quotation/ListQuoapprove.jsp"/>
+    </action>     
+  </action-mappings>
+</struts-config>

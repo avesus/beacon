@@ -1,0 +1,112 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN"
+	"hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.bureaueye.beacon.model.standard">
+	<class name="Vendortariffhdr" table="vendortariffhdr">
+<meta attribute="sync-DAO">true</meta>	
+		<id column="VENDTARFHDR_ID" name="VendtarfhdrId" type="string">
+			<generator class="assigned" />
+		</id>
+		<property column="systemlogprogram" length="50" name="Systemlogprogram" not-null="false" type="string"/>
+		<property column="systemlogaction" length="10" name="Systemlogaction" not-null="false" type="string"/>
+		<property column="systemloguserid" length="10" name="Systemloguserid" not-null="false" type="string"/>
+		<property column="systemlogdate" length="10" name="Systemlogdate" not-null="false" type="date"/>
+		<property column="validfrom" length="10" name="Validfrom" not-null="false" type="date"/>
+		<property column="tog2key" length="10" name="Tog2key" not-null="false" type="string"/>
+		<property column="validto" length="10" name="Validto" not-null="false" type="date"/>
+		<property column="xinactive" length="1" name="Xinactive" not-null="false" type="string"/>
+		<property column="tog3key" length="10" name="Tog3key" not-null="false" type="string"/>
+		<property column="p3key" length="10" name="P3key" not-null="false" type="string"/>
+		<property column="systemlogtime" length="10" name="Systemlogtime" not-null="false" type="string"/>
+		<property column="tog4key" length="10" name="Tog4key" not-null="false" type="string"/>
+		<property column="createdate" length="10" name="Createdate" not-null="false" type="date"/>
+		<property column="tog1key" length="10" name="Tog1key" not-null="false" type="string"/>
+		<property column="productkey" length="10" name="Productkey" not-null="false" type="string"/>
+		<property column="p2key" length="10" name="P2key" not-null="false" type="string"/>
+		<property column="fromg3key" length="10" name="Fromg3key" not-null="false" type="string"/>
+		<property column="createuserid" length="10" name="Createuserid" not-null="false" type="string"/>
+		<property column="fromg2key" length="10" name="Fromg2key" not-null="false" type="string"/>
+		<property column="unittype" length="10" name="Unittype" not-null="false" type="string"/>
+		<property column="fromg1key" length="10" name="Fromg1key" not-null="false" type="string"/>
+		<property column="rowid" length="11" name="Rowid" not-null="false" type="integer"/>
+		<property column="p1key" length="10" name="P1key" not-null="false" type="string"/>
+		<property column="fromg4key" length="10" name="Fromg4key" not-null="false" type="string"/>
+		<property column="ccykey" length="10" name="Ccykey" not-null="false" type="string"/>
+		<property column="createtime" length="30" name="Createtime" not-null="false" type="string"/>
+		<property column="xlock" length="20" name="Xlock" not-null="false" type="string"/>
+		<property column="note1" name="Note1" not-null="false" type="string"/>
+		<property column="note2" name="Note2" not-null="false" type="string"/>
+		<property column="lumpsum" length="11" name="Lumpsum" not-null="false" type="big_decimal"/>
+	
+	
+    <property column="vendoraddrkey" length="10" name="Vendoraddrkey" not-null="false" type="string"/>
+    <property column="costkey" length="10" name="Costkey" not-null="false" type="string"/>	
+    <property column="fromlocationkey" length="10" name="Fromlocationkey" not-null="false" type="string"/>
+    <property column="tolocationkey" length="10" name="Tolocationkey" not-null="false" type="string"/>
+    <property column="tslocationkey" length="10" name="Tslocationkey" not-null="false" type="string"/>
+    	
+		<property
+			column="producthazardous"
+			name="Producthazardous"
+			not-null="false"
+			type="string"
+			length="10"
+		 />
+		<property
+			column="inclavgtarfcalcflag"
+			name="Inclavgtarfcalcflag"
+			not-null="false"
+			type="yes_no"
+		 />
+		
+	</class>
+
+	<query name="findVendortariffhdrsTotalResults">
+		<![CDATA[
+		select count(*) from Vendortariffhdr vendortariffhdr where 
+			vendortariffhdr.VendtarfhdrId LIKE :id1 and 		
+			vendortariffhdr.Vendoraddrkey LIKE :id2 and 
+			vendortariffhdr.Costkey LIKE :id3 and
+			vendortariffhdr.Fromlocationkey LIKE :id4 and
+			vendortariffhdr.Tolocationkey LIKE :id5 
+		]]>
+	</query>
+
+	<query name="findVendortariffhdrsTotalResultsExpired">
+		<![CDATA[
+		select count(*) from Vendortariffhdr vendortariffhdr where 
+			vendortariffhdr.VendtarfhdrId LIKE :id1 and 		
+			vendortariffhdr.Vendoraddrkey LIKE :id2 and 
+			vendortariffhdr.Costkey LIKE :id3 and
+			vendortariffhdr.Fromlocationkey LIKE :id4 and
+			vendortariffhdr.Tolocationkey LIKE :id5 and
+			vendortariffhdr.Validto < :date1
+		]]>
+	</query>
+	
+	<query name="findVendortariffhdrsTotalResultsActive">
+		select count(*) from Vendortariffhdr vendortariffhdr where 
+			vendortariffhdr.VendtarfhdrId LIKE :id1 and 		
+			vendortariffhdr.Vendoraddrkey LIKE :id2 and 
+			vendortariffhdr.Costkey LIKE :id3 and
+			vendortariffhdr.Fromlocationkey LIKE :id4 and
+			vendortariffhdr.Tolocationkey LIKE :id5 and
+			vendortariffhdr.Validto >= :date1
+	</query>
+	
+				
+	
+	
+  <query name="vendortariffSearchTotalResults">
+  	SELECT COUNT(*) FROM Vendortariffhdr vendortariffhdr WHERE 
+  		vendortariffhdr.Vendoraddrkey LIKE :addrkey AND 
+  		vendortariffhdr.Costkey LIKE :costkey AND 
+  		vendortariffhdr.Fromlocationkey LIKE :fromlocationkey AND 
+  		vendortariffhdr.Tolocationkey LIKE :tolocationkey AND 
+  		vendortariffhdr.Tslocationkey LIKE :tslocationkey AND 
+  		vendortariffhdr.Productkey LIKE :productkey AND 
+  		vendortariffhdr.Ccykey LIKE :ccykey AND
+  		vendortariffhdr.Validto >= :validto
+  </query>
+	
+</hibernate-mapping>

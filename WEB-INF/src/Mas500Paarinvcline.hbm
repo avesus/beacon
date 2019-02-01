@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.bureaueye.beacon.model.mas500">
+	<class name="Paarinvcline" table="paarinvcline">
+		<id
+			column="InvoiceLineKey"
+			name="InvoiceLineKey"
+			type="integer"
+		>
+			<generator class="native" />
+		</id>
+		<property
+			column="intTaskKey"
+			length="11"
+			name="IntTaskKey"
+			not-null="false"
+			type="integer"
+		 />
+		<property
+			column="intInvDescrKey"
+			length="11"
+			name="IntInvDescrKey"
+			not-null="false"
+			type="integer"
+		 />
+		<property
+			column="intJobLineKey"
+			length="11"
+			name="IntJobLineKey"
+			not-null="false"
+			type="integer"
+		 />
+		<property
+			column="Comment"
+			name="Comment"
+			not-null="false"
+			type="string"
+		 />
+		<property
+			column="siFromTS"
+			length="6"
+			name="SiFromTS"
+			not-null="false"
+			type="java.lang.Short"
+		 />
+		<property
+			column="intPhaseKey"
+			length="11"
+			name="IntPhaseKey"
+			not-null="false"
+			type="integer"
+		 />
+		<property
+			column="intJobKey"
+			length="11"
+			name="IntJobKey"
+			not-null="false"
+			type="integer"
+		 />
+	</class>
+</hibernate-mapping>

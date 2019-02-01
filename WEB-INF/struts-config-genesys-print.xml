@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "file:///C:/BUREAUEYE/xml/struts-config_1_3.dtd">
+<struts-config>
+  <display-name>GENESYS PRINTS</display-name>
+  <description>This is the Struts configuration file for the DOCUMENT GENESYS PRINTS</description>
+  
+  <form-beans>
+    <form-bean name="PrinthdrForm" type="com.bureaueye.beacon.form.print.PrinthdrForm"/>
+  </form-beans>
+  
+  <global-forwards>
+    <forward name="Onhirenotification" path="/pages/print/Onhirenotification.jsp"/>         
+    <forward name="Offhirenotification" path="/pages/print/Offhirenotification.jsp"/>  
+  </global-forwards>
+  
+  <action-mappings>
+    
+    <action path="/EditOnhirenotification" type="com.bureaueye.genesys.action.onhire.print.EditOnhirenotificationAction" name="PrinthdrForm" scope="session" validate="false">
+      <forward name="failure" path="/pages/onhire/ListOnhireMain.jsp"/>
+      <forward name="success" path="/pages/print/Onhirenotification.jsp"/>
+    </action>
+    <action path="/SaveOnhirenotification" type="com.bureaueye.genesys.action.onhire.print.SaveOnhirenotificationAction" name="PrinthdrForm" scope="session" cancellable="true" input="Printhdr">
+      <forward name="success" path="/ListOnhire.do"/>
+    </action> 
+ 
+     <action path="/EditOffhirenotification" type="com.bureaueye.genesys.action.offhire.print.EditOffhirenotificationAction" name="PrinthdrForm" scope="session" validate="false">
+      <forward name="failure" path="/pages/offhire/ListOffhireMain.jsp"/>
+      <forward name="success" path="/pages/print/Offhirenotification.jsp"/>
+    </action>
+    <action path="/SaveOffhirenotification" type="com.bureaueye.genesys.action.offhire.print.SaveOffhirenotificationAction" name="PrinthdrForm" scope="session" cancellable="true" input="Printhdr">
+      <forward name="success" path="/ListOffhire.do"/>
+    </action>
+                
+  </action-mappings>
+  
+</struts-config>

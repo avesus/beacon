@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN"
+	"hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.bureaueye.beacon.model.standard">
+	<class name="Transportmode" table="transportmode">
+<meta attribute="sync-DAO">true</meta>	
+		<id column="transportmode" name="Transportmode" type="string">
+			<generator class="assigned"/>
+		</id>
+		<property column="descr" length="50" name="Descr" not-null="false" type="string"/>
+	</class>
+</hibernate-mapping>
+ 

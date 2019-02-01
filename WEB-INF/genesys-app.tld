@@ -1,0 +1,681 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<!DOCTYPE taglib
+
+  PUBLIC "-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.1//EN"
+
+  "http://java.sun.com/j2ee/dtds/web-jsptaglibrary_1_1.dtd">
+
+
+
+<taglib>
+
+  <tlibversion>1.0</tlibversion>
+
+  <jspversion>1.1</jspversion>
+
+  <shortname>Application Tag Library</shortname>
+
+  <uri>http://jakarta.apache.org/taglibs/struts-example-1.0</uri>
+
+  <info>
+  
+    This tag library contains functionality specific to the Beacon Job Application
+    
+  </info>
+  
+       
+      <tag>
+    <name>linkContractLineItem</name>
+    <tagclass>com.bureaueye.genesys.taglib.contract.LinkContractLineItemTag</tagclass>
+    <info>
+      Generate a URL-encoded hyperlink to the a URL made up of the
+      specified base value, plus optional query parameters that
+      select the specified object.
+      name     - Name of the attribute containing the specified object.
+                 [contract]
+      href     - Context-relative URL of the generated link
+    </info>
+    <attribute>
+      <name>name</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>page</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+  <tag>
+    <name>linkContractCreate</name>
+    <tagclass>com.bureaueye.genesys.taglib.contract.LinkContractCreateTag</tagclass>
+    <info>
+      Generate a URL-encoded hyperlink to the a URL made up of the
+      specified base value, plus optional query parameters that
+      select the specified object.
+      name     - Name of the attribute containing the specified object.
+                 [contract]
+      href     - Context-relative URL of the generated link
+    </info>
+    <attribute>
+      <name>name</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>page</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+  
+        
+  <tag>
+    <name>linkContracteqpLineItem</name>
+    <tagclass>com.bureaueye.genesys.taglib.contract.LinkContracteqpLineItemTag</tagclass>
+    <info>
+      Generate a URL-encoded hyperlink to the a URL made up of the
+      specified base value, plus optional query parameters that
+      select the specified object.
+      name     - Name of the attribute containing the specified object.
+                 [contracteqp]
+      href     - Context-relative URL of the generated link
+    </info>
+    <attribute>
+      <name>name</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>page</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+  <tag>
+    <name>linkContracteqpCreate</name>
+    <tagclass>com.bureaueye.genesys.taglib.contract.LinkContracteqpCreateTag</tagclass>
+    <info>
+      Generate a URL-encoded hyperlink to the a URL made up of the
+      specified base value, plus optional query parameters that
+      select the specified object.
+      name     - Name of the attribute containing the specified object.
+                 [contracteqp]
+      href     - Context-relative URL of the generated link
+    </info>
+    <attribute>
+      <name>name</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>page</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+  
+  <tag>
+    <name>linkContractagentLineItem</name>
+    <tagclass>com.bureaueye.genesys.taglib.contract.LinkContractagentLineItemTag</tagclass>
+    <info>
+      Generate a URL-encoded hyperlink to the a URL made up of the
+      specified base value, plus optional query parameters that
+      select the specified object.
+      name     - Name of the attribute containing the specified object.
+                 [contractagent]
+      href     - Context-relative URL of the generated link
+    </info>
+    <attribute>
+      <name>name</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>page</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+  <tag>
+    <name>linkContractagentCreate</name>
+    <tagclass>com.bureaueye.genesys.taglib.contract.LinkContractagentCreateTag</tagclass>
+    <info>
+      Generate a URL-encoded hyperlink to the a URL made up of the
+      specified base value, plus optional query parameters that
+      select the specified object.
+      name     - Name of the attribute containing the specified object.
+                 [contractagent]
+      href     - Context-relative URL of the generated link
+    </info>
+    <attribute>
+      <name>name</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>page</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+    
+  <tag>
+    <name>linkContracteqpContracteqplocLineItem</name>
+    <tagclass>com.bureaueye.genesys.taglib.contract.LinkContracteqpContracteqplocLineItemTag</tagclass>
+    <info>
+      Generate a URL-encoded hyperlink to the a URL made up of the
+      specified base value, plus optional query parameters that
+      select the specified object.
+      name     - Name of the attribute containing the specified object.
+                 [contracteqploc]
+      href     - Context-relative URL of the generated link
+    </info>
+    <attribute>
+      <name>name</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>page</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+  
+    
+
+  <tag>
+    <name>linkContracteqplocLineItem</name>
+    <tagclass>com.bureaueye.genesys.taglib.contract.LinkContracteqplocLineItemTag</tagclass>
+    <info>
+      Generate a URL-encoded hyperlink to the a URL made up of the
+      specified base value, plus optional query parameters that
+      select the specified object.
+      name     - Name of the attribute containing the specified object.
+                 [contracteqploc]
+      href     - Context-relative URL of the generated link
+    </info>
+    <attribute>
+      <name>name</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>page</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+  <tag>
+    <name>linkContracteqplocCreate</name>
+    <tagclass>com.bureaueye.genesys.taglib.contract.LinkContracteqplocCreateTag</tagclass>
+    <info>
+      Generate a URL-encoded hyperlink to the a URL made up of the
+      specified base value, plus optional query parameters that
+      select the specified object.
+      name     - Name of the attribute containing the specified object.
+                 [contracteqploc]
+      href     - Context-relative URL of the generated link
+    </info>
+    <attribute>
+      <name>name</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>page</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+
+
+
+
+  <tag>
+    <name>linkOnhireLineItem</name>
+    <tagclass>com.bureaueye.genesys.taglib.onhire.LinkOnhireLineItemTag</tagclass>
+    <info>
+      Generate a URL-encoded hyperlink to the a URL made up of the
+      specified base value, plus optional query parameters that
+      select the specified object.
+      name     - Name of the attribute containing the specified object.
+                 [onhire]
+      href     - Context-relative URL of the generated link
+    </info>
+    <attribute>
+      <name>name</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>page</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+  <tag>
+    <name>linkOnhireCreate</name>
+    <tagclass>com.bureaueye.genesys.taglib.onhire.LinkOnhireCreateTag</tagclass>
+    <info>
+      Generate a URL-encoded hyperlink to the a URL made up of the
+      specified base value, plus optional query parameters that
+      select the specified object.
+      name     - Name of the attribute containing the specified object.
+                 [onhire]
+      href     - Context-relative URL of the generated link
+    </info>
+    <attribute>
+      <name>name</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>page</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+  
+        
+  <tag>
+    <name>linkOnhireeqpLineItem</name>
+    <tagclass>com.bureaueye.genesys.taglib.onhire.LinkOnhireeqpLineItemTag</tagclass>
+    <info>
+      Generate a URL-encoded hyperlink to the a URL made up of the
+      specified base value, plus optional query parameters that
+      select the specified object.
+      name     - Name of the attribute containing the specified object.
+                 [onhireeqp]
+      href     - Context-relative URL of the generated link
+    </info>
+    <attribute>
+      <name>name</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>page</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+  <tag>
+    <name>linkOnhireeqpCreate</name>
+    <tagclass>com.bureaueye.genesys.taglib.onhire.LinkOnhireeqpCreateTag</tagclass>
+    <info>
+      Generate a URL-encoded hyperlink to the a URL made up of the
+      specified base value, plus optional query parameters that
+      select the specified object.
+      name     - Name of the attribute containing the specified object.
+                 [onhireeqp]
+      href     - Context-relative URL of the generated link
+    </info>
+    <attribute>
+      <name>name</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>page</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+  
+  <tag>
+    <name>linkOnhireeqpOnhireeqpotcLineItem</name>
+    <tagclass>com.bureaueye.genesys.taglib.onhire.LinkOnhireeqpOnhireeqpotcLineItemTag</tagclass>
+    <info>
+      Generate a URL-encoded hyperlink to the a URL made up of the
+      specified base value, plus optional query parameters that
+      select the specified object.
+      name     - Name of the attribute containing the specified object.
+                 [onhireeqpotc]
+      href     - Context-relative URL of the generated link
+    </info>
+    <attribute>
+      <name>name</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>page</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+  
+    
+
+  <tag>
+    <name>linkOnhireeqpotcLineItem</name>
+    <tagclass>com.bureaueye.genesys.taglib.onhire.LinkOnhireeqpotcLineItemTag</tagclass>
+    <info>
+      Generate a URL-encoded hyperlink to the a URL made up of the
+      specified base value, plus optional query parameters that
+      select the specified object.
+      name     - Name of the attribute containing the specified object.
+                 [onhireeqpotc]
+      href     - Context-relative URL of the generated link
+    </info>
+    <attribute>
+      <name>name</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>page</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+  <tag>
+    <name>linkOnhireeqpotcCreate</name>
+    <tagclass>com.bureaueye.genesys.taglib.onhire.LinkOnhireeqpotcCreateTag</tagclass>
+    <info>
+      Generate a URL-encoded hyperlink to the a URL made up of the
+      specified base value, plus optional query parameters that
+      select the specified object.
+      name     - Name of the attribute containing the specified object.
+                 [onhireeqpotc]
+      href     - Context-relative URL of the generated link
+    </info>
+    <attribute>
+      <name>name</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>page</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+
+
+
+  <tag>
+    <name>linkOffhireLineItem</name>
+    <tagclass>com.bureaueye.genesys.taglib.offhire.LinkOffhireLineItemTag</tagclass>
+    <info>
+      Generate a URL-encoded hyperlink to the a URL made up of the
+      specified base value, plus optional query parameters that
+      select the specified object.
+      name     - Name of the attribute containing the specified object.
+                 [offhire]
+      href     - Context-relative URL of the generated link
+    </info>
+    <attribute>
+      <name>name</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>page</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+  <tag>
+    <name>linkOffhireCreate</name>
+    <tagclass>com.bureaueye.genesys.taglib.offhire.LinkOffhireCreateTag</tagclass>
+    <info>
+      Generate a URL-encoded hyperlink to the a URL made up of the
+      specified base value, plus optional query parameters that
+      select the specified object.
+      name     - Name of the attribute containing the specified object.
+                 [offhire]
+      href     - Context-relative URL of the generated link
+    </info>
+    <attribute>
+      <name>name</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>page</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+  
+        
+  <tag>
+    <name>linkOffhireeqpLineItem</name>
+    <tagclass>com.bureaueye.genesys.taglib.offhire.LinkOffhireeqpLineItemTag</tagclass>
+    <info>
+      Generate a URL-encoded hyperlink to the a URL made up of the
+      specified base value, plus optional query parameters that
+      select the specified object.
+      name     - Name of the attribute containing the specified object.
+                 [offhireeqp]
+      href     - Context-relative URL of the generated link
+    </info>
+    <attribute>
+      <name>name</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>page</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+  <tag>
+    <name>linkOffhireeqpCreate</name>
+    <tagclass>com.bureaueye.genesys.taglib.offhire.LinkOffhireeqpCreateTag</tagclass>
+    <info>
+      Generate a URL-encoded hyperlink to the a URL made up of the
+      specified base value, plus optional query parameters that
+      select the specified object.
+      name     - Name of the attribute containing the specified object.
+                 [offhireeqp]
+      href     - Context-relative URL of the generated link
+    </info>
+    <attribute>
+      <name>name</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>page</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+  
+ 
+  <tag>
+    <name>linkOffhireeqpOffhireeqpotcLineItem</name>
+    <tagclass>com.bureaueye.genesys.taglib.offhire.LinkOffhireeqpOffhireeqpotcLineItemTag</tagclass>
+    <info>
+      Generate a URL-encoded hyperlink to the a URL made up of the
+      specified base value, plus optional query parameters that
+      select the specified object.
+      name     - Name of the attribute containing the specified object.
+                 [offhireeqpotc]
+      href     - Context-relative URL of the generated link
+    </info>
+    <attribute>
+      <name>name</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>page</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+  <tag>
+    <name>linkOffhireeqpotcLineItem</name>
+    <tagclass>com.bureaueye.genesys.taglib.offhire.LinkOffhireeqpotcLineItemTag</tagclass>
+    <info>
+      Generate a URL-encoded hyperlink to the a URL made up of the
+      specified base value, plus optional query parameters that
+      select the specified object.
+      name     - Name of the attribute containing the specified object.
+                 [offhireeqpotc]
+      href     - Context-relative URL of the generated link
+    </info>
+    <attribute>
+      <name>name</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>page</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+  <tag>
+    <name>linkOffhireeqpotcCreate</name>
+    <tagclass>com.bureaueye.genesys.taglib.offhire.LinkOffhireeqpotcCreateTag</tagclass>
+    <info>
+      Generate a URL-encoded hyperlink to the a URL made up of the
+      specified base value, plus optional query parameters that
+      select the specified object.
+      name     - Name of the attribute containing the specified object.
+                 [offhireeqpotc]
+      href     - Context-relative URL of the generated link
+    </info>
+    <attribute>
+      <name>name</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>page</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+
+
+  <tag>
+    <name>linkBillingviewLineItem</name>
+    <tagclass>com.bureaueye.genesys.taglib.finance.LinkBillingviewLineItemTag</tagclass>
+    <info>
+      Generate a URL-encoded hyperlink to the a URL made up of the
+      specified base value, plus optional query parameters that
+      select the specified object.
+      name     - Name of the attribute containing the specified object.
+                 [billing view]
+      href     - Context-relative URL of the generated link
+    </info>
+    <attribute>
+      <name>name</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>page</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+  
+      
+ 
+  <!-- finance taglibs -->
+  <tag>
+    <name>linkFinancehdrLineItem</name>
+    <tagclass>com.bureaueye.genesys.taglib.finance.LinkFinancehdrLineItemTag</tagclass>
+    <info>
+      Generate a URL-encoded hyperlink to the a URL made up of the
+      specified base value, plus optional query parameters that
+      select the specified object.
+      name     - Name of the attribute containing the specified object.
+                 [financehdr]
+      href     - Context-relative URL of the generated link
+    </info>
+    <attribute>
+      <name>name</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>page</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+  
+  <tag>
+    <name>linkFinancedtlLineItem</name>
+    <tagclass>com.bureaueye.genesys.taglib.finance.LinkFinancedtlLineItemTag</tagclass>
+    <info>
+      Generate a URL-encoded hyperlink to the a URL made up of the
+      specified base value, plus optional query parameters that
+      select the specified object.
+      name     - Name of the attribute containing the specified object.
+                 [financedtl]
+      href     - Context-relative URL of the generated link
+    </info>
+    <attribute>
+      <name>name</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>page</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+  
+  <tag>
+    <name>linkFinancehdrCreate</name>
+    <tagclass>com.bureaueye.genesys.taglib.finance.LinkFinancehdrCreateTag</tagclass>
+    <info>
+      Generate a URL-encoded hyperlink to the a URL made up of the
+      specified base value, plus optional query parameters that
+      select the specified object.
+      name     - Name of the attribute containing the specified object.
+                 [financehdr]
+      href     - Context-relative URL of the generated link
+    </info>
+    <attribute>
+      <name>name</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>page</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+  
+  <tag>
+    <name>linkFinancedtlCreate</name>
+    <tagclass>com.bureaueye.genesys.taglib.finance.LinkFinancedtlCreateTag</tagclass>
+    <info>
+      Generate a URL-encoded hyperlink to the a URL made up of the
+      specified base value, plus optional query parameters that
+      select the specified object.
+      name     - Name of the attribute containing the specified object.
+                 [financedtl]
+      href     - Context-relative URL of the generated link
+    </info>
+    <attribute>
+      <name>name</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>page</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+  
+  
+                                      
+</taglib>
+

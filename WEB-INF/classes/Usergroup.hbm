@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN"
+	"hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.bureaueye.beacon.model.standard">
+	<class name="Usergroup" table="usergroup">
+<meta attribute="sync-DAO">true</meta>	
+		<id 
+			column="usergroupid" 
+			name="Usergroupid" 
+			type="string">
+			<generator class="assigned"/>
+		</id>
+		<property column="email" length="100" name="Email" not-null="false" type="string"/>
+		<property column="name" length="50" name="Name" not-null="false" type="string"/>
+	</class>
+	
+	<query name="findUsergroupsTotalResults">
+		<![CDATA[
+			select count(*) from Usergroup usergroup where 
+				usergroup.Usergroupid like :id1
+		]]>
+	</query>
+		
+</hibernate-mapping>

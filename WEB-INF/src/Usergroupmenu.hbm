@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.bureaueye.beacon.model.standard">
+	<class
+		name="Usergroupmenu"
+		table="usergroupmenu"
+	>
+<meta attribute="sync-DAO">true</meta>	
+		<id
+			name="UsergroupmenuId"
+			type="integer"
+			column="USERGROUPMENU_ID"
+		>
+			<generator class="native"/>
+		</id>
+
+		<property
+			name="Usergroupid"
+			column="usergroupid"
+			type="string"
+			not-null="false"
+			length="10"
+		/>
+		<property
+			name="Programtype"
+			column="programtype"
+			type="string"
+			not-null="false"
+			length="10"
+		/>
+		<property
+			name="Programid"
+			column="programid"
+			type="string"
+			not-null="false"
+			length="100"
+		/>
+		<property
+			name="Menuid"
+			column="menuid"
+			type="string"
+			not-null="false"
+			length="100"
+		/>
+		<property
+			name="Sequence"
+			column="sequence"
+			type="integer"
+			not-null="false"
+			length="11"
+		/>
+
+
+	</class>
+
+	<query name="findUsergroupmenusByUsergroupid">
+		from Usergroupmenu usergroupmenu where usergroupmenu.Usergroupid = :usergroupid order by Sequence, Menuid
+	</query>
+
+	<query name="findUsergroupmenusTotalResults">select count(*) from Usergroupmenu usergroupmenu where usergroupmenu.Usergroupid = :id</query>
+
+
+</hibernate-mapping>

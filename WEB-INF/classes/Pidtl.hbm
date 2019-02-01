@@ -1,0 +1,207 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.bureaueye.beacon.model.purchaseinvoice">
+	<class name="Pidtl" table="pidtl">
+<meta attribute="sync-DAO">true</meta>	
+		<id
+			column="PIDTL_ID"
+			name="PidtlId"
+			type="integer"
+		>
+			<generator class="native" />
+		</id>
+		<property
+			column="systemlogdate"
+			length="10"
+			name="Systemlogdate"
+			not-null="false"
+			type="date"
+		 />
+		<property
+			column="invoicestatus"
+			length="20"
+			name="Invoicestatus"
+			not-null="false"
+			type="string"
+		 />		 
+		<property
+			column="createdate"
+			length="10"
+			name="Createdate"
+			not-null="false"
+			type="date"
+		 />
+		<property
+			column="xlock"
+			length="20"
+			name="Xlock"
+			not-null="false"
+			type="string"
+		 />
+		<property
+			column="systemlogaction"
+			length="10"
+			name="Systemlogaction"
+			not-null="false"
+			type="string"
+		 />
+		<property
+			column="PIHDR_ID"
+			length="11"
+			name="PihdrId"
+			not-null="false"
+			type="integer"
+		 />
+		<property
+			column="JOBHDR_ID"
+			length="11"
+			name="JobhdrId"
+			not-null="false"
+			type="integer"
+		 />
+		<property
+			column="createtime"
+			length="30"
+			name="Createtime"
+			not-null="false"
+			type="string"
+		 />
+		<property
+			column="systemlogtime"
+			length="10"
+			name="Systemlogtime"
+			not-null="false"
+			type="string"
+		 />
+		<property
+			column="xinactive"
+			name="Xinactive"
+			not-null="false"
+			type="yes_no"
+		 />
+		<property
+			column="invoiceamt"
+			length="18"
+			name="Invoiceamt"
+			not-null="false"
+			type="big_decimal"
+		 />
+		<property
+			column="cstamt"
+			length="18"
+			name="Cstamt"
+			not-null="false"
+			type="big_decimal"
+		 />
+		<property
+			column="UNIT_ID"
+			length="11"
+			name="UnitId"
+			not-null="false"
+			type="integer"
+		 />		 
+		<property
+			column="approvedflag"
+			name="Approvedflag"
+			not-null="false"
+			type="yes_no"
+		 />
+		<property
+			column="disputemessage"
+			length="100"
+			name="Disputemessage"			
+			not-null="false"
+			type="string"
+		 />
+		<property
+			column="systemlogprogram"
+			length="50"
+			name="Systemlogprogram"
+			not-null="false"
+			type="string"
+		 />
+		<property
+			column="createuserid"
+			length="10"
+			name="Createuserid"
+			not-null="false"
+			type="string"
+		 />
+		<property
+			column="systemloguserid"
+			length="10"
+			name="Systemloguserid"
+			not-null="false"
+			type="string"
+		 />
+		<property
+			column="deleteflag"
+			name="Deleteflag"
+			not-null="false"
+			type="yes_no"
+		 />
+		<property
+			column="jobno"
+			length="20"
+			name="Jobno"
+			not-null="false"
+			type="string"
+		 />
+		<property
+			column="unitkey"
+			length="20"
+			name="Unitkey"
+			not-null="false"
+			type="string"
+		 />
+		<property
+			column="costkey"
+			length="10"
+			name="Costkey"
+			not-null="false"
+			type="string"
+		 />
+	<property
+			column="txt1"
+			name="Txt1"
+			not-null="false"
+			type="string"
+		 />
+		<property
+			column="txt2"
+			name="Txt2"
+			not-null="false"
+			type="string"
+		 />
+
+		<property
+			column="orderno"
+			length="40"
+			name="Orderno"
+			not-null="false"
+			type="string"
+		 />
+		 		 	 	 		 		 	 	 
+	</class>
+	
+		<query name="findPidtlsTotalResults">
+			select count(*) from Pidtl pidtl where pidtl.PihdrId = :id1 and pidtl.Invoicestatus LIKE :id2
+		</query>
+		
+		<query name="pidtlsInvoiceamtTotal">
+			select sum(pidtl.Invoiceamt) from Pidtl pidtl where pidtl.PihdrId = :id1
+		</query>
+		
+		<query name="pidtlsInvoicestatusCount">
+			select count(*) from Pidtl pidtl where pidtl.PihdrId = :id1 and pidtl.Invoicestatus LIKE :id2
+		</query>
+
+		<query name="pidtlsCount">
+			select count(*) from Pidtl pidtl where pidtl.PihdrId = :id1
+		</query>
+		
+					
+</hibernate-mapping>

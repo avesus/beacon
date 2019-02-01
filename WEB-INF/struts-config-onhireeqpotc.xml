@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "file:///C:/BUREAUEYE/xml/struts-config_1_3.dtd">
+<struts-config>
+
+  <display-name>onhireeqpotc</display-name>
+  <description>This is the Struts configuration file for the onhire equipment otc</description>
+  
+  <form-beans>
+    <form-bean name="OnhireeqpotcForm" type="com.bureaueye.genesys.form.onhire.OnhireeqpotcForm"/>
+    <form-bean name="ListOnhireeqpotcForm" type="com.bureaueye.beacon.form.ListForm"/>
+  </form-beans>
+  
+  <global-forwards>
+    <forward name="Onhireeqpotc" path="/pages/onhire/Onhireeqpotc.jsp"/>
+  </global-forwards>
+  
+  <action-mappings>
+  
+    <action path="/EditOnhireeqpotc" type="com.bureaueye.genesys.action.onhire.EditOnhireeqpotcAction" name="OnhireeqpotcForm" scope="request" validate="false">
+      <forward name="failure" path="/pages/onhire/ListOnhireeqpotc.jsp"/>
+      <forward name="success" path="/pages/onhire/Onhireeqpotc.jsp"/>
+    </action>
+    
+    <action path="/SaveOnhireeqpotc" type="com.bureaueye.genesys.action.onhire.SaveOnhireeqpotcAction" name="OnhireeqpotcForm" scope="request" cancellable="true" input="Onhireeqpotc">
+      <forward name="success" path="/ListOnhireeqpotc.do"/>
+    </action>
+    
+    <action path="/ListOnhireeqpotc" type="com.bureaueye.genesys.action.onhire.ListOnhireeqpotcAction" name="ListOnhireeqpotcForm" scope="session" validate="false" parameter="ListOnhireForm,ListOnhireeqpForm">
+      <forward name="success" path="/pages/onhire/ListOnhireeqpotc.jsp"/>
+    </action>
+    
+  </action-mappings>
+  
+</struts-config>

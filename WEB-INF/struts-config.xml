@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "file:///C:/BUREAUEYE/xml/struts-config_1_3.dtd">
+<!--
+ $Header: /home/cvs/jakarta-struts/web/example/WEB-INF/struts-config.xml,v 1.43 2004/09/02 03:43:15 niallp Exp $
+ $Revision: 1.43 $
+ $Date: 2004-09-02 04:43:16 +0100 (Thu, 02 Sep 2004) $
+
+ Copyright 2000-2004 Apache Software Foundation
+
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+<struts-config>
+  <display-name><![CDATA[
+     beacon
+  ]]>
+  </display-name>
+    <description><![CDATA[
+     beacon main config
+  ]]>
+  </description>
+  
+  
+
+  <!-- ========== Form Bean Definitions =================================== -->
+  <form-beans>
+
+    <!-- Logon form bean -->
+    <form-bean      name="LogonForm"
+                    type="com.bureaueye.beacon.form.LogonForm"/>
+
+    <!-- Usermenu form bean -->
+    <form-bean      name="UsermenuForm"
+                    type="com.bureaueye.beacon.form.standard.UsermenuForm"/>
+
+    <!-- Switchto Company form bean -->
+    <form-bean      name="SwitchtocompanyForm"
+                    type="com.bureaueye.beacon.form.SwitchtocompanyForm"/>
+                                                          
+    </form-beans>
+
+  <global-exceptions>
+    <exception key="error.database.missing" type="java.lang.Exception" path="/pages/Error.jsp"/>
+  </global-exceptions>    
+
+  <!-- ========== Global Forward Definitions ============================== -->
+  <global-forwards>
+    <forward   name="welcome"              path="/Welcome.do"/>
+    <forward   name="logoff"               path="/Logoff.do"/>
+    <forward   name="mainmenu"             path="/MainMenu.do"/>
+    <forward   name="logon"                path="/Logon.do"/>
+    <forward   name="success"              path="/MainMenu.do"/> 
+    <forward   name="dashboard"             path="/Dashboard.do"/>
+    <forward   name="switchtocompany"             path="/Switchtocompany.do"/>                
+  </global-forwards>
+
+
+  <!-- ========== Action Mapping Definitions ============================== -->
+  <action-mappings>
+
+      <!-- Display welcome page -->
+      <action    path="/Welcome"
+                 type="com.bureaueye.beacon.action.WelcomeAction">
+          <forward name="failure" path="/pages/Error.jsp" />
+          <forward name="success" path="/pages/Welcome.jsp" />
+      </action>
+
+      <!-- Change locale action -->
+      <action
+          path="/Locale"
+          type="com.bureaueye.beacon.action.LocaleAction"
+          parameter="welcome" />
+
+
+      <!-- Display mainmenu page -->
+      <action    path="/MainMenu"
+                 forward="/pages/MainMenu.jsp"/>
+
+      <!-- Display logon page -->
+      <action    path="/Logon"
+                 forward="/pages/Logon.jsp"/>   
+                 
+      <!-- Display welcome page -->
+      <action    path="/Welcome"
+                 forward="/pages/Welcome.jsp"/>                                  
+
+      <!-- Display help page -->
+      <action    path="/BeaconHelp"
+                 forward="/pages/BeaconHelp.jsp"/>
+      <!-- Display help page -->
+      <action    path="/GeneralHelp"
+                 forward="/pages/help/GeneralHelp.jsp"/>
+          
+
+      <!-- DEMO NEWPORT TARIFF DATABASE -->          
+      <action    path="/Tariff"   forward="/pages/TreeGrid/TariffMain.jsp"/>           
+                                
+                                
+                                                   
+       <!-- Process a user logon -->
+       <action  path="/SubmitLogon"
+                type="com.bureaueye.beacon.action.LogonAction"
+                name="LogonForm"
+                scope="request"
+                input="welcome">
+         <exception
+                   key="expired.password"
+                  type="com.bureaueye.beacon.exception.ExpiredPasswordException"
+                  path="/ExpiredPassword.do"/>
+       </action>
+
+      <!-- Process a user logoff -->
+       <action    path="/Logoff"
+                  type="com.bureaueye.beacon.action.LogoffAction">
+         <forward name="success"              path="/pages/Logout.jsp"/>
+       </action>
+
+
+  
+  		<action    path="/Dashboard" type="com.bureaueye.beacon.action.DashboardAction">
+        	<forward name="success"              path="/pages/dashboard/Dashboard.jsp"/>
+		</action>  
+  
+  		<action	path="/Switchtocompany" 
+  				type="com.bureaueye.beacon.action.SwitchtocompanyAction"
+                name="SwitchtocompanyForm"  				
+                scope="session">
+        	<forward name="success"              path="/pages/MainMenu.jsp"/>
+		</action>         
+                    
+
+  </action-mappings>
+
+  <!-- ========== Controller Configuration ================================ -->
+
+  <controller 
+  	pagePattern="$M$P" 
+  	inputForward="true" 
+  	nocache="false" 
+  	processorClass="com.bureaueye.beacon.action.RequestProcessor"
+  	/>
+    <!-- pagePattern: use this pattern when creating URIs to resources.
+        $M=module, $P=path -->
+    <!-- inputForward: The "input" parameter on "action" elements is the name of a
+         local or global "forward" rather than a module-relative path -->
+	<!-- nocache: set to true so that client web browser always renders 
+	     latest dynamic data from server -->
+
+
+  <!-- ========== Message Resources Definitions =========================== -->
+
+  <message-resources
+    parameter="com.bureaueye.beacon.ApplicationResources"/>
+
+  <message-resources
+    parameter="com.bureaueye.beacon.AlternateApplicationResources"
+    key="alternate"/>
+
+  <message-resources
+    parameter="com.bureaueye.beacon.SystemResources"
+    key="systemResources"/>
+
+  <message-resources
+    parameter="com.bureaueye.beacon.LicenseResources"
+    key="licenseResources"/>
+        
+  <!-- ========== Plug Ins Configuration ================================== -->
+
+  <plug-in className="org.apache.struts.plugins.ModuleConfigVerifier"/>
+
+
+  <plug-in className="org.apache.struts.validator.ValidatorPlugIn">
+    <set-property
+        property="pathnames"
+        value="/org/apache/struts/validator/validator-rules.xml,
+               /WEB-INF/validation.xml"/>
+  </plug-in>
+
+<!--
+  <plug-in className="org.apache.struts.validator.ValidatorPlugIn">
+    <set-property property="pathnames"
+                     value="/WEB-INF/validator-rules.xml,
+                            /WEB-INF/validation.xml"/>
+  </plug-in>
+-->  
+
+   <plug-in className="com.bureaueye.hibernate.plugin.HibernateCluster1Plugin">
+      <set-property property="path" value="/hibernate.cfg.xml"/>    
+   </plug-in>
+   
+   <plug-in className="com.bureaueye.hibernate.plugin.HibernateCluster2Plugin">
+      <set-property property="path" value="/hibernate.cfg.cluster2.xml"/>     
+   </plug-in>
+
+   <plug-in className="com.bureaueye.hibernate.plugin.HibernateCluster3Plugin">
+      <set-property property="path" value="/hibernate.cfg.cluster3.xml"/>     
+   </plug-in>
+      
+   
+</struts-config>

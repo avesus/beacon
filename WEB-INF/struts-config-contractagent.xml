@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "file:///C:/BUREAUEYE/xml/struts-config_1_3.dtd">
+<struts-config>
+
+  <display-name>contractagent</display-name>
+  <description>This is the Struts configuration file for the contract agent</description>
+  
+  <form-beans>
+    <form-bean name="ContractagentForm" type="com.bureaueye.genesys.form.contract.ContractagentForm"/>
+    <form-bean name="ListContractagentForm" type="com.bureaueye.beacon.form.ListForm"/>
+  </form-beans>
+  
+  <global-forwards>
+    <forward name="Contractagent" path="/pages/contract/Contractagent.jsp"/>
+  </global-forwards>
+  
+  <action-mappings>
+  
+    <action path="/EditContractagent" type="com.bureaueye.genesys.action.contract.EditContractagentAction" name="ContractagentForm" scope="request" validate="false">
+      <forward name="failure" path="/pages/contract/ListContractagent.jsp"/>
+      <forward name="success" path="/pages/contract/Contractagent.jsp"/>
+    </action>
+    
+    <action path="/SaveContractagent" type="com.bureaueye.genesys.action.contract.SaveContractagentAction" name="ContractagentForm" scope="request" cancellable="true" input="Contractagent">
+      <forward name="success" path="/ListContractagent.do"/>
+    </action>
+    
+    <action path="/ListContractagent" type="com.bureaueye.genesys.action.contract.ListContractagentAction" name="ListContractagentForm" scope="session" validate="false" parameter="ListContractForm">
+      <forward name="success" path="/pages/contract/ListContractagent.jsp"/>
+    </action>
+    
+  </action-mappings>
+  
+</struts-config>

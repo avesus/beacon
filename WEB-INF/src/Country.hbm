@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.bureaueye.beacon.model.standard">
+	<class
+		name="Country"
+		table="country"
+	>
+<meta attribute="sync-DAO">true</meta>	
+		<id
+			name="Countrykey"
+			type="string"
+			column="countrykey"
+		>
+			<generator class="assigned"/>
+		</id>
+
+		<property
+			name="Country"
+			column="Country"
+			type="string"
+			not-null="false"
+			length="50"
+		/>
+
+
+	</class>
+	  <query name="findCountrysTotalResults">select count(*) from Country country where country.Country LIKE :country</query>
+	
+</hibernate-mapping>

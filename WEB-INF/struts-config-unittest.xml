@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "file:///C:/BUREAUEYE/xml/struts-config_1_3.dtd">
+<struts-config>
+  <display-name>unittest</display-name>
+  <description>This is the Struts configuration file for the unit test</description>
+  <form-beans>
+    <form-bean name="UnittestForm" type="com.bureaueye.beacon.form.standard.UnittestForm"/>
+    <form-bean name="ListUnittestForm" type="com.bureaueye.beacon.form.ListForm"/>
+  </form-beans>
+  <global-forwards>
+    <forward name="Unittest" path="/pages/standard/Unittest.jsp"/>
+  </global-forwards>
+  <action-mappings>
+    <action path="/EditUnittest" type="com.bureaueye.beacon.action.standard.EditUnittestAction" name="UnittestForm" scope="session" validate="false">
+      <forward name="failure" path="/pages/standard/ListUnittest.jsp"/>
+      <forward name="success" path="/pages/standard/Unittest.jsp"/>
+    </action>
+    <action path="/SaveUnittest" type="com.bureaueye.beacon.action.standard.SaveUnittestAction" name="UnittestForm" scope="session" cancellable="true" input="Unittest">
+      <forward name="success" path="/ListUnittest.do"/>
+    </action>
+    <action path="/ListUnittest" type="com.bureaueye.beacon.action.standard.ListUnittestAction" name="ListUnittestForm" scope="session" validate="false" parameter="ListUnitForm">
+      <forward name="success" path="/pages/standard/ListUnittest.jsp"/>
+    </action>
+    <action path="/ReportUnittest" type="com.bureaueye.beacon.action.report.ReportUnittestAction" name="ListForm" scope="request" validate="false">
+          <forward name="success" path="/pages/report/ReportUnittest.jsp"/>
+          <forward name="failure" path="/pages/report/ReportUnittest.jsp"/>
+    </action>     
+  </action-mappings>
+</struts-config>

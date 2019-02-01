@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "file:///C:/BUREAUEYE/xml/struts-config_1_3.dtd">
+<struts-config>
+
+  <display-name>Agent Module</display-name>
+  <description>This is the Struts configuration file for the Agent module.</description>
+  
+  <form-beans>
+    <form-bean name="AgentjobForm" type="com.bureaueye.beacon.form.agent.AgentjobForm"/>  
+    <form-bean name="AgentJobmovForm" type="com.bureaueye.beacon.form.agent.AgentJobmovForm"/>      
+  </form-beans>
+  
+  <global-forwards> 
+    <forward name="AgentJobmov" path="/pages/agent/AgentJobmov.jsp"/>   
+  </global-forwards>
+  
+  <action-mappings>
+ 
+    <!-- Display pages only -->
+	<action path="/Agentjob2" forward="/pages/agent/Agentjob2.jsp"/>
+	<action path="/Agentjob3" forward="/pages/agent/Agentjob3.jsp"/>
+	<action path="/Agentjob4" forward="/pages/agent/Agentjob4.jsp"/>
+	<action path="/Agentjob5" forward="/pages/agent/Agentjob5.jsp"/>		                  
+	<action path="/Agentjob6" forward="/pages/agent/Agentjob6.jsp"/>
+			                  
+    <action path="/EditAgentjob1" type="com.bureaueye.beacon.action.agent.EditAgentjob1Action" name="AgentjobForm" scope="session" validate="false">
+      <forward name="success" path="/pages/agent/Agentjob1.jsp"/>
+    </action>  
+    <action path="/EditAgentjob2" type="com.bureaueye.beacon.action.agent.EditAgentjob2Action" name="AgentjobForm" scope="session" cancellable="true">
+      <forward name="failure" path="/pages/agent/Agentjob1.jsp"/>
+      <forward name="success" path="/pages/agent/Agentjob2.jsp"/>
+    </action>  
+    <action path="/EditAgentjob3" type="com.bureaueye.beacon.action.agent.EditAgentjob3Action" name="AgentjobForm" scope="session" cancellable="true">
+      <forward name="failure" path="/pages/agent/Agentjob2.jsp"/>
+      <forward name="success" path="/pages/agent/Agentjob3.jsp"/>
+    </action> 
+    <action path="/EditAgentjob4" type="com.bureaueye.beacon.action.agent.EditAgentjob4Action" name="AgentjobForm" scope="session" cancellable="true">
+      <forward name="failure" path="/pages/agent/Agentjob3.jsp"/>
+      <forward name="success" path="/pages/agent/Agentjob4.jsp"/>
+    </action> 
+    <action path="/EditAgentjob5" type="com.bureaueye.beacon.action.agent.EditAgentjob5Action" name="AgentjobForm" scope="session" cancellable="true">
+      <forward name="failure" path="/pages/agent/Agentjob4.jsp"/>
+      <forward name="success" path="/pages/agent/Agentjob5.jsp"/>
+    </action> 
+    <action path="/EditAgentjob6" type="com.bureaueye.beacon.action.agent.EditAgentjob6Action" name="AgentjobForm" scope="session" cancellable="true">
+      <forward name="failure" path="/pages/agent/Agentjob5.jsp"/>
+      <forward name="success" path="/pages/agent/Agentjob6.jsp"/>
+    </action> 
+        
+    <action path="/EditAgentJobmov" type="com.bureaueye.beacon.action.agent.EditAgentJobmovAction" name="AgentJobmovForm" scope="request" validate="false">
+      <forward name="failure" path="/pages/agent/Agentjob5.jsp"/>
+      <forward name="success" path="/pages/agent/AgentJobmov.jsp"/>
+    </action>
+    <action path="/SaveAgentJobmov" type="com.bureaueye.beacon.action.agent.SaveAgentJobmovAction" name="AgentJobmovForm" scope="request" cancellable="true" input="AgentJobmov">
+      <forward name="failure" path="/pages/agent/AgentJobmov.jsp"/>
+      <forward name="success" path="/pages/agent/Agentjob5.jsp"/>
+    </action>
+        
+  </action-mappings>
+  
+</struts-config>

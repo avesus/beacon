@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "file:///C:/BUREAUEYE/xml/struts-config_1_3.dtd">
+<struts-config>
+	<display-name>Vendor Tariff Detail</display-name>
+	<description>This is the Struts configuration file for the vendor tariff
+		detail</description>
+	<form-beans>
+		<form-bean name="ListVendortariffdtlForm"
+			type="com.bureaueye.beacon.form.standard.ListVendortariffdtlForm"/>
+	</form-beans>
+	<action-mappings>
+		<action 
+			path="/ListVendortariffdtl"
+			type="com.bureaueye.beacon.action.standard.ListVendortariffdtlAction"
+			name="ListVendortariffdtlForm" 
+			scope="request" 
+			validate="false"
+			cancellable="true"
+			>
+			<forward name="list" path="/pages/standard/ListVendortariffdtl.jsp"/>
+			<forward name="success" path="/ListVendortariffdtl.do?action=List"/>
+			<forward name="failure"
+				path="/pages/standard/ListVendortariffhdr.jsp"/>
+		</action>
+	</action-mappings>
+</struts-config>

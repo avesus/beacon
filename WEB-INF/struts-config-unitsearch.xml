@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "file:///C:/BUREAUEYE/xml/struts-config_1_3.dtd">
+<struts-config>
+  <display-name>unit search</display-name>
+  <description>This is the Struts configuration file for the unit search</description>
+  <form-beans>
+    <form-bean name="ListUnitSearchForm" type="com.bureaueye.beacon.form.ListForm"/>
+  </form-beans>
+  <action-mappings>
+    <action path="/EditUnitSearch" type="com.bureaueye.beacon.action.standard.EditUnitSearchAction" name="ListUnitSearchForm" scope="session" validate="false">
+       <forward name="success" path="/pages/standard/UnitSearch.jsp"/>
+     </action>
+    <action path="/ListUnitSearch" type="com.bureaueye.beacon.action.standard.ListUnitSearchAction" name="ListUnitSearchForm" scope="session" validate="false">
+      <forward name="success" path="/pages/standard/ListUnitSearch.jsp"/>
+    </action>
+  </action-mappings>
+</struts-config>

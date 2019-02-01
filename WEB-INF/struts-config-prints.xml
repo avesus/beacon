@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "file:///C:/BUREAUEYE/xml/struts-config_1_3.dtd">
+<struts-config>
+  <display-name>PRINTS</display-name>
+  <description>This is the Struts configuration file for the DOCUMENT PRINTS</description>
+  
+  <form-beans>
+    <form-bean name="PrinthdrForm" type="com.bureaueye.beacon.form.print.PrinthdrForm"/>
+  </form-beans>
+  
+
+  
+  <action-mappings>
+  
+    <action path="/EditHBL" type="com.bureaueye.beacon.action.order.print.EditHBLAction" name="PrinthdrForm" scope="session" validate="false">
+      <forward name="failure" path="/pages/order/ListOrderhdrMain.jsp"/>
+      <forward name="success" path="/pages/print/HBL.jsp"/>
+    </action>
+    <action path="/SaveHBL" type="com.bureaueye.beacon.action.order.print.SaveHBLAction" name="PrinthdrForm" scope="session" cancellable="true" input="Printhdr">
+      <forward name="success" path="/ListOrderhdr.do"/>
+    </action>  
+    
+    <action path="/EditBookingnotification" type="com.bureaueye.beacon.action.order.print.EditBookingnotificationAction" name="PrinthdrForm" scope="session" validate="false">
+      <forward name="failure" path="/pages/order/ListOrderhdrMain.jsp"/>
+      <forward name="success" path="/pages/print/Bookingnotification.jsp"/>
+    </action>
+    <action path="/SaveBookingnotification" type="com.bureaueye.beacon.action.order.print.SaveBookingnotificationAction" name="PrinthdrForm" scope="session" cancellable="true" input="Printhdr">
+      <forward name="success" path="/ListOrderhdr.do"/>
+    </action> 
+
+    <action path="/EditArrivalnotice" type="com.bureaueye.beacon.action.order.print.EditArrivalnoticeAction" name="PrinthdrForm" scope="session" validate="false">
+      <forward name="failure" path="/pages/order/ListOrderhdrMain.jsp"/>
+      <forward name="success" path="/pages/print/Arrivalnotice.jsp"/>
+    </action>
+    <action path="/SaveArrivalnotice" type="com.bureaueye.beacon.action.order.print.SaveArrivalnoticeAction" name="PrinthdrForm" scope="session" cancellable="true" input="Printhdr">
+      <forward name="success" path="/ListOrderhdr.do"/>
+    </action>
+
+    <action path="/EditQuotationletter" type="com.bureaueye.beacon.action.quotation.print.EditQuotationletterAction" name="PrinthdrForm" scope="session" validate="false">
+      <forward name="failure" path="/pages/quotation/ListQuohdr.jsp"/>
+      <forward name="success" path="/pages/print/Quotationletter.jsp"/>
+    </action>
+    <action path="/SaveQuotationletter" type="com.bureaueye.beacon.action.quotation.print.SaveQuotationletterAction" name="PrinthdrForm" scope="session" cancellable="true" input="Printhdr">
+      <forward name="success" path="/ListQuohdr.do"/>
+    </action> 
+
+
+    <action path="/EditJobmovBookingnotification" type="com.bureaueye.beacon.action.job.print.EditJobmovBookingnotificationAction" name="PrinthdrForm" scope="session" validate="false">
+      <forward name="failure" path="/pages/job/ListJobmov.jsp"/>
+      <forward name="success" path="/pages/job/print/Bookingnotification.jsp"/>
+    </action>
+    <action path="/SaveJobmovBookingnotification" type="com.bureaueye.beacon.action.job.print.SaveJobmovBookingnotificationAction" name="PrinthdrForm" scope="session" cancellable="true" input="Printhdr">
+      <forward name="success" path="/ListJobmov.do"/>
+    </action> 
+
+    <action path="/EditJobmovArrivalnotice" type="com.bureaueye.beacon.action.job.print.EditJobmovArrivalnoticeAction" name="PrinthdrForm" scope="session" validate="false">
+      <forward name="failure" path="/pages/job/ListJobmov.jsp"/>
+      <forward name="success" path="/pages/job/print/Arrivalnotice.jsp"/>
+    </action>
+    <action path="/SaveJobmovArrivalnotice" type="com.bureaueye.beacon.action.job.print.SaveJobmovArrivalnoticeAction" name="PrinthdrForm" scope="session" cancellable="true" input="Printhdr">
+      <forward name="success" path="/ListJobmov.do"/>
+    </action>
+    
+
+
+ 
+    
+                         
+  </action-mappings>
+  
+</struts-config>

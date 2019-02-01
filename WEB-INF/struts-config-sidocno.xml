@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "file:///C:/BUREAUEYE/xml/struts-config_1_3.dtd">
+<struts-config>
+  <display-name>docno</display-name>
+  <description>This is the Struts configuration file for the docno.</description>
+  <form-beans>
+    <form-bean name="SidocnoForm" type="com.bureaueye.beacon.form.salesinvoice.SidocnoForm"/>
+    <form-bean name="ListSidocnoForm" type="com.bureaueye.beacon.form.ListForm"/>    
+  </form-beans>
+  <global-forwards>
+    <forward name="Sidocno" path="/pages/salesinvoice/Sidocno.jsp"/>    
+  </global-forwards>
+  <action-mappings>
+
+
+    <action path="/EditSidocno" type="com.bureaueye.beacon.action.salesinvoice.EditSidocnoAction" name="SidocnoForm" scope="request" validate="false">
+      <forward name="failure" path="/pages/salesinvoice/ListSidocno.jsp"/>
+      <forward name="success" path="/pages/salesinvoice/Sidocno.jsp"/>
+    </action>
+    <action path="/SaveSidocno" type="com.bureaueye.beacon.action.salesinvoice.SaveSidocnoAction" name="SidocnoForm" scope="request"  cancellable="true" input="Sidocno">
+      <forward name="success" path="/ListSidocno.do"/>
+    </action>
+    <action path="/ListSidocno" type="com.bureaueye.beacon.action.salesinvoice.ListSidocnoAction" name="ListSidocnoForm" scope="session" validate="false">
+      <forward name="success" path="/pages/salesinvoice/ListSidocno.jsp"/>
+    </action>
+    
+            
+  </action-mappings>
+</struts-config>

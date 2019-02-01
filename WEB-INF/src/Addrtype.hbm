@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"hibernate-mapping-3.0.dtd" > 
+
+<hibernate-mapping package="com.bureaueye.beacon.model.standard">
+	<class name="Addrtype" table="addrtype">
+<meta attribute="sync-DAO">true</meta>	
+		<id
+			column="typekey"
+			name="Typekey"
+			type="string"
+		>
+<generator class="assigned"/>
+		</id>
+	</class>	
+  <query name="findAddrtypesByTypekey"><![CDATA[from Addrtype addrtype where addrtype.Typekey = :id]]></query>	
+  <query name="findAddrtypesTotalResults"><![CDATA[select count(*) from Addrtype addrtype where addrtype.Typekey LIKE :id]]></query>  
+	
+</hibernate-mapping>

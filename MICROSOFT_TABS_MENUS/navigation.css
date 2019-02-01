@@ -1,0 +1,51 @@
+body{font-family:Segoe UI, Helvetica, Arial, sans-serif;font-size:9.75pt;}input,textarea,select{font-family:Segoe UI, Helvetica, Arial, sans-serif;}#primaryNav{width:15.27em;}#mainFrame,#vertLineContainer,#secondaryNav{left:15.27em;}.voiceMailBottomNote{font-size:85%;}
+
+
+.MainNavigationSprite { overflow:hidden; background-image:url('mainnavigationsprite.png'); vertical-align:middle; }
+
+.secNavBtnSelected .Oof { background-position:-96px -147px; width: 32px; height: 32px; }
+.Oof { background-position:0px -211px; width: 32px; height: 32px; }
+.secNavBtnLnkContent:Hover .Oof { background-position:-32px -211px; width: 32px; height: 32px; }
+.secNavBtnSelected .Oof { background-position:-96px -147px; width: 32px; height: 32px; }
+
+.InboxRules { background-position:-96px -403px; width: 32px; height: 32px; }
+.secNavBtnLnkContent:Hover .InboxRules { background-position:-128px -403px; width: 32px; height: 32px; }
+.secNavBtnSelected .InboxRules { background-position:-64px -435px; width: 32px; height: 32px; }
+
+.MessageTracking32 { background-position:-288px -179px; width: 32px; height: 32px; }
+.secNavBtnLnkContent:Hover .MessageTracking32 { background-position:-96px -211px; width: 32px; height: 32px; }
+.secNavBtnSelected .MessageTracking32 { background-position:-128px -211px; width: 32px; height: 32px; }
+
+
+
+
+.HorizontalSprite { background-image:url('horizontalsprite.png'); }
+.SecNavBg { background-position:0px 0px; height: 80px; }
+
+
+
+
+#secondaryNav{position:absolute;top:72px;right:11px;height:90px;min-width:37.5em;z-index:250;background:transparent;}
+.secNavOuterPane{position:absolute;top:5px;left:10px;right:0px;height:85px;overflow:hidden;overflow-x:auto;}
+
+
+#secNavPane{height:78px;min-width:17.8571em;}
+.secNavBtn{float:left;margin:0px;height:66px;margin:0px;padding:5px 6px 2px;border:1px solid transparent;}
+.secNavBtnLnk{display:block;text-decoration:none;color:#555555;text-align:center;font-size:92.3%;}
+.secNavBtnSelected{float:left;margin:0px;height:66px!important;padding:5px 6px 2px;border:1px solid #e8e8e8;background-color:#f2f2f2;font-weight:bold;}
+
+.secNavBtnSelected > .secNavBtnSpan > .secNavBtnLnk,.secNavBtnLnk:hover{color:#000000;}
+.secNavBtnSpan{width:100%;height:63px;padding-top:6px;padding-bottom:4px;overflow:hidden;}
+.secNavBtn,.secNavBtnSelected,.secNavBtn .secNavBtnLnk,.secNavBtnSelected .secNavBtnLnk{cursor:pointer;}
+.secNavBtnLnkContent{clear:left;text-align:center;display:block;min-width:4.82em;max-width:11.5em;overflow:hidden;word-wrap:break-word;}
+.secNavBtnLnkIcon{border:none;position:relative;vertical-align:top;margin-bottom:2px;}
+
+
+
+#divHeaderDivideLeft,#secNavDividerLeft{background:transparent url("hdrdiv-l.png") no-repeat;width:400px;max-width:50%;left:0px;}
+#divHeaderDivideRight,#secNavDividerRight{background:transparent url("hdrdiv-r.png") no-repeat;width:400px;max-width:49.95%;background-position:right top;right:0px;}
+#divHeaderDivideTile,#secNavDividerTitle{background:transparent url("hdrdiv-t.png") repeat-x;left:400px;right:400px;}
+#secNavDividerLeft,#secNavDividerRight,#secNavDividerTitle{position:absolute;top:78px;height:7px;overflow:hidden;}
+
+
+

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "file:///C:/BUREAUEYE/xml/struts-config_1_3.dtd">
+<struts-config>
+  <display-name>billing run</display-name>
+  <description>This is the Struts configuration file for the Billing Run.</description>
+  
+  <form-beans>
+    <form-bean name="ListBillingrunForm" type="com.bureaueye.beacon.form.ListForm"/>   
+  </form-beans>
+  
+  <global-forwards>
+    <forward name="Billingrun" path="/pages/finance/Billingrun.jsp"/>
+  </global-forwards>
+  
+  <action-mappings> 
+ 
+    <action path="/EditBillingrun" type="com.bureaueye.genesys.action.finance.EditBillingrunAction" name="ListBillingrunForm" scope="session" validate="false">
+      <forward name="failure" path="/pages/finance/Billingrun.jsp"/>
+      <forward name="success" path="/ListBillingrun.do"/>
+    </action>         
+
+    <action path="/ListBillingrun" type="com.bureaueye.genesys.action.finance.ListBillingrunAction" name="ListBillingrunForm" scope="session" validate="false">
+      <forward name="success" path="/pages/finance/Billingrun.jsp"/>
+    </action>  
+        
+  </action-mappings>
+  
+</struts-config>

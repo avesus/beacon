@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "file:///C:/BUREAUEYE/xml/struts-config_1_3.dtd">
+<struts-config>
+	<display-name>vessel</display-name>
+	<description>This is the Struts configuration file for the vessel</description>
+	<form-beans>
+		<form-bean name="VesselForm" type="com.bureaueye.beacon.form.standard.VesselForm"/>
+		<form-bean name="ListVesselForm" type="com.bureaueye.beacon.form.ListForm"/>
+	</form-beans>
+	<global-forwards>
+		<forward name="Vessel" path="/pages/standard/Vessel.jsp"/>
+	</global-forwards>
+	<action-mappings>
+		<action path="/EditVessel" type="com.bureaueye.beacon.action.standard.EditVesselAction" name="VesselForm" scope="request" validate="false">
+			<forward name="failure" path="/pages/standard/ListVessel.jsp"/>
+			<forward name="success" path="/pages/standard/Vessel.jsp"/>
+		</action>
+		<action path="/SaveVessel" type="com.bureaueye.beacon.action.standard.SaveVesselAction" name="VesselForm" scope="request" cancellable="true" input="Vessel">
+			<forward name="success" path="/ListVessel.do"/>
+		</action>
+		<action path="/ListVessel" type="com.bureaueye.beacon.action.standard.ListVesselAction" name="ListVesselForm" scope="session" validate="false">
+			<forward name="success" path="/pages/standard/ListVessel.jsp"/>
+		</action>
+	</action-mappings>
+</struts-config>

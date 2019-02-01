@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "file:///C:/BUREAUEYE/xml/struts-config_1_3.dtd">
+<struts-config>
+  <display-name>ediinbound</display-name>
+  <description>This is the Struts configuration file for the ediinbound.</description>
+  <form-beans>
+    <form-bean name="EDIInboundForm" type="com.bureaueye.beacon.form.edi.EDIInboundForm"/>
+    <form-bean name="ListEDIInboundForm" type="com.bureaueye.beacon.form.ListForm"/>
+  </form-beans>
+  <global-forwards>
+    <forward name="EDIInbound" path="/pages/edi/EDIInbound.jsp"/>
+  </global-forwards>
+  <action-mappings>
+  
+    <action path="/EditEDIInbound" type="com.bureaueye.beacon.action.edi.EditEDIInboundAction" name="EDIInboundForm" scope="request" validate="false">
+      <forward name="failure" path="/pages/edi/ListEDIInbound.jsp"/>
+      <forward name="success" path="/pages/edi/EDIInbound.jsp"/>
+    </action>
+    <action path="/SaveEDIInbound" type="com.bureaueye.beacon.action.edi.SaveEDIInboundAction" name="EDIInboundForm" scope="request"  cancellable="true" input="EDIInbound">
+      <forward name="success" path="/ListEDIInbound.do"/>
+    </action>
+    <action path="/ListEDIInbound" type="com.bureaueye.beacon.action.edi.ListEDIInboundAction" name="ListEDIInboundForm" scope="session" validate="false">
+      <forward name="success" path="/pages/edi/ListEDIInbound.jsp"/>
+    </action>
+
+    <action path="/ReportEdifactIftmbf" type="com.bureaueye.beacon.action.edi.report.ReportEdifactIftmbfAction" name="EDIInboundForm" scope="request" validate="false">
+      <forward name="success" path="/pages/edi/ListEDIInbound.jsp"/>
+      <forward name="failure" path="/pages/edi/ListEDIInbound.jsp"/>
+    </action>
+    <action path="/ReportEdifactIftmbfV1" type="com.bureaueye.beacon.action.edi.report.ReportEdifactIftmbfActionV1" name="EDIInboundForm" scope="request" validate="false">
+      <forward name="success" path="/pages/edi/ListEDIInbound.jsp"/>
+      <forward name="failure" path="/pages/edi/ListEDIInbound.jsp"/>
+    </action>
+    <action path="/ReportEdifactIftmin" type="com.bureaueye.beacon.action.edi.report.ReportEdifactIftminAction" name="EDIInboundForm" scope="request" validate="false">
+      <forward name="success" path="/pages/edi/ListEDIInbound.jsp"/>
+      <forward name="failure" path="/pages/edi/ListEDIInbound.jsp"/>
+    </action>
+    
+            
+  </action-mappings>
+</struts-config>

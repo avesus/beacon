@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "file:///C:/BUREAUEYE/xml/struts-config_1_3.dtd">
+<struts-config>
+  <display-name>onhire</display-name>
+  <description>This is the Struts configuration file for the Onhire Header.</description>
+  
+  <form-beans>
+    <form-bean name="ListOnhireForm" type="com.bureaueye.beacon.form.ListForm"/>
+    <form-bean name="OnhireForm" type="com.bureaueye.genesys.form.onhire.OnhireForm"/>     
+  </form-beans>
+  
+  <global-forwards>
+    <forward name="Onhire" path="/pages/onhire/Onhire.jsp"/>
+  </global-forwards>
+  
+  <action-mappings> 
+  
+    <action path="/EditOnhire" type="com.bureaueye.genesys.action.onhire.EditOnhireAction" name="OnhireForm" scope="request" validate="false">
+      <forward name="failure" path="/pages/onhire/ListOnhireMain.jsp"/>
+      <forward name="success" path="/pages/onhire/Onhire.jsp"/>
+    </action>
+ 
+    <action path="/SaveOnhire" type="com.bureaueye.genesys.action.onhire.SaveOnhireAction" name="OnhireForm" scope="request" cancellable="true" input="Onhire">
+      <forward name="success" path="/ListOnhire.do"/>
+    </action>  
+
+    <action path="/ListOnhire" type="com.bureaueye.genesys.action.onhire.ListOnhireAction" name="ListOnhireForm" scope="session" validate="false">
+      <forward name="success" path="/pages/onhire/ListOnhireMain.jsp"/>
+    </action>           
+    
+  </action-mappings>
+  
+</struts-config>

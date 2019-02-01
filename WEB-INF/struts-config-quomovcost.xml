@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="ISO-8859-1"?> 
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "file:///C:/BUREAUEYE/xml/struts-config_1_3.dtd">
+<struts-config>
+  <display-name>quomovcost</display-name>
+  <description>This is the Struts configuration file for the quotation movement costs</description>
+  <form-beans>
+    <form-bean name="QuomovcostForm" type="com.bureaueye.beacon.form.quotation.QuomovcostForm"/>
+    <form-bean name="ListQuomovcostForm" type="com.bureaueye.beacon.form.ListForm"/>
+  </form-beans>
+  <global-forwards>
+    <forward name="Quomovcost" path="/pages/quotation/Quomovcost.jsp"/>
+  </global-forwards>
+  <action-mappings>
+    <action path="/EditQuomovcost" type="com.bureaueye.beacon.action.quotation.EditQuomovcostAction" name="QuomovcostForm" scope="session" validate="false" parameter="Quomovcost">
+      <forward name="failure" path="/pages/quotation/ListQuomovcost.jsp"/>
+      <forward name="success" path="/pages/quotation/Quomovcost.jsp"/>
+    </action>
+    <action path="/SaveQuomovcost" type="com.bureaueye.beacon.action.quotation.SaveQuomovcostAction" name="QuomovcostForm" scope="session" cancellable="true" input="Quomovcost">
+      <forward name="success" path="/ListQuomovcost.do"/>
+    </action>
+    <action path="/ListQuomovcost" type="com.bureaueye.beacon.action.quotation.ListQuomovcostAction" name="ListQuomovcostForm" scope="session" validate="false" parameter="ListQuohdrForm,ListQuomovForm">
+      <forward name="success" path="/pages/quotation/ListQuomovcost.jsp"/>
+    </action>   
+  </action-mappings>
+</struts-config>

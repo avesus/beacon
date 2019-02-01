@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.bureaueye.beacon.model.standard">
+	<class name="Customertoport" table="customertoport">
+<meta attribute="sync-DAO">true</meta>	
+		<id
+			column="CUSTOMERTOPORT_ID"
+			name="CustomertoportId"
+			type="integer"
+		>
+			<generator class="native" />
+		</id>
+		<property
+			column="DemRate3"
+			length="19"
+			name="DemRate3"
+			not-null="false"
+			type="big_decimal"
+		 />
+		<property
+			column="DemRate1"
+			length="19"
+			name="DemRate1"
+			not-null="false"
+			type="big_decimal"
+		 />
+		<property
+			column="DemPeriod2"
+			length="11"
+			name="DemPeriod2"
+			not-null="false"
+			type="integer"
+		 />
+		<property
+			column="DemPeriod1"
+			length="11"
+			name="DemPeriod1"
+			not-null="false"
+			type="integer"
+		 />
+		<property
+			column="tokey"
+			length="10"
+			name="Tokey"
+			not-null="true"
+			type="string"
+		 />
+		<property
+			column="DemRate2"
+			length="19"
+			name="DemRate2"
+			not-null="false"
+			type="big_decimal"
+		 />
+		<property
+			column="FreeDays"
+			length="11"
+			name="FreeDays"
+			not-null="false"
+			type="integer"
+		 />
+		<property
+			column="customeraddrkey"
+			length="10"
+			name="Customeraddrkey"
+			not-null="true"
+			type="string"
+		 />
+	</class>
+	
+	  <query name="findCustomertoportTotalResults">select count(*) from Customertoport customertoport where customertoport.Customeraddrkey LIKE :customeraddrkey</query>
+	
+</hibernate-mapping>

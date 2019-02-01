@@ -1,0 +1,169 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.bureaueye.beacon.model.standard">
+	<class name="User" table="userx">
+<meta attribute="sync-DAO">true</meta>	
+		<id
+			column="userid"
+			name="Userid"
+			type="string"
+		>
+<generator class="assigned"/>
+		</id>
+		<property
+			column="password"
+			length="10"
+			name="Password"
+			not-null="false"
+			type="string"
+		 />
+		<property
+			column="securitylevel"
+			length="20"
+			name="Securitylevel"
+			not-null="false"
+			type="string"
+		 />
+		<property
+			column="mailhost"
+			length="20"
+			name="Mailhost"
+			not-null="false"
+			type="string"
+		 />		 
+		<property
+			column="email"
+			length="40"
+			name="Email"
+			not-null="false"
+			type="string"
+		 />
+		<property
+			column="phone"
+			length="60"
+			name="Phone"
+			not-null="false"
+			type="string"
+		 />
+		<property
+			column="fax"
+			length="60"
+			name="Fax"
+			not-null="false"
+			type="string"
+		 />		 		 
+		<property
+			column="companykey"
+			length="10"
+			name="Companykey"
+			not-null="false"
+			type="string"
+		 />
+		<property
+			column="activitykey"
+			length="10"
+			name="Activitykey"
+			not-null="false"
+			type="string"
+		 />
+		<property
+			column="departmentkey"
+			length="10"
+			name="Departmentkey"
+			not-null="false"
+			type="string"
+		 />
+		<property
+			column="actvid"
+			length="10"
+			name="Actvid"
+			not-null="false"
+			type="string"
+		 />
+		<property
+			column="deptid"
+			length="10"
+			name="Deptid"
+			not-null="false"
+			type="string"
+		 />
+		<property
+			column="compid"
+			length="10"
+			name="Compid"
+			not-null="false"
+			type="string"
+		 />		 		 
+		<property
+			column="pagesize"
+			length="10"
+			name="Pagesize"
+			not-null="false"
+			type="string"
+		 />
+		<property
+			column="name"
+			length="20"
+			name="Name"
+			not-null="false"
+			type="string"
+		 />
+		<property
+			column="language"
+			length="10"
+			name="Language"
+			not-null="false"
+			type="string"
+		 />
+		<property
+			column="country"
+			length="10"
+			name="Country"
+			not-null="false"
+			type="string"
+		 />
+		<property
+			column="locale"
+			length="10"
+			name="Locale"
+			not-null="false"
+			type="string"
+		 />
+		<property
+			column="usergroupid"
+			length="10"
+			name="Usergroupid"
+			not-null="false"
+			type="string"
+		 />
+
+		<property
+			column="salesinvoiceprintclass"
+			length="200"
+			name="Salesinvoiceprintclass"
+			not-null="false"
+			type="string"
+		 />
+		 
+		<property name="Typekeylist" column="typekeylist" type="string" not-null="false" length="250"/>
+		<property name="Locationtypelist" column="locationtypelist" type="string" not-null="false" length="250"/>
+
+
+		<property name="Companykeylist" column="companykeylist" type="string" not-null="false" length="250"/>
+		<property name="Departmentkeylist" column="departmentkeylist" type="string" not-null="false" length="250"/>
+		<property name="Activitykeylist" column="activitykeylist" type="string" not-null="false" length="250"/>
+		
+						
+	</class>
+	
+		<query name="findUsersTotalResults">
+		<![CDATA[
+			select count(*) from User user where 
+				user.Userid like :id1
+		]]>
+	</query>
+		
+</hibernate-mapping>

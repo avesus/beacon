@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "file:///C:/BUREAUEYE/xml/struts-config_1_3.dtd">
+<struts-config>
+  <display-name>financedtl</display-name>
+  <description>This is the Struts configuration file for the sales invoice detail</description>
+  <form-beans>
+    <form-bean name="FinancedtlForm" type="com.bureaueye.genesys.form.finance.FinancedtlForm"/>
+    <form-bean name="ListFinancedtlForm" type="com.bureaueye.beacon.form.ListForm"/>
+  </form-beans>
+  <global-forwards>
+    <forward name="Financedtl" path="/pages/finance/Financedtl.jsp"/>
+  </global-forwards>
+  <action-mappings>
+    <action path="/EditFinancedtl" type="com.bureaueye.genesys.action.finance.EditFinancedtlAction" name="FinancedtlForm" scope="request" validate="false">
+      <forward name="failure" path="/pages/finance/ListFinancedtl.jsp"/>
+      <forward name="success" path="/pages/finance/Financedtl.jsp"/>
+    </action>
+    <action path="/SaveFinancedtl" type="com.bureaueye.genesys.action.finance.SaveFinancedtlAction" name="FinancedtlForm" scope="request" cancellable="true" input="Financedtl">
+      <forward name="success" path="/ListFinancedtl.do"/>
+    </action>
+    <action path="/ListFinancedtl" type="com.bureaueye.genesys.action.finance.ListFinancedtlAction" name="ListFinancedtlForm" scope="session" validate="false" parameter="ListFinancehdrForm">
+      <forward name="success" path="/pages/finance/ListFinancedtl.jsp"/>
+    </action>
+  </action-mappings>
+</struts-config>

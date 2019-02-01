@@ -1,0 +1,77 @@
+ 
+
+.label1 { font-family: Arial, Verdana, Helvetica; font-size: 13px; font-weight: bold; color: #007DDF; line-height: 100%; padding:5px 5px 5px 5px; background:#F1F1F1; border: solid #CECFD6 1px ;}
+.label2 { font-family: Arial, Verdana, Helvetica; font-size: 12px; font-weight: normal; color: black; line-height: 100%; padding:0px 0px 0px 0px; background:ffffff; }
+.label3 { font-family: Arial, Verdana, Helvetica; font-size: 12px; font-weight: normal; color: #5566D5; line-height: 100%; padding:0px 10px 0px 0px; background:#ffffff; }
+.label4 {font-family: Arial, Verdana, Helvetica; font-size: 11px;font-weight: normal; background:#FFFFFF; color: black; padding:0px 6px 0px 6px; }
+.label5 {font-family: Arial, Verdana, Helvetica; font-size: 10px;font-weight: normal;color: black;}
+.label6 { font-family: Arial, Verdana, Helvetica; font-size: 12px; font-weight: normal; color: red; line-height: 100%; padding:0px 0px 0px 0px; background:ffffff; }
+.label7 { font-family: Arial, Verdana, Helvetica; font-size: 12px; font-weight: normal; color: blue; line-height: 100%; padding:0px 0px 0px 0px; background:ffffff; }
+.label8 { font-family: Arial, Verdana, Helvetica; font-size: 11px; font-weight: normal; color: #666; line-height: 100%; padding:0px 0px 0px 0px; background:ffffff; }
+
+.label9 { font-family: Arial, Verdana, Helvetica; font-size: 9px; font-weight: normal; color: black; line-height: 100%; padding:0px 0px 0px 0px; background:ffffff; }
+.label10 { font-family: Arial, Verdana, Helvetica; font-size: 12px; font-weight: normal; color: gray; line-height: 100%; padding:0px 0px 0px 0px; background:ffffff; }
+.label11 { font-family: Arial, Verdana, Helvetica; font-size: 12px; font-weight: normal; color:#0066cc; line-height: 100%; padding:0px 0px 0px 0px; }
+
+.label12 { font-family: Arial, Verdana, Helvetica; font-size: 13px; font-weight: normal; color: #004477; line-height: 100%; padding:0px 0px 0px 0px; background:ffffff; }
+
+.label13 { font-family: Arial, Verdana, Helvetica; font-size: 13px; font-weight: bold; color: #007DDF; }
+.label14 { font-family: Arial, Verdana, Helvetica; font-size: 10px; font-weight: normal; color:#0066cc; line-height: 100%; padding:0px 0px 0px 0px; }
+
+.label15 { font-family: Arial, Verdana, Helvetica; font-size: 12px; font-weight: normal; color: #090; line-height: 100%; padding:0px 0px 0px 0px; background:ffffff; }
+
+
+.header1 { font-family: Arial, Verdana, Helvetica; font-size: 16px; font-weight: normal; color: black; line-height: 200%; padding:0px 0px 0px 5px; background:#E3E6E8; }
+.header2 { font-family: Arial, Verdana, Helvetica; font-size: 14px; font-weight: normal; color: black; line-height: 150%; padding:0px 0px 0px 5px; background:#F1F1F1; }
+.header3 { font-family: Arial, Verdana, Helvetica; font-size: 13px; font-weight: normal; color: black; line-height: 150%; padding:0px 5px 0px 0px; background:#F1F1F1; }
+.header4 { font-family: Arial, Verdana, Helvetica; font-size: 14px; font-weight: normal; color: #004477; line-height: 150%; padding:0px 5px 0px 0px; background:#F1F1F1; }
+
+
+
+.column-header1 { font-family: Arial, Verdana, Helvetica; font-size: 12px; font-weight: normal; color: #007DDF; line-height: 200%; padding:0px 5px 0px 5px; background:#ffffff; border-top: solid #C6C6C6 1px; border-bottom: solid #C6C6C6 1px;}
+.column-header2 { font-family: Arial, Verdana, Helvetica; font-size: 12px; font-weight: normal; color: #007DDF; line-height: 200%; padding:0px 5px 0px 5px; background:#ffffff; border-top: solid #C6C6C6 1px; border-bottom: solid #C6C6C6 1px; border-left: solid #C6C6C6 1px; }
+
+.column-header3 { font-family: Arial, Verdana, Helvetica; font-size: 12px; font-weight: normal; color: #007DDF; line-height: 200%; padding:0px 5px 0px 5px; background:#ffffff; border-bottom: solid #C6C6C6 1px;}
+.column-header4 { font-family: Arial, Verdana, Helvetica; font-size: 12px; font-weight: normal; color: #007DDF; line-height: 200%; padding:0px 5px 0px 5px; background:#ffffff; border-bottom: solid #C6C6C6 1px; border-left: solid #C6C6C6 1px; }
+
+
+
+.column-header5 { font-family: Arial, Verdana, Helvetica; font-size: 10px; font-weight: normal; color: #007DDF; line-height: 200%; padding:0px 5px 0px 5px; background:#ffffff; border-top: solid #C6C6C6 1px; border-bottom: solid #C6C6C6 1px;}
+.column-header6 { font-family: Arial, Verdana, Helvetica; font-size: 10px; font-weight: normal; color: #007DDF; line-height: 200%; padding:0px 5px 0px 5px; background:#ffffff; border-top: solid #C6C6C6 1px; border-bottom: solid #C6C6C6 1px; border-left: solid #C6C6C6 1px; }
+.column-header7 { font-family: Arial, Verdana, Helvetica; font-size: 10px; font-weight: normal; color: #007DDF; line-height: 200%; padding:0px 5px 0px 5px; background:#ffffff; border-bottom: solid #C6C6C6 1px;}
+
+
+
+
+
+.column-cell1 { font-family: Arial, Verdana, Helvetica; font-size: 12px; font-weight: normal; color: black; line-height: 200%; padding:0px 5px 0px 5px; background:#DBE1E7; border-bottom: solid #C6C6C6 1px;}
+.column-cell2 { font-family: Arial, Verdana, Helvetica; font-size: 12px; font-weight: normal; color: black; line-height: 200%; padding:0px 5px 0px 5px; background:#ffffff; border-bottom: solid #C6C6C6 1px;}
+.column-cell3 { font-family: Arial, Verdana, Helvetica; font-size: 12px; font-weight: normal; color: black; line-height: 200%; padding:0px 5px 0px 5px; background:#FAE2EE; border-bottom: solid #C6C6C6 1px;}
+.column-cell4 { font-family: Arial, Verdana, Helvetica; font-size: 11px; font-weight: normal; color: black; line-height: 200%; padding:0px 5px 0px 5px; background:#FAE2EE; border-bottom: solid #C6C6C6 1px;}
+.column-cell5 { font-family: Arial, Verdana, Helvetica; font-size: 12px; font-weight: normal; color: black; line-height: 200%; padding:0px 5px 0px 5px; background:#DBE1E7; border-bottom:#DBE1E7 1px solid;}
+.column-cell6 { font-family: Arial, Verdana, Helvetica; font-size: 12px; font-weight: normal; color: black; line-height: 200%; padding:0px 5px 0px 5px; background:#ffffff; border-bottom:transparent 1px solid;}
+
+
+.column-cell7 { font-family: Arial, Verdana, Helvetica; font-size: 12px; font-weight: normal; color: #0066cc; line-height: 200%; padding:0px 5px 0px 5px; background:#F1F1F1; border-bottom: solid #C6C6C6 1px;}
+.column-cell8 { font-family: Arial, Verdana, Helvetica; font-size: 12px; font-weight: normal; color: black; line-height: 200%; padding:0px 5px 0px 5px; background:#F1F1F1; border-bottom: solid #C6C6C6 1px;}
+
+.column-cell9 { font-family: Arial, Verdana, Helvetica; font-size: 10px; font-weight: normal; color: black; line-height: 200%; padding:0px 5px 0px 5px; background:#F5F3F4; border-bottom: solid #C6C6C6 1px;}
+.column-cell10 { font-family: Arial, Verdana, Helvetica; font-size: 10px; font-weight: normal; color: black; line-height: 200%; padding:0px 5px 0px 5px; background:#DBE1E7; border-bottom: solid #C6C6C6 1px;}
+
+
+.column-cell1Red { font-family: Arial, Verdana, Helvetica; font-size: 12px; font-weight: normal; color: red; line-height: 200%; padding:0px 5px 0px 5px; background:#DBE1E7; border-bottom: solid #C6C6C6 1px;}
+.column-cell2Red { font-family: Arial, Verdana, Helvetica; font-size: 12px; font-weight: normal; color: red; line-height: 200%; padding:0px 5px 0px 5px; background:#ffffff; border-bottom: solid #C6C6C6 1px;}
+.column-cell1Blue { font-family: Arial, Verdana, Helvetica; font-size: 12px; font-weight: normal; color: blue; line-height: 200%; padding:0px 5px 0px 5px; background:#DBE1E7; border-bottom: solid #C6C6C6 1px;}
+.column-cell2Blue { font-family: Arial, Verdana, Helvetica; font-size: 12px; font-weight: normal; color: blue; line-height: 200%; padding:0px 5px 0px 5px; background:#ffffff; border-bottom: solid #C6C6C6 1px;}
+.column-cell1Green { font-family: Arial, Verdana, Helvetica; font-size: 12px; font-weight: normal; color: green; line-height: 200%; padding:0px 5px 0px 5px; background:#DBE1E7; border-bottom: solid #C6C6C6 1px;}
+.column-cell2Green { font-family: Arial, Verdana, Helvetica; font-size: 12px; font-weight: normal; color: green; line-height: 200%; padding:0px 5px 0px 5px; background:#ffffff; border-bottom: solid #C6C6C6 1px;}
+
+
+.link1 { font-family: Arial, Verdana, Helvetica; font-size: 11px; font-weight: normal; color: black; line-height: 150%; padding:0px 5px 0px 5px; background:#ffffff; }
+
+
+.forminput1 {font-family: Arial, Verdana, Helvetica; font-size: 12px;font-weight: normal;background: FFFFFF;color: black;}
+.forminput2 {font-family: Arial, Verdana, Helvetica; font-size: 10px;font-weight: normal;background: FFFFFF;color: black;}
+
+
+

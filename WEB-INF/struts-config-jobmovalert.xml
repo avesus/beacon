@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "file:///C:/BUREAUEYE/xml/struts-config_1_3.dtd">
+<struts-config>
+  <display-name>jobmovalert</display-name>
+  <description>This is the Struts configuration file for the job movement alert</description>
+  <form-beans>
+    <form-bean name="JobmovalertForm" type="com.bureaueye.beacon.form.alert.AlertForm"/>
+    <form-bean name="ListJobmovalertForm" type="com.bureaueye.beacon.form.ListForm"/>
+  </form-beans>
+  <global-forwards>
+    <forward name="Jobmovalert" path="/pages/job/Jobmovalert.jsp"/>
+  </global-forwards>
+  <action-mappings>
+    <action path="/EditJobmovalert" type="com.bureaueye.beacon.action.job.EditJobmovalertAction" name="JobmovalertForm" scope="session" validate="false">
+      <forward name="failure" path="/pages/job/ListJobmovalert.jsp"/>
+      <forward name="success" path="/pages/job/Jobmovalert.jsp"/>
+    </action>
+    <action path="/SaveJobmovalert" type="com.bureaueye.beacon.action.job.SaveJobmovalertAction" name="JobmovalertForm" scope="session" cancellable="true" input="Jobmovalert">
+      <forward name="success" path="/ListJobmovalert.do"/>
+    </action>
+    <action path="/ListJobmovalert" type="com.bureaueye.beacon.action.job.ListJobmovalertAction" name="ListJobmovalertForm" scope="session" validate="false" parameter="ListOrderhdrForm,ListJobhdrForm">
+      <forward name="success" path="/pages/job/ListJobmovalert.jsp"/>
+    </action>
+ 
+
+    
+        
+  </action-mappings>
+</struts-config>

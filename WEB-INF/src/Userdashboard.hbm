@@ -1,0 +1,125 @@
+<?xml version="1.0"?>  
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.bureaueye.beacon.model.standard">
+	<class name="Userdashboard" table="userdashboard">
+		<meta attribute="sync-DAO">true</meta>
+		<id
+			column="USERDASHBOARD_ID"
+			name="UserdashboardId"
+			type="integer">
+			<generator class="native"/>
+		</id>			
+
+
+		<property
+			name="Userid"
+			column="userid"
+			type="string"
+			not-null="false"
+			length="10"
+		/>
+		<property
+			name="Dashboardid"
+			column="dashboardid"
+			type="string"
+			not-null="false"
+			length="100"
+		/>
+		<property
+			name="Dashboardtype"
+			column="dashboardtype"
+			type="string"
+			not-null="false"
+			length="100"
+		/>		
+		<property
+			name="Daterangedays"
+			column="daterangedays"
+			type="string"
+			not-null="false"
+			length="10"
+		/>	
+		<property
+			name="Txt"
+			column="txt"
+			type="string"
+			not-null="false"
+		/>
+		<property
+			name="Systemloguserid"
+			column="systemloguserid"
+			type="string"
+			not-null="false"
+			length="10"
+		/>
+		<property
+			name="Systemlogdate"
+			column="systemlogdate"
+			type="date"
+			not-null="false"
+			length="10"
+		/>
+		<property
+			name="Systemlogtime"
+			column="systemlogtime"
+			type="string"
+			not-null="false"
+			length="10"
+		/>
+		<property
+			name="Systemlogprogram"
+			column="systemlogprogram"
+			type="string"
+			not-null="false"
+			length="50"
+		/>
+		<property
+			name="Systemlogaction"
+			column="systemlogaction"
+			type="string"
+			not-null="false"
+			length="10"
+		/>
+		<property
+			name="Xlock"
+			column="xlock"
+			type="string"
+			not-null="false"
+			length="20"
+		/>
+		<property
+			column="xinactive"
+			name="Xinactive"
+			not-null="false"
+			type="yes_no"
+		 />
+		<property
+			name="Createdate"
+			column="createdate"
+			type="date"
+			not-null="false"
+			length="10"
+		/>
+		<property
+			name="Createtime"
+			column="createtime"
+			type="string"
+			not-null="false"
+			length="30"
+		/>
+		<property
+			name="Createuserid"
+			column="createuserid"
+			type="string"
+			not-null="false"
+			length="10"
+		/>
+
+
+	</class>
+	
+		
+</hibernate-mapping>

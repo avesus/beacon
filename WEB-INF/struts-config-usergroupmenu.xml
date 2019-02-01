@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "file:///C:/BUREAUEYE/xml/struts-config_1_3.dtd">
+<struts-config>
+  <display-name>usergroupmenu</display-name>
+  <description>This is the Struts configuration file for the user group menus</description>
+
+  <form-beans>
+    <form-bean name="UsergroupmenuForm" type="com.bureaueye.beacon.form.standard.UsergroupmenuForm"/>
+    <form-bean name="ListUsergroupmenuForm" type="com.bureaueye.beacon.form.ListForm"/>
+  </form-beans>
+
+  <global-forwards>
+    <forward name="Usergroupmenu" path="/pages/standard/Usergroupmenu.jsp"/>
+  </global-forwards>
+
+  <action-mappings>
+
+    <action path="/EditUsergroupmenu" type="com.bureaueye.beacon.action.standard.EditUsergroupmenuAction" name="UsergroupmenuForm" scope="request" validate="false">
+      <forward name="failure" path="/pages/standard/ListUsergroupmenu.jsp"/>
+      <forward name="success" path="/pages/standard/Usergroupmenu.jsp"/>
+    </action>
+    <action path="/SaveUsergroupmenu" type="com.bureaueye.beacon.action.standard.SaveUsergroupmenuAction" name="UsergroupmenuForm" scope="request" cancellable="true" input="Usergroupmenu">
+      <forward name="success" path="/ListUsergroupmenu.do"/>
+    </action>
+    <action path="/ListUsergroupmenu" type="com.bureaueye.beacon.action.standard.ListUsergroupmenuAction" name="ListUsergroupmenuForm" scope="session" validate="false" parameter="ListUserForm">
+      <forward name="success" path="/pages/standard/ListUsergroupmenu.jsp"/>
+    </action>
+    
+  </action-mappings>
+</struts-config>

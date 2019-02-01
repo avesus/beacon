@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "file:///C:/BUREAUEYE/xml/struts-config_1_3.dtd">
+<struts-config>
+  <display-name>Maintenance and Repair</display-name>
+  <description>This is the Struts configuration file for the Maintenance and Repair.</description>
+  
+  <form-beans>
+    <form-bean name="ListMandrhdrForm" type="com.bureaueye.beacon.form.ListForm"/>
+    <form-bean name="MandrhdrForm" type="com.bureaueye.beacon.form.mandr.MandrhdrForm"/> 
+    <form-bean name="MandrdtlForm" type="com.bureaueye.beacon.form.mandr.MandrdtlForm"/>
+    <form-bean name="ListMandrdtlForm" type="com.bureaueye.beacon.form.ListForm"/>        
+  </form-beans>
+  
+  <global-forwards>
+    <forward name="Mandrhdr" path="/pages/mandr/Mandrhdr.jsp"/>
+    <forward name="Mandrdtl" path="/pages/mandr/Mandrdtl.jsp"/>    
+  </global-forwards>
+  
+  <action-mappings> 
+
+      <action path="/ListMandrhdrMain" forward="/pages/mandr/ListMandrhdrMain.jsp"/> 
+        
+    <action path="/EditMandrhdr" type="com.bureaueye.beacon.action.mandr.EditMandrhdrAction" name="MandrhdrForm" scope="request" validate="false">
+      <forward name="failure" path="/pages/mandr/ListMandrhdrMain.jsp"/>
+      <forward name="success" path="/pages/mandr/Mandrhdr.jsp"/>
+    </action>
+ 
+    <action path="/SaveMandrhdr" type="com.bureaueye.beacon.action.mandr.SaveMandrhdrAction" name="MandrhdrForm" scope="request" cancellable="true" input="Mandrhdr">
+      <forward name="success" path="/ListMandrhdr.do"/>
+    </action>  
+
+    <action path="/ListMandrhdr" type="com.bureaueye.beacon.action.mandr.ListMandrhdrAction" name="ListMandrhdrForm" scope="session" validate="false">
+      <forward name="success" path="/pages/mandr/ListMandrhdrMain.jsp"/>
+    </action>
+ 
+ 
+     <action path="/EditMandrdtl" type="com.bureaueye.beacon.action.mandr.EditMandrdtlAction" name="MandrdtlForm" scope="request" validate="false">
+      <forward name="failure" path="/pages/mandr/ListMandrdtl.jsp"/>
+      <forward name="success" path="/pages/mandr/Mandrdtl.jsp"/>
+    </action>
+    
+    <action path="/SaveMandrdtl" type="com.bureaueye.beacon.action.mandr.SaveMandrdtlAction" name="MandrdtlForm" scope="request" cancellable="true" input="Mandrdtl">
+      <forward name="success" path="/ListMandrdtl.do"/>
+    </action>
+    
+    <action path="/ListMandrdtl" type="com.bureaueye.beacon.action.mandr.ListMandrdtlAction" name="ListMandrdtlForm" scope="session" validate="false" parameter="ListMandrhdrForm">
+      <forward name="success" path="/pages/mandr/ListMandrdtl.jsp"/>
+    </action>
+ 
+    <action path="/PrintMandr" type="com.bureaueye.beacon.action.mandr.print.PrintMandrAction" name="ListForm" scope="session" validate="false" parameter="ListMandrhdrForm">
+    </action>      
+                   
+  </action-mappings>
+  
+</struts-config>

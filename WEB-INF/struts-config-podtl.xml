@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "file:///C:/BUREAUEYE/xml/struts-config_1_3.dtd">
+<struts-config>
+
+  <display-name>podtl</display-name>
+  <description>This is the Struts configuration file for the purchase order detail</description>
+  
+  <form-beans>
+    <form-bean name="PodtlForm" type="com.bureaueye.beacon.form.purchaseorder.PodtlForm"/>
+    <form-bean name="ListPodtlForm" type="com.bureaueye.beacon.form.ListForm"/>
+  </form-beans>
+  
+  <global-forwards>
+    <forward name="Podtl" path="/pages/purchaseorder/Podtl.jsp"/>
+  </global-forwards>
+  
+  <action-mappings>
+  
+    <action path="/EditPodtl" type="com.bureaueye.beacon.action.purchaseorder.EditPodtlAction" name="PodtlForm" scope="request" validate="false">
+      <forward name="failure" path="/pages/purchaseorder/ListPodtl.jsp"/>
+      <forward name="success" path="/pages/purchaseorder/Podtl.jsp"/>
+    </action>
+    
+    <action path="/SavePodtl" type="com.bureaueye.beacon.action.purchaseorder.SavePodtlAction" name="PodtlForm" scope="request" cancellable="true" input="Podtl">
+      <forward name="success" path="/ListPodtl.do"/>
+    </action>
+    
+    <action path="/ListPodtl" type="com.bureaueye.beacon.action.purchaseorder.ListPodtlAction" name="ListPodtlForm" scope="session" validate="false" parameter="ListPohdrForm">
+      <forward name="success" path="/pages/purchaseorder/ListPodtl.jsp"/>
+    </action>
+    
+  </action-mappings>
+  
+</struts-config>

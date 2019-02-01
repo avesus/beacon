@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<?xml version="1.0"?>
+<ticker>
+ <tickerstyle
+   pause       = "true" / "false"       "true" for pause onMouseOver
+   timeout     = positive integer       The delay in seconds b/w messages
+   border      = positive integer       The border width of Ticker
+   bordercolor = #HexColor              The border color of Ticker
+   background  = #HexColor              The background color of Ticker
+   width       = positive integer       Ticker width
+   height      = positive integer       Ticker height
+ />
+ <tickerlinkstyle>
+   <mouseout
+     font       = "verdana,arial,helvetica..."     Ticker link font  
+     color      = #HexColor                        Ticker link color
+     decoration = "none" / "underline" /
+                  "underline + overline"           Ticker link style
+     weight     = "normal" / "bold"                Ticker link weight
+     size       = <positive integer>pt             Ticker link size
+   />
+   <mouseover
+     font       = "verdana,arial,hevetica..."      Ticker link font
+     color      = #HexColor                        Ticker link color
+     decoration = "none" / "underline" /
+                  "underline + overline"           Ticker link style
+     weight     = "normal" / "bold"                Ticker link weight
+     size       = <positive integer>pt             Ticker link size
+   />
+ </tickerlinkstyle>
+ <tickeritem
+   URL       = A valid URL                         Ticker link URL
+   target    = "_blank" / "_top" / "_self" /
+               <any other valid target name>       Ticker link target
+ > Ticker item 1 text 
+ </tickeritem>
+ <tickeritem
+   URL       = A valid URL                         Ticker link URL
+   target    = "_blank" / "_top" / "_self" /
+               <any other valid target name>       Ticker link target
+ > Ticker item 2 text 
+ </tickeritem>
+</ticker>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "file:///C:/BUREAUEYE/xml/struts-config_1_3.dtd">
+
+<struts-config>
+  <display-name><![CDATA[
+     address create
+  ]]>
+  </display-name>
+    <description><![CDATA[
+     This is the Struts configuration file for the address create
+  ]]>
+  </description>
+
+  <!-- ========== Form Bean Definitions =================================== -->
+  <form-beans>
+  	<form-bean name="QuotationAddressForm" type="com.bureaueye.beacon.form.quotation.QuotationAddressForm"/>            
+  </form-beans>
+
+  <!-- ========== Global Forward Definitions ============================== -->
+
+
+  <!-- ========== Action Mapping Definitions ============================== -->
+  <action-mappings>
+
+    <!-- Matches all edit actions -->
+    <action path="/EditAddressCreate"
+            type="com.bureaueye.beacon.action.quotation.EditAddressCreateAction"
+            name="QuotationAddressForm"
+            scope="request"
+           	validate="false">  
+      	<forward name="failure" path="/pages/quotation/AddressCreate.jsp"/>                      
+    	<forward name="success" path="/pages/quotation/AddressCreate.jsp"/>
+    </action>
+
+    <!-- Matches all save actions -->
+    <action path="/SaveAddressCreate"
+            type="com.bureaueye.beacon.action.quotation.SaveAddressCreateAction"
+            name="QuotationAddressForm"
+            scope="request" 
+			input="Address"
+			cancellable="true"> 
+		<forward name="failure" path="/pages/quotation/AddressCreate.jsp"/>                
+	    <forward name="success"	path="/pages/quotation/ListQuohdrMain.jsp"/>             
+    </action>
+             
+  </action-mappings>
+
+</struts-config>

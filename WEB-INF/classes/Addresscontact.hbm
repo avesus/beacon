@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN"
+	"hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.bureaueye.beacon.model.standard"> 
+  <class name="Addresscontact" table="addresscontact">
+<meta attribute="sync-DAO">true</meta>  
+    <composite-id class="AddresscontactPK" name="Id">
+      <key-property column="contactkey" name="Contactkey" type="string"/>
+      <key-property column="addrkey" name="Addrkey" type="string"/>
+    </composite-id>
+    <property column="xprog" length="50" name="Xprog" not-null="false" type="string"/>
+    <property column="PhoneExtension" length="4" name="PhoneExtension" not-null="false" type="string"/>
+    <property column="City" length="50" name="City" not-null="false" type="string"/>
+    <property column="xdate" length="10" name="Xdate" not-null="false" type="date"/>
+    <property column="xtime" length="10" name="Xtime" not-null="false" type="string"/>
+    <property column="Pager" length="25" name="Pager" not-null="false" type="string"/>
+    <property column="xinactive" length="1" name="Xinactive" not-null="false" type="string"/>
+    <property column="xaction" length="10" name="Xaction" not-null="false" type="string"/>
+    <property column="Fax" length="25" name="Fax" not-null="false" type="string"/>
+    <property column="createdate" length="10" name="Createdate" not-null="false" type="date"/>
+    <property column="Name" length="50" name="Name" not-null="false" type="string"/>
+    <property column="PostalCode" length="20" name="PostalCode" not-null="false" type="string"/>
+    <property column="State" length="20" name="State" not-null="false" type="string"/>
+    <property column="Address1" length="50" name="Address1" not-null="false" type="string"/>
+    <property column="createuserid" length="10" name="Createuserid" not-null="false" type="string"/>
+    <property column="Phone" length="25" name="Phone" not-null="false" type="string"/>
+    <property column="Email" name="Email" not-null="false" type="string"/>
+    <property column="Address3" length="50" name="Address3" not-null="false" type="string"/>
+    <property column="rowid" length="11" name="Rowid" not-null="false" type="integer"/>
+    <property column="xuserid" length="10" name="Xuserid" not-null="false" type="string"/>
+    <property column="Country" length="30" name="Country" not-null="false" type="string"/>
+    <property column="Title" length="20" name="Title" not-null="false" type="string"/>
+    <property column="createtime" length="30" name="Createtime" not-null="false" type="string"/>
+    <property column="Address2" length="50" name="Address2" not-null="false" type="string"/>
+    <property column="xlock" length="20" name="Xlock" not-null="false" type="string"/>
+  </class>
+  <query name="findAddresscontactsTotalResults">select count(*) from Addresscontact addresscontact where addresscontact.id.Addrkey = :addrkey</query>
+</hibernate-mapping>

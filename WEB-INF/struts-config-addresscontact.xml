@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "file:///C:/BUREAUEYE/xml/struts-config_1_3.dtd">
+<struts-config>
+  <display-name>address contact</display-name>
+  <description>This is the Struts configuration file for the addresscontact</description>
+  <form-beans>
+    <form-bean name="AddresscontactForm" type="com.bureaueye.beacon.form.standard.AddresscontactForm"/>
+    <form-bean name="ListAddresscontactForm" type="com.bureaueye.beacon.form.ListForm"/>
+  </form-beans>
+  <global-forwards>
+    <forward name="Addresscontact" path="/pages/standard/Addresscontact.jsp"/>
+  </global-forwards>
+  <action-mappings>
+    <action path="/EditAddresscontact" type="com.bureaueye.beacon.action.standard.EditAddresscontactAction" name="AddresscontactForm" scope="request" validate="false">
+      <forward name="failure" path="/pages/standard/ListAddresscontact.jsp"/>
+      <forward name="success" path="/pages/standard/Addresscontact.jsp"/>
+      <forward name="parent" path="/pages/standard/ListAddress.jsp"/>
+    </action>
+    <action path="/SaveAddresscontact" type="com.bureaueye.beacon.action.standard.SaveAddresscontactAction" name="AddresscontactForm" scope="request" cancellable="true" input="Addresscontact">
+      <forward name="success" path="/ListAddresscontact.do"/>
+    </action>
+    <action path="/ListAddresscontact" type="com.bureaueye.beacon.action.standard.ListAddresscontactAction" name="ListAddresscontactForm" scope="session" validate="false" parameter="ListAddressForm">
+      <forward name="success" path="/pages/standard/ListAddresscontact.jsp"/>
+      <forward name="failure" path="/pages/standard/ListAddress.jsp"/>
+    </action>
+  </action-mappings>
+</struts-config>

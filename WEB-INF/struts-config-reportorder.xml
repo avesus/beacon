@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "file:///C:/BUREAUEYE/xml/struts-config_1_3.dtd">
+<struts-config>
+  <display-name>report order</display-name>
+  <description></description> 
+  <form-beans>
+    <form-bean name="ListReportForm" type="com.bureaueye.beacon.form.ListForm"/>       
+  </form-beans>
+  <action-mappings>  
+
+    <action path="/ReportOrderSummary" type="com.bureaueye.beacon.action.order.report.ReportOrderSummaryAction" name="ListReportForm" scope="request" validate="false">
+          <forward name="success" path="/pages/order/ReportOrderSummary.jsp"/>
+          <forward name="failure" path="/pages/order/ReportOrderSummary.jsp"/>
+    </action> 
+ 
+    
+    <action path="/ReportCashSettlement" type="com.bureaueye.beacon.action.order.report.ReportCashSettlementAction" name="ListReportForm" scope="request" validate="false">
+          <forward name="success" path="/pages/order/ReportCashSettlement.jsp"/>
+          <forward name="failure" path="/pages/order/ReportCashSettlement.jsp"/>
+    </action> 
+
+
+
+    <action path="/ReportJobActualEstimate" type="com.bureaueye.beacon.action.order.report.ReportJobActualEstimateAction" name="ListReportForm" scope="request" validate="false">
+          <forward name="success" path="/pages/order/ReportJobActualEstimate.jsp"/>
+          <forward name="failure" path="/pages/order/ReportJobActualEstimate.jsp"/>
+    </action> 
+    
+        
+    <action path="/ReportDisbursement" type="com.bureaueye.beacon.action.order.report.ReportDisbursementAction" name="ListReportForm" scope="request" validate="false">
+          <forward name="success" path="/pages/order/ReportDisbursement.jsp"/>
+          <forward name="failure" path="/pages/order/ReportDisbursement.jsp"/>
+    </action> 
+    
+    
+        
+  </action-mappings>
+</struts-config>

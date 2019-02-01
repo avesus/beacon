@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "file:///C:/BUREAUEYE/xml/struts-config_1_3.dtd">
+<struts-config>
+  <display-name>loading confirmation</display-name>
+  <description>This is the Struts configuration file for the LOADING CONFIRMATION</description>
+  <form-beans>
+    <form-bean name="PrinthdrForm" type="com.bureaueye.beacon.form.print.PrinthdrForm"/>
+  </form-beans>
+  <global-forwards>
+    <forward name="Loadingconfirmation" path="/pages/print/Loadingconfirmation.jsp"/>
+  </global-forwards>
+  <action-mappings>
+    <action path="/EditLoadingconfirmation" type="com.bureaueye.beacon.action.order.print.EditLoadingconfirmationAction" name="PrinthdrForm" scope="session" validate="false">
+      <forward name="failure" path="/pages/job/ListJobhdr.jsp"/>
+      <forward name="success" path="/pages/print/Loadingconfirmation.jsp"/>
+    </action>
+    <action path="/SaveLoadingconfirmation" type="com.bureaueye.beacon.action.order.print.SaveLoadingconfirmationAction" name="PrinthdrForm" scope="session" cancellable="true" input="Printhdr">
+      <forward name="success" path="/ListJobhdr.do"/>
+    </action>  
+  </action-mappings>
+</struts-config>

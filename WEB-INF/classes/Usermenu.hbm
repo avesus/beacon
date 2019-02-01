@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.bureaueye.beacon.model.standard">
+	<class name="Usermenu" table="usermenu">
+<meta attribute="sync-DAO">true</meta>	
+		<id
+			column="USERMENU_ID"
+			name="UsermenuId"
+			type="integer"
+		>
+			<generator class="native" />
+		</id>
+		<property
+			column="userid"
+			length="10"
+			name="Userid"
+			not-null="false"
+			type="string"
+		 />
+		<property
+			column="programtype"
+			length="10"
+			name="Programtype"
+			not-null="false"
+			type="string"
+		 />
+		<property
+			column="programid"
+			length="100"
+			name="Programid"
+			not-null="false"
+			type="string"
+		 />
+		<property
+			column="menuid"
+			length="100"
+			name="Menuid"
+			not-null="false"
+			type="string"
+		 />
+		<property
+			column="sequence"
+			length="11"
+			name="Sequence"
+			not-null="false"
+			type="integer"
+		 />
+		<property
+			column="programbutton"
+			length="200"
+			name="Programbutton"
+			not-null="false"
+			type="string"
+		 />
+		<property
+			column="programbuttondisabled"
+			length="200"
+			name="Programbuttondisabled"
+			not-null="false"
+			type="string"
+		 />		 
+		<property
+			column="disabledflag"
+			name="Disabledflag"
+			not-null="false"
+			type="yes_no"
+		 />
+		<property
+			column="desktopflag"
+			name="desktopflag"
+			not-null="false"
+			type="yes_no"
+		 />
+		 		 		 	
+	</class>
+	
+	
+	<query name="findUsermenusTotalResults">select count(*) from Usermenu usermenu where usermenu.Userid = :id</query>
+	
+	
+</hibernate-mapping>

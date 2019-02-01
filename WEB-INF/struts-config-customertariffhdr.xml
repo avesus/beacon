@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "file:///C:/BUREAUEYE/xml/struts-config_1_3.dtd">
+<struts-config>
+	<display-name>customer tariff header</display-name>
+	<description>This is the Struts configuration file for the customer tariff</description>
+	<form-beans>
+		<form-bean name="CustomertariffhdrForm" type="com.bureaueye.beacon.form.standard.CustomertariffhdrForm"/>
+		<form-bean name="ListCustomertariffhdrForm" type="com.bureaueye.beacon.form.standard.ListCustomertariffhdrForm"/>
+	</form-beans>
+	<global-forwards>
+		<forward name="Customertariffhdr" path="/pages/standard/Customertariffhdr.jsp"/>
+	</global-forwards>
+	<action-mappings>
+		<action path="/EditCustomertariffhdr" type="com.bureaueye.beacon.action.standard.EditCustomertariffhdrAction" name="CustomertariffhdrForm" scope="request" validate="false">
+			<forward name="failure" path="/pages/standard/ListCustomertariffhdr.jsp"/>
+			<forward name="success" path="/pages/standard/Customertariffhdr.jsp"/>
+		</action>
+		<action path="/SaveCustomertariffhdr" type="com.bureaueye.beacon.action.standard.SaveCustomertariffhdrAction" name="CustomertariffhdrForm" scope="request" cancellable="true" input="Customertariffhdr">
+			<forward name="success" path="/ListCustomertariffhdr.do"/>
+		</action>
+		<action path="/ListCustomertariffhdr" type="com.bureaueye.beacon.action.standard.ListCustomertariffhdrAction" name="ListCustomertariffhdrForm" scope="session" validate="false">
+			<forward name="success" path="/pages/standard/ListCustomertariffhdr.jsp"/>
+		</action>
+	</action-mappings>
+</struts-config>

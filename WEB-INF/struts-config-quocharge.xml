@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="ISO-8859-1"?> 
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "file:///C:/BUREAUEYE/xml/struts-config_1_3.dtd">
+<struts-config>
+  <display-name>quocharge</display-name>
+  <description>This is the Struts configuration file for the addresscontact</description>
+  <form-beans>
+    <form-bean name="QuochargeForm" type="com.bureaueye.beacon.form.quotation.QuochargeForm"/>
+    <form-bean name="ListQuochargeForm" type="com.bureaueye.beacon.form.ListForm"/>
+  </form-beans>
+  <global-forwards>
+    <forward name="Quocharge" path="/pages/quotation/Quocharge.jsp"/>
+  </global-forwards>
+  <action-mappings>
+    <action path="/EditQuocharge" type="com.bureaueye.beacon.action.quotation.EditQuochargeAction" name="QuochargeForm" scope="session" validate="false" parameter="Quocharge">
+      <forward name="failure" path="/pages/quotation/ListQuocharge.jsp"/>
+      <forward name="success" path="/pages/quotation/Quocharge.jsp"/>
+    </action>
+    <action path="/SaveQuocharge" type="com.bureaueye.beacon.action.quotation.SaveQuochargeAction" name="QuochargeForm" scope="session" cancellable="true" input="Quocharge">
+      <forward name="success" path="/ListQuocharge.do"/>
+    </action>
+    <action path="/ListQuocharge" type="com.bureaueye.beacon.action.quotation.ListQuochargeAction" name="ListQuochargeForm" scope="session" validate="false" parameter="ListQuohdrForm">
+      <forward name="success" path="/pages/quotation/ListQuocharge.jsp"/>
+    </action>
+    <action path="/FindCustomertariff" type="com.bureaueye.beacon.action.quotation.FindCustomertariffAction" name="QuochargeForm" scope="session" cancellable="true" input="Quocharge">
+      <forward name="success" path="/pages/quotation/Quocharge.jsp"/>
+    </action>  
+  </action-mappings>
+</struts-config>

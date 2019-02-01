@@ -1,0 +1,99 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.bureaueye.beacon.model.standard"> 
+	<class
+		name="Shipmethod"
+		table="shipmethod"
+	>
+		<meta attribute="sync-DAO">false</meta>
+		<id
+			name="ShipmethodId"
+			type="integer"
+			column="ShipMethodId"
+		>
+			<generator class="native"/>
+		</id>
+
+		<property
+			name="ShipMethod"
+			column="ShipMethod"
+			type="string"
+			not-null="false"
+			length="20"
+		/>
+		<property
+			name="Xuserid"
+			column="xuserid"
+			type="string"
+			not-null="false"
+			length="10"
+		/>
+		<property
+			name="Xdate"
+			column="xdate"
+			type="date"
+			not-null="false"
+			length="10"
+		/>
+		<property
+			name="Xtime"
+			column="xtime"
+			type="string"
+			not-null="false"
+			length="10"
+		/>
+		<property
+			name="Xprog"
+			column="xprog"
+			type="string"
+			not-null="false"
+			length="50"
+		/>
+		<property
+			name="Xaction"
+			column="xaction"
+			type="string"
+			not-null="false"
+			length="10"
+		/>
+		<property
+			name="Xlock"
+			column="xlock"
+			type="string"
+			not-null="false"
+			length="20"
+		/>
+		<property
+			name="Xinactive"
+			column="xinactive"
+			not-null="false"
+			type="yes_no"
+		/>
+		<property
+			name="Createdate"
+			column="createdate"
+			type="date"
+			not-null="false"
+			length="10"
+		/>
+		<property
+			name="Createtime"
+			column="createtime"
+			type="string"
+			not-null="false"
+			length="30"
+		/>
+		<property
+			name="Createuserid"
+			column="createuserid"
+			type="string"
+			not-null="false"
+			length="10"
+		/>
+
+
+	</class>	
+</hibernate-mapping>

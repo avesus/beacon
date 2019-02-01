@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "file:///C:/BUREAUEYE/xml/struts-config_1_3.dtd">
+<struts-config>
+  <display-name>category</display-name>
+  <description>This is the Struts configuration file for the category.</description>
+  <form-beans>
+    <form-bean name="CategoryForm" type="com.bureaueye.beacon.form.standard.CategoryForm"/>
+    <form-bean name="ListCategoryForm" type="com.bureaueye.beacon.form.ListForm"/>
+    <form-bean name="SubcategoryForm" type="com.bureaueye.beacon.form.standard.SubcategoryForm"/>
+    <form-bean name="ListSubcategoryForm" type="com.bureaueye.beacon.form.ListForm"/>
+  </form-beans>
+  <global-forwards>
+    <forward name="Category" path="/pages/standard/Category.jsp"/>
+    <forward name="Subcategory" path="/pages/standard/Subcategory.jsp"/>
+  </global-forwards>
+  <action-mappings>
+  
+    <action path="/EditCategory" type="com.bureaueye.beacon.action.standard.EditCategoryAction" name="CategoryForm" scope="request" validate="false">
+      <forward name="failure" path="/pages/standard/ListCategory.jsp"/>
+      <forward name="success" path="/pages/standard/Category.jsp"/>
+    </action>
+    <action path="/SaveCategory" type="com.bureaueye.beacon.action.standard.SaveCategoryAction" name="CategoryForm" scope="request"  cancellable="true" input="Category">
+      <forward name="success" path="/ListCategory.do"/>
+    </action>
+    <action path="/ListCategory" type="com.bureaueye.beacon.action.standard.ListCategoryAction" name="ListCategoryForm" scope="session" validate="false">
+      <forward name="success" path="/pages/standard/ListCategory.jsp"/>
+    </action>
+
+    <action path="/EditSubcategory" type="com.bureaueye.beacon.action.standard.EditSubcategoryAction" name="SubcategoryForm" scope="request" validate="false">
+      <forward name="failure" path="/pages/standard/ListSubcategory.jsp"/>
+      <forward name="success" path="/pages/standard/Subcategory.jsp"/>
+    </action>
+    <action path="/SaveSubcategory" type="com.bureaueye.beacon.action.standard.SaveSubcategoryAction" name="SubcategoryForm" scope="request"  cancellable="true" input="Subcategory">
+      <forward name="success" path="/ListSubcategory.do"/>
+    </action>
+    <action path="/ListSubcategory" type="com.bureaueye.beacon.action.standard.ListSubcategoryAction" name="ListSubcategoryForm" scope="session" validate="false">
+      <forward name="success" path="/pages/standard/ListSubcategory.jsp"/>
+    </action>
+         
+            
+  </action-mappings>
+</struts-config>

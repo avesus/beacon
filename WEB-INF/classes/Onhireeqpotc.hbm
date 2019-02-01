@@ -1,0 +1,137 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.bureaueye.genesys.model.onhire">
+	<class name="Onhireeqpotc" table="onhireeqpotc">
+<meta attribute="sync-DAO">true</meta>	
+		<id
+			column="ONHIREEQPOTC_ID"
+			name="OnhireeqpotcId"
+			type="integer"
+		>
+			<generator class="native" />
+		</id>
+		<property
+			column="systemlogdate"
+			length="10"
+			name="Systemlogdate"
+			not-null="false"
+			type="date"
+		 />
+		<property
+			column="ONHIREEQP_ID"
+			length="11"
+			name="OnhireeqpId"
+			not-null="false"
+			type="integer"
+		 />
+		<property
+			column="ONHIRE_ID"
+			length="11"
+			name="OnhireId"
+			not-null="false"
+			type="integer"
+		 />
+		<property
+			column="createdate"
+			length="10"
+			name="Createdate"
+			not-null="false"
+			type="date"
+		 />
+		<property
+			column="xlock"
+			length="20"
+			name="Xlock"
+			not-null="false"
+			type="string"
+		 />
+		<property
+			column="UNIT_ID"
+			length="11"
+			name="UnitId"
+			not-null="false"
+			type="integer"
+		 />
+		<property
+			column="chargeamt"
+			length="10"
+			name="Chargeamt"
+			not-null="false"
+			type="big_decimal"
+		 />
+		<property
+			column="systemlogaction"
+			length="10"
+			name="Systemlogaction"
+			not-null="false"
+			type="string"
+		 />
+		<property
+			column="createtime"
+			length="8"
+			name="Createtime"
+			not-null="false"
+			type="string"
+		 />
+		<property
+			column="systemlogprogram"
+			length="50"
+			name="Systemlogprogram"
+			not-null="false"
+			type="string"
+		 />
+		<property
+			column="systemlogtime"
+			length="10"
+			name="Systemlogtime"
+			not-null="false"
+			type="string"
+		 />
+		<property
+			column="xinactive"
+			name="Xinactive"
+			not-null="false"
+			type="yes_no"
+		 />
+		<property
+			column="createuserid"
+			length="10"
+			name="Createuserid"
+			not-null="false"
+			type="string"
+		 />
+		<property
+			column="unitkey"
+			length="20"
+			name="Unitkey"
+			not-null="false"
+			type="string"
+		 />
+		<property
+			column="systemloguserid"
+			length="10"
+			name="Systemloguserid"
+			not-null="false"
+			type="string"
+		 />
+
+
+		<property
+			column="chargekey"
+			length="10"
+			name="Chargekey"
+			not-null="false"
+			type="string"
+		 />
+		 
+		 
+	</class>
+	
+	<query name="findOnhireeqpotcsTotalResults">
+		select count(*) from Onhireeqpotc onhireeqpotc where onhireeqpotc.OnhireeqpId = :id
+	</query>
+	
+</hibernate-mapping>

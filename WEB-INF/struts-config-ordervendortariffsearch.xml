@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "file:///C:/BUREAUEYE/xml/struts-config_1_3.dtd">
+<struts-config>
+  <display-name>vendor tariff search</display-name>
+  <description>This is the Struts configuration file for the vendor tariff search</description>
+  <form-beans>
+    <form-bean name="ListVendortariffSearchForm" type="com.bureaueye.beacon.form.ListForm"/>
+  </form-beans>
+  <action-mappings>
+    <action path="/EditOrderVendortariffSearch" type="com.bureaueye.beacon.action.order.EditVendortariffSearchAction" name="ListVendortariffSearchForm" scope="session" validate="false">
+       <forward name="success" path="/pages/order/VendortariffSearch.jsp"/>
+     </action>
+    <action path="/ListOrderVendortariffSearch" type="com.bureaueye.beacon.action.order.ListVendortariffSearchAction" name="ListVendortariffSearchForm" scope="session" validate="false">
+      <forward name="success" path="/pages/order/ListVendortariffSearch.jsp"/>
+    </action>
+  </action-mappings>
+</struts-config>

@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<!DOCTYPE taglib
+
+  PUBLIC "-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.1//EN"
+
+  "http://java.sun.com/j2ee/dtds/web-jsptaglibrary_1_1.dtd">
+
+
+
+<taglib>
+
+  <tlibversion>1.0</tlibversion>
+
+  <jspversion>1.1</jspversion>
+
+  <shortname>Application Tag Library</shortname>
+
+  <uri>http://jakarta.apache.org/taglibs/struts-example-1.0</uri>
+
+  <info>
+  
+    This tag library contains functionality specific to the Beacon Job Application
+    
+  </info>
+  
+       
+      <tag>
+    <name>linkPihdrLineItem</name>
+    <tagclass>com.bureaueye.beacon.taglib.purchaseinvoice.LinkPihdrLineItemTag</tagclass>
+    <info>
+      Generate a URL-encoded hyperlink to the a URL made up of the
+      specified base value, plus optional query parameters that
+      select the specified object.
+      name     - Name of the attribute containing the specified object.
+                 [pihdr]
+      href     - Context-relative URL of the generated link
+    </info>
+    <attribute>
+      <name>name</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>page</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+  
+  <tag>
+    <name>linkPihdr</name>
+    <tagclass>com.bureaueye.beacon.taglib.purchaseinvoice.LinkPihdrTag</tagclass>
+    <info>
+      Generate a URL-encoded hyperlink to the a URL made up of the
+      specified base value, plus optional query parameters that
+      select the specified object.
+      name     - Name of the attribute containing the specified object.
+                 [pihdr]
+      href     - Context-relative URL of the generated link
+    </info>
+    <attribute>
+      <name>name</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>page</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag> 
+  
+  <tag>
+    <name>linkPihdrCreate</name>
+    <tagclass>com.bureaueye.beacon.taglib.purchaseinvoice.LinkPihdrCreateTag</tagclass>
+    <info>
+      Generate a URL-encoded hyperlink to the a URL made up of the
+      specified base value, plus optional query parameters that
+      select the specified object.
+      name     - Name of the attribute containing the specified object.
+                 [pihdr]
+      href     - Context-relative URL of the generated link
+    </info>
+    <attribute>
+      <name>name</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>page</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+  
+    <tag>
+    <name>linkPidtlCreate</name>
+    <tagclass>com.bureaueye.beacon.taglib.purchaseinvoice.LinkPidtlCreateTag</tagclass>
+    <info>
+      Generate a URL-encoded hyperlink to the a URL made up of the
+      specified base value, plus optional query parameters that
+      select the specified object.
+      name     - Name of the attribute containing the specified object.
+                 [pidtl]
+      href     - Context-relative URL of the generated link
+    </info>
+    <attribute>
+      <name>name</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>page</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+        
+  <tag>
+    <name>linkPidtlLineItem</name>
+    <tagclass>com.bureaueye.beacon.taglib.purchaseinvoice.LinkPidtlLineItemTag</tagclass>
+    <info>
+      Generate a URL-encoded hyperlink to the a URL made up of the
+      specified base value, plus optional query parameters that
+      select the specified object.
+      name     - Name of the attribute containing the specified object.
+                 [pidtl]
+      href     - Context-relative URL of the generated link
+    </info>
+    <attribute>
+      <name>name</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>page</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+
+                                    
+</taglib>
+

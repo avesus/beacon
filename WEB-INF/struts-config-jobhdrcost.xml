@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "file:///C:/BUREAUEYE/xml/struts-config_1_3.dtd">
+<struts-config>
+  <display-name>jobhdrcost</display-name>
+  <description>This is the Struts configuration file for the job header cost</description>
+  <form-beans>
+    <form-bean name="JobhdrcostForm" type="com.bureaueye.beacon.form.job.JobhdrcostForm"/>
+    <form-bean name="ListJobhdrcostForm" type="com.bureaueye.beacon.form.ListForm"/>
+  </form-beans>
+  <global-forwards>
+    <forward name="Jobhdrcost" path="/pages/job/Jobhdrcost.jsp"/>
+  </global-forwards>
+  <action-mappings>
+    <action path="/EditJobhdrcost" type="com.bureaueye.beacon.action.job.EditJobhdrcostAction" name="JobhdrcostForm" scope="request" validate="false">
+      <forward name="failure" path="/pages/job/ListJobhdrcost.jsp"/>
+      <forward name="success" path="/pages/job/Jobhdrcost.jsp"/>
+    </action>
+    <action path="/SaveJobhdrcost" type="com.bureaueye.beacon.action.job.SaveJobhdrcostAction" name="JobhdrcostForm" scope="request" cancellable="true" input="Jobhdrcost">
+      <forward name="success" path="/ListJobhdrcost.do"/>
+    </action>
+    <action path="/ListJobhdrcost" type="com.bureaueye.beacon.action.job.ListJobhdrcostAction" name="ListJobhdrcostForm" scope="session" validate="false" parameter="ListJobhdrForm">
+      <forward name="success" path="/pages/job/ListJobhdrcost.jsp"/>
+    </action>
+  </action-mappings>
+</struts-config>

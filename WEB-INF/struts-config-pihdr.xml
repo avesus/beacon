@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "file:///C:/BUREAUEYE/xml/struts-config_1_3.dtd">
+<struts-config>
+  <display-name>pihdr</display-name>
+  <description>This is the Struts configuration file for the Purchase Invoice Header.</description>
+  
+  <form-beans>
+    <form-bean name="ListPihdrForm" type="com.bureaueye.beacon.form.ListForm"/>
+    <form-bean name="PihdrForm" type="com.bureaueye.beacon.form.purchaseinvoice.PihdrForm"/>
+    <form-bean name="ListPihdrdtlForm" type="com.bureaueye.beacon.form.ListForm"/>
+    <form-bean name="PihdrdtlForm" type="com.bureaueye.beacon.form.purchaseinvoice.PihdrdtlForm"/> 
+    <form-bean name="PihdrcostForm" type="com.bureaueye.beacon.form.purchaseinvoice.PidtlcostForm"/>
+    <form-bean name="ListPihdrcostForm" type="com.bureaueye.beacon.form.ListForm"/>              
+  </form-beans>
+  
+  <global-forwards>
+    <forward name="Pihdr" path="/pages/purchaseinvoice/Pihdr.jsp"/>
+    <forward name="Pihdrdtl" path="/pages/purchaseinvoice/Pihdrdtl.jsp"/> 
+    <forward name="Pihdrcost" path="/pages/purchaseinvoice/Pihdrcost.jsp"/>       
+  </global-forwards>
+  
+  <action-mappings> 
+  
+  
+    <action path="/EditPihdr" type="com.bureaueye.beacon.action.purchaseinvoice.EditPihdrAction" name="PihdrForm" scope="request" validate="false">
+      <forward name="failure" path="/pages/purchaseinvoice/ListPihdrMain.jsp"/>
+      <forward name="success" path="/pages/purchaseinvoice/Pihdr.jsp"/>
+    </action>
+ 
+    <action path="/SavePihdr" type="com.bureaueye.beacon.action.purchaseinvoice.SavePihdrAction" name="PihdrForm" scope="request" cancellable="true" input="Pihdr">
+      <forward name="success" path="/ListPihdr.do"/>
+    </action>  
+
+    <action path="/ListPihdr" type="com.bureaueye.beacon.action.purchaseinvoice.ListPihdrAction" name="ListPihdrForm" scope="session" validate="false">
+      <forward name="success" path="/pages/purchaseinvoice/ListPihdrMain.jsp"/>
+    </action>
+
+
+
+    <action path="/EditPihdrdtl" type="com.bureaueye.beacon.action.purchaseinvoice.EditPihdrdtlAction" name="PihdrdtlForm" scope="request" validate="false">
+      <forward name="failure" path="/pages/purchaseinvoice/ListPihdrdtlMain.jsp"/>
+      <forward name="success" path="/pages/purchaseinvoice/Pihdrdtl.jsp"/>
+    </action>
+ 
+    <action path="/SavePihdrdtl" type="com.bureaueye.beacon.action.purchaseinvoice.SavePihdrdtlAction" name="PihdrdtlForm" scope="request" cancellable="true" input="Pihdrdtl">
+      <forward name="success" path="/ListPihdrdtl.do"/>
+    </action>  
+
+    <action path="/ListPihdrdtl" type="com.bureaueye.beacon.action.purchaseinvoice.ListPihdrdtlAction" name="ListPihdrdtlForm" scope="session" validate="false">
+      <forward name="success" path="/pages/purchaseinvoice/ListPihdrdtlMain.jsp"/>
+    </action>
+    
+ 
+
+    <action path="/EditPihdrcost" type="com.bureaueye.beacon.action.purchaseinvoice.EditPihdrcostAction" name="PihdrcostForm" scope="session" validate="false">
+      <forward name="failure" path="/pages/purchaseinvoice/ListPihdrcost.jsp"/>
+      <forward name="success" path="/pages/purchaseinvoice/Pihdrcost.jsp"/>
+    </action>
+    
+    <action path="/SavePihdrcost" type="com.bureaueye.beacon.action.purchaseinvoice.SavePihdrcostAction" name="PihdrcostForm" scope="session" cancellable="true" input="Pihdrcost">
+      <forward name="success" path="/ListPihdrcost.do"/>
+      <forward name="failure" path="/pages/purchaseinvoice/Pihdrcost.jsp"/>      
+    </action>
+    
+    <action path="/ListPihdrcost" type="com.bureaueye.beacon.action.purchaseinvoice.ListPihdrcostAction" name="ListPihdrcostForm" scope="session" validate="false" parameter="ListPihdrdtlForm">
+      <forward name="success" path="/pages/purchaseinvoice/ListPihdrcost.jsp"/>
+    </action>
+    
+           
+    
+  </action-mappings>
+  
+</struts-config>

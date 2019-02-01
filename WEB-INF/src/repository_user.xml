@@ -1,0 +1,39 @@
+   <class-descriptor
+     class="org.apache.struts.util.MessageResource"
+     table="application_resources"
+   >
+      <field-descriptor id="1"
+         name="moduleKey"
+         column="subApp"
+         jdbc-type="VARCHAR"
+         primarykey="true"
+         autoincrement="false"
+      />
+      <field-descriptor id="2"
+         name="bundleKey"
+         column="bundleKey"
+         jdbc-type="VARCHAR"
+         primarykey="true"
+         autoincrement="false"
+      />
+      <field-descriptor id="3"
+         name="locale"
+         column="locale"
+         jdbc-type="VARCHAR"
+         primarykey="true"
+         autoincrement="false"
+      />
+      <field-descriptor id="4"
+         name="key"
+         column="msgKey"
+         jdbc-type="VARCHAR"
+         primarykey="true"
+         autoincrement="false"
+      />
+      <field-descriptor id="5"
+         name="val"
+         column="val"
+         jdbc-type="VARCHAR"
+      /> 
+   </class-descriptor>   
+   

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "file:///C:/BUREAUEYE/xml/struts-config_1_3.dtd">
+<struts-config>
+  <display-name>movement</display-name>
+  <description>This is the Struts configuration file for the movement</description>
+  <form-beans>
+    <form-bean name="MovementForm" type="com.bureaueye.beacon.form.standard.MovementForm"/>
+    <form-bean name="ListMovementForm" type="com.bureaueye.beacon.form.ListForm"/>
+  </form-beans>
+  <global-forwards>
+    <forward name="Movement" path="/pages/standard/Movement.jsp"/>
+  </global-forwards>
+  <action-mappings>
+    <action path="/EditMovement" type="com.bureaueye.beacon.action.standard.EditMovementAction" name="MovementForm" scope="session" validate="false">
+      <forward name="failure" path="/pages/standard/ListMovement.jsp"/>
+      <forward name="success" path="/pages/standard/Movement.jsp"/>
+    </action>
+    <action path="/SaveMovement" type="com.bureaueye.beacon.action.standard.SaveMovementAction" name="MovementForm" scope="session" cancellable="true" input="Movement">
+      <forward name="success" path="/ListMovement.do"/>
+    </action>
+    <action path="/ListMovement" type="com.bureaueye.beacon.action.standard.ListMovementAction" name="ListMovementForm" scope="session" validate="false" parameter="ListUnitForm">
+      <forward name="success" path="/pages/standard/ListMovement.jsp"/>
+    </action>    
+  </action-mappings>
+</struts-config>

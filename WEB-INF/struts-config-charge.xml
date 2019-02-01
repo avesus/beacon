@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "file:///C:/BUREAUEYE/xml/struts-config_1_3.dtd">
+<struts-config>
+  <display-name>charge</display-name>
+  <description>This is the Struts configuration file for the charge.</description>
+  <form-beans>
+    <form-bean name="ChargeForm" type="com.bureaueye.beacon.form.standard.ChargeForm"/>
+    <form-bean name="ListChargeForm" type="com.bureaueye.beacon.form.ListForm"/>
+  </form-beans>
+  <global-forwards>
+    <forward name="Charge" path="/pages/standard/Charge.jsp"/>
+  </global-forwards>
+  <action-mappings>
+    <action path="/EditCharge" type="com.bureaueye.beacon.action.standard.EditChargeAction" name="ChargeForm" scope="request" validate="false">
+      <forward name="failure" path="/pages/standard/ListCharge.jsp"/>
+      <forward name="success" path="/pages/standard/Charge.jsp"/>
+    </action>
+    <action path="/SaveCharge" type="com.bureaueye.beacon.action.standard.SaveChargeAction" name="ChargeForm" scope="request" cancellable="true" input="Charge">
+      <forward name="success" path="/ListCharge.do"/>
+    </action>
+    <action path="/ListCharge" type="com.bureaueye.beacon.action.standard.ListChargeAction" name="ListChargeForm" scope="session" validate="false">
+      <forward name="success" path="/pages/standard/ListCharge.jsp"/>
+    </action>
+  </action-mappings>
+</struts-config>

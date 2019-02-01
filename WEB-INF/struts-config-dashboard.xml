@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "file:///C:/BUREAUEYE/xml/struts-config_1_3.dtd">
+<struts-config>
+  <display-name>dashboard</display-name>
+  <description>This is the Struts configuration file for the dashboard.</description>
+
+
+  <global-forwards>
+    <forward name="DashboardJobmov" path="/pages/dashboard/Jobmov.jsp"/>
+    <forward name="DashboardMultipleUpdate1" path="/pages/dashboard/MultipleUpdate.jsp"/>    
+  </global-forwards>
+  
+  <action-mappings>
+  
+    <action path="/DashboardSaveQuoapprove"
+            type="com.bureaueye.beacon.action.quotation.SaveQuoapproveAction"
+            name="ListQuoapproveForm"
+            scope="session"
+			validate="false"
+			cancellable="true">                
+	    <forward name="success"		path="/Dashboard.do?action=REFRESH1"/>	                   
+    </action>
+    <action path="/DashboardListQuoapprove" 
+    		type="com.bureaueye.beacon.action.quotation.ListQuoapproveAction" 
+    		name="ListQuoapproveForm" 
+    		scope="session" 
+    		validate="false">
+      <forward name="success" path="/pages/dashboard/ListQuoapprove.jsp"/>
+    </action>  
+    
+    <action path="/DashboardEditJobmov" 
+    		type="com.bureaueye.beacon.action.job.EditJobmovAction" 
+    		name="JobmovForm" 
+    		scope="session" 
+    		validate="false">
+      <forward name="failure" path="/Dashboard.do?action=REFRESH5"/>
+      <forward name="success" path="/pages/dashboard/Jobmov.jsp"/>
+    </action>
+    <action path="/DashboardSaveJobmov" 
+    		type="com.bureaueye.beacon.action.job.SaveJobmovAction" 
+    		name="JobmovForm" 
+    		scope="session" 
+    		cancellable="true" 
+    		input="DashboardJobmov">
+      <forward name="success" path="/Dashboard.do?action=REFRESH5"/>
+      <forward name="multipleupdate1" path="/DashboardMultipleUpdate1.do"/>      
+    </action>
+    <action path="/DashboardMultipleUpdate1" 
+    		type="com.bureaueye.beacon.action.job.MultipleUpdate1Action" 
+    		name="MultipleUpdateForm" 
+    		scope="session">
+      <forward name="success" path="/pages/dashboard/MultipleUpdate.jsp"/>
+      <forward name="failure" path="/Dashboard.do?action=REFRESH5"/>      
+    </action>
+    <action path="/DashboardMultipleUpdate2" 
+    		type="com.bureaueye.beacon.action.job.MultipleUpdate2Action" 
+    		name="MultipleUpdateForm" 
+    		scope="session" 
+    		validate="false"
+    		cancellable="true"  
+    		input="DashboardMultipleUpdate1">
+      <forward name="success" path="/Dashboard.do?action=REFRESH5"/>
+      <forward name="failure" path="/Dashboard.do?action=REFRESH5"/>      
+    </action>
+             
+  </action-mappings>           
+  
+</struts-config>

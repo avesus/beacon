@@ -1,0 +1,105 @@
+
+
+#mainFrame,#vertLineContainer,#secondaryNav{left:1.00em;}
+
+
+.MainNavigationSprite { overflow:hidden; background-image:url('/beacon/images/navigation/mainnavigationsprite.png'); vertical-align:middle; }
+
+.secNavBtnSelected .Oof { background-position:-96px -147px; width: 32px; height: 32px; }
+.Oof { background-position:0px -211px; width: 32px; height: 32px; }
+.secNavBtnLnkContent:Hover .Oof { background-position:-32px -211px; width: 32px; height: 32px; }
+.secNavBtnSelected .Oof { background-position:-96px -147px; width: 32px; height: 32px; }
+
+.InboxRules { background-position:-96px -403px; width: 32px; height: 32px; }
+.secNavBtnLnkContent:Hover .InboxRules { background-position:-128px -403px; width: 32px; height: 32px; }
+.secNavBtnSelected .InboxRules { background-position:-64px -435px; width: 32px; height: 32px; }
+
+.MessageTracking32 { background-position:-288px -179px; width: 32px; height: 32px; }
+.secNavBtnLnkContent:Hover .MessageTracking32 { background-position:-96px -211px; width: 32px; height: 32px; }
+.secNavBtnSelected .MessageTracking32 { background-position:-128px -211px; width: 32px; height: 32px; }
+
+.secNavBtnSelected .General { background-position:-192px -403px; width: 32px; height: 32px; }
+.General { background-position:-96px -467px; width: 32px; height: 32px; }
+.secNavBtnLnkContent:Hover .General { background-position:-128px -467px; width: 32px; height: 32px; }
+
+.secNavBtnSelected .Certficate { background-position:0px -435px; width: 32px; height: 32px; }
+.Certficate { background-position:-288px -403px; width: 32px; height: 32px; }
+.secNavBtnLnkContent:Hover .Certficate { background-position:-320px -403px; width: 32px; height: 32px; }
+
+.secNavBtnSelected .Dangerous { background-position:-224px -307px; width: 32px; height: 32px; }
+.Dangerous { background-position:-320px -307px; width: 32px; height: 32px; }
+.secNavBtnLnkContent:Hover .Dangerous { background-position:-128px -307px; width: 32px; height: 32px; }
+
+.secNavBtnSelected .Measurement { background-position:-160px -275px; width: 32px; height: 32px; }
+.Measurement { background-position:-96px -275px; width: 32px; height: 32px; }
+.secNavBtnLnkContent:Hover .Measurement { background-position:-128px -275px; width: 32px; height: 32px; }
+
+.secNavBtnSelected .Logistic { background-position:-288px -147px; width: 32px; height: 32px; }
+.Logistic { background-position:0px -179px; width: 32px; height: 32px; }
+.secNavBtnLnkContent:Hover .Logistic { background-position:-32px -179px; width: 32px; height: 32px; }
+
+.secNavBtnSelected .Address { background-position:-32px -339px; width: 32px; height: 32px; }
+.Address { background-position:-128px -339px; width: 32px; height: 32px; }
+.secNavBtnLnkContent:Hover .Address { background-position:-64px -339px; width: 32px; height: 32px; }
+
+.secNavBtnSelected .Document { background-position:-192px -275px; width: 32px; height: 32px; }
+.Document { background-position:-32px -275px; width: 32px; height: 32px; }
+.secNavBtnLnkContent:Hover .Document { background-position:0px -307px; width: 32px; height: 32px; }
+
+
+
+.HorizontalSprite { background-image:url('/beacon/images/navigation/horizontalsprite.png'); }
+.SecNavBg { background-position:0px 0px; height: 80px; width: 80px; }
+
+
+
+
+/*#secondaryNav{position:absolute;top:72px;right:11px;height:90px;min-width:37.5em;z-index:250;background:transparent;}
+.secNavOuterPane{position:absolute;top:5px;left:10px;right:0px;height:85px;overflow:hidden;overflow-x:auto;}*/
+
+
+
+#secondaryNav{position:relative;;top:10px;right:0px;height:90px;width:800px; min-width:37.5em;z-index:250;background:transparent;}
+.secNavOuterPane{position:relative;top:0px;left:0px;right:0px;height:85px;overflow:hidden;overflow-x:auto;}
+
+
+
+.secNavBtnLnk{display:block;text-decoration:none;color:#555555;text-align:center;font-size:92.3%;font-family:Segoe UI, Helvetica, Arial, sans-serif;font-weight:normal;}
+.secNavBtnLnk:link {
+	text-decoration: none;
+	color: 555555; 
+	
+}
+.secNavBtnLnk:visited {
+	text-decoration: none;
+	color: 555555;
+}
+.secNavBtnLnk:hover {
+	text-decoration: none;
+	color: black;
+}
+.secNavBtnLnk:active {
+	text-decoration: none;
+}
+
+
+.secNavBtnSelected{float:left;margin:0px;height:66px!important;padding:5px 6px 2px;border:1px solid #e8e8e8;background-color:#f2f2f2;}
+
+.secNavBtnSelected > .secNavBtnSpan > .secNavBtnLnk,.secNavBtnLnk:hover{color:#000000;}
+.secNavBtnSpan{width:100%;height:63px;padding-top:6px;padding-bottom:4px;overflow:hidden;}
+.secNavBtn,.secNavBtnSelected,.secNavBtn .secNavBtnLnk,.secNavBtnSelected .secNavBtnLnk{cursor:pointer;}
+.secNavBtnLnkContent{font-size: 11px; clear:left;text-align:center;display:block;min-width:4.82em;max-width:11.5em;overflow:hidden;word-wrap:break-word;}
+.secNavBtnLnkIcon{border:none;position:relative;vertical-align:top;margin-bottom:2px;}
+
+
+
+#secNavPane{height:78px;min-width:17.8571em;font-size:9.75pt;}.secNavBtn{float:left;margin:0px;height:66px;margin:0px;padding:5px 6px 2px;border:1px solid transparent;}
+
+
+#secNavDividerLeft{background:transparent url("/beacon/images/navigation/hdrdiv-l.png") no-repeat;width:400px;max-width:50%;left:0px;}
+#secNavDividerRight{background:transparent url("/beacon/images/navigation/hdrdiv-r.png") no-repeat;width:400px;max-width:49.95%;background-position:right top;right:0px;}
+#secNavDividerTitle{background:transparent url("/beacon/images/navigation/hdrdiv-t.png") repeat-x;left:400px;right:400px;}
+#secNavDividerLeft,#secNavDividerRight,#secNavDividerTitle{position:absolute;top:78px;height:7px;overflow:hidden;}
+
+
+

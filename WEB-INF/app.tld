@@ -1,0 +1,1627 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<!DOCTYPE taglib
+
+  PUBLIC "-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.1//EN"
+
+  "http://java.sun.com/j2ee/dtds/web-jsptaglibrary_1_1.dtd">
+
+
+
+<taglib>
+
+
+
+  <tlibversion>1.0</tlibversion>
+
+  <jspversion>1.1</jspversion>
+
+  <shortname>Application Tag Library</shortname>
+
+  <uri>http://jakarta.apache.org/taglibs/struts-example-1.0</uri>
+
+  <info>
+
+    This tag library contains functionality specific to the Struts
+
+    Example Application.
+
+  </info>
+
+
+
+
+
+  <tag>
+
+    <name>checkLogon</name>
+
+    <tagclass>com.bureaueye.beacon.taglib.CheckLogonTag</tagclass>
+
+    <bodycontent>empty</bodycontent>
+
+    <info>
+
+      Validate that there is a currently logged on user, by checking for
+
+      the existence of a session-scope bean under the specified name.
+
+      If there is no such bean, forward control to the specified page,
+
+      which will typically be a logon form.
+
+
+
+      name - Name of the session-scope bean to check for [user]
+
+
+
+      page - Context-relative path to the logon page [/logon.jsp]
+
+    </info>
+
+    <attribute>
+
+      <name>name</name>
+
+      <required>false</required>
+
+      <rtexprvalue>true</rtexprvalue>
+
+    </attribute>
+
+    <attribute>
+
+      <name>page</name>
+
+      <required>false</required>
+
+      <rtexprvalue>true</rtexprvalue>
+
+    </attribute>
+
+  </tag>
+
+
+
+
+
+
+
+
+
+  <tag>
+
+    <name>linkCountryLineItem</name>
+
+    <tagclass>com.bureaueye.beacon.taglib.standard.LinkCountryLineItemTag</tagclass>
+
+    <info>
+
+      Generate a URL-encoded hyperlink to the a URL made up of the
+
+      specified base value, plus optional query parameters that
+
+      select the specified User object.
+
+
+
+      name     - Name of the attribute containing the specified user.
+
+                 [country]
+
+
+
+      href     - Context-relative URL of the generated link
+
+    </info>
+
+    <attribute>
+
+      <name>name</name>
+
+      <required>false</required>
+
+      <rtexprvalue>true</rtexprvalue>
+
+    </attribute>
+
+    <attribute>
+
+      <name>page</name>
+
+      <required>true</required>
+
+      <rtexprvalue>true</rtexprvalue>
+
+    </attribute>
+
+  </tag>
+  
+  
+  <tag>
+
+    <name>linkCityLineItem</name>
+
+    <tagclass>com.bureaueye.beacon.taglib.standard.LinkCityLineItemTag</tagclass>
+
+    <info>
+
+      Generate a URL-encoded hyperlink to the a URL made up of the
+
+      specified base value, plus optional query parameters that
+
+      select the specified User object.
+
+
+
+      name     - Name of the attribute containing the specified user.
+
+                 [country]
+
+
+
+      href     - Context-relative URL of the generated link
+
+    </info>
+
+    <attribute>
+
+      <name>name</name>
+
+      <required>false</required>
+
+      <rtexprvalue>true</rtexprvalue>
+
+    </attribute>
+
+    <attribute>
+
+      <name>page</name>
+
+      <required>true</required>
+
+      <rtexprvalue>true</rtexprvalue>
+
+    </attribute>
+
+  </tag>
+  
+  
+  
+  <tag>
+
+    <name>linkCcyLineItem</name>
+
+    <tagclass>com.bureaueye.beacon.taglib.standard.LinkCcyLineItemTag</tagclass>
+
+    <info>
+
+      Generate a URL-encoded hyperlink to the a URL made up of the
+
+      specified base value, plus optional query parameters that
+
+      select the specified object.
+
+
+
+      name     - Name of the attribute containing the specified user.
+
+                 [ccy]
+
+
+
+      href     - Context-relative URL of the generated link
+
+    </info>
+
+    <attribute>
+
+      <name>name</name>
+
+      <required>false</required>
+
+      <rtexprvalue>true</rtexprvalue>
+
+    </attribute>
+
+    <attribute>
+
+      <name>page</name>
+
+      <required>true</required>
+
+      <rtexprvalue>true</rtexprvalue>
+
+    </attribute>
+
+  </tag>
+  
+ 
+ 
+  <tag>
+    <name>linkUnitLineItem</name>
+    <tagclass>com.bureaueye.beacon.taglib.standard.LinkUnitLineItemTag</tagclass>
+    <info>
+      Generate a URL-encoded hyperlink to the a URL made up of the
+      specified base value, plus optional query parameters that
+      select the specified object.
+      name     - Name of the attribute containing the specified object.
+                 [unit]
+      href     - Context-relative URL of the generated link
+    </info>
+    <attribute>
+      <name>name</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>page</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+  
+  <tag>
+    <name>linkMovementLineItem</name>
+    <tagclass>com.bureaueye.beacon.taglib.standard.LinkMovementLineItemTag</tagclass>
+    <info>
+      Generate a URL-encoded hyperlink to the a URL made up of the
+      specified base value, plus optional query parameters that
+      select the specified object.
+      name     - Name of the attribute containing the specified object.
+                 [movement]
+      href     - Context-relative URL of the generated link
+    </info>
+    <attribute>
+      <name>name</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>page</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+  <tag>
+    <name>linkMovementCreate</name>
+    <tagclass>com.bureaueye.beacon.taglib.standard.LinkMovementCreateTag</tagclass>
+    <info>
+      Generate a URL-encoded hyperlink to the a URL made up of the
+      specified base value, plus optional query parameters that
+      select the specified object.
+      name     - Name of the attribute containing the specified object.
+                 [movement]
+      href     - Context-relative URL of the generated link
+    </info>
+    <attribute>
+      <name>name</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>page</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+
+
+
+
+  
+      
+  <tag>
+    <name>linkCostLineItem</name>
+    <tagclass>com.bureaueye.beacon.taglib.standard.LinkCostLineItemTag</tagclass>
+    <info>
+      Generate a URL-encoded hyperlink to the a URL made up of the
+      specified base value, plus optional query parameters that
+      select the specified object.
+      name     - Name of the attribute containing the specified object.
+                 [cost]
+      href     - Context-relative URL of the generated link
+    </info>
+    <attribute>
+      <name>name</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>page</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+
+
+  <tag>
+    <name>linkIncotermLineItem</name>
+    <tagclass>com.bureaueye.beacon.taglib.standard.LinkIncotermLineItemTag</tagclass>
+    <info>
+      Generate a URL-encoded hyperlink to the a URL made up of the
+      specified base value, plus optional query parameters that
+      select the specified object.
+      name     - Name of the attribute containing the specified object.
+                 [incoterm]
+      href     - Context-relative URL of the generated link
+    </info>
+    <attribute>
+      <name>name</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>page</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+    
+    
+    
+  <tag>
+    <name>linkLocationLineItem</name>
+    <tagclass>com.bureaueye.beacon.taglib.standard.LinkLocationLineItemTag</tagclass>
+    <info>
+      Generate a URL-encoded hyperlink to the a URL made up of the
+      specified base value, plus optional query parameters that
+      select the specified object.
+      name     - Name of the attribute containing the specified object.
+                 [location]
+      href     - Context-relative URL of the generated link
+    </info>
+    <attribute>
+      <name>name</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>page</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+  
+      
+  <tag>
+    <name>linkAddressLineItem</name>
+    <tagclass>com.bureaueye.beacon.taglib.standard.LinkAddressLineItemTag</tagclass>
+    <info>
+      Generate a URL-encoded hyperlink to the a URL made up of the
+      specified base value, plus optional query parameters that
+      select the specified object.
+      name     - Name of the attribute containing the specified object.
+                 [address]
+      href     - Context-relative URL of the generated link
+    </info>
+    <attribute>
+      <name>name</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>page</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+  
+  <tag>
+    <name>linkAddresscontactLineItem</name>
+    <tagclass>com.bureaueye.beacon.taglib.standard.LinkAddresscontactLineItemTag</tagclass>
+    <info>
+      Generate a URL-encoded hyperlink to the a URL made up of the
+      specified base value, plus optional query parameters that
+      select the specified object.
+      name     - Name of the attribute containing the specified object.
+                 [addresscontact]
+      href     - Context-relative URL of the generated link
+    </info>
+    <attribute>
+      <name>name</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>page</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+
+  <tag>
+    <name>linkAddresscontactCreate</name>
+    <tagclass>com.bureaueye.beacon.taglib.standard.LinkAddresscontactCreateTag</tagclass>
+    <info>
+      Generate a URL-encoded hyperlink to the a URL made up of the
+      specified base value, plus optional query parameters that
+      select the specified object.
+      name     - Name of the attribute containing the specified object.
+                 [addresscontact]
+      href     - Context-relative URL of the generated link
+    </info>
+    <attribute>
+      <name>name</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>page</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+
+  <tag>
+    <name>linkChargeLineItem</name>
+    <tagclass>com.bureaueye.beacon.taglib.standard.LinkChargeLineItemTag</tagclass>
+    <info>
+      Generate a URL-encoded hyperlink to the a URL made up of the
+      specified base value, plus optional query parameters that
+      select the specified object.
+      name     - Name of the attribute containing the specified object.
+                 [charge]
+      href     - Context-relative URL of the generated link
+    </info>
+    <attribute>
+      <name>name</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>page</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+  
+  <tag>
+    <name>linkSectionLineItem</name>
+    <tagclass>com.bureaueye.beacon.taglib.standard.LinkSectionLineItemTag</tagclass>
+    <info>
+      Generate a URL-encoded hyperlink to the a URL made up of the
+      specified base value, plus optional query parameters that
+      select the specified object.
+      name     - Name of the attribute containing the specified object.
+                 [section]
+      href     - Context-relative URL of the generated link
+    </info>
+    <attribute>
+      <name>name</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>page</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+  
+  <tag>
+    <name>linkVesselLineItem</name>
+    <tagclass>com.bureaueye.beacon.taglib.standard.LinkVesselLineItemTag</tagclass>
+    <info>
+      Generate a URL-encoded hyperlink to the a URL made up of the
+      specified base value, plus optional query parameters that
+      select the specified object.
+      name     - Name of the attribute containing the specified object.
+                 [vessel]
+      href     - Context-relative URL of the generated link
+    </info>
+    <attribute>
+      <name>name</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>page</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+
+  <tag>
+    <name>linkQuohdrLineItem</name>
+    <tagclass>com.bureaueye.beacon.taglib.quotation.LinkQuohdrLineItemTag</tagclass>
+    <info>
+      Generate a URL-encoded hyperlink to the a URL made up of the
+      specified base value, plus optional query parameters that
+      select the specified object.
+      name     - Name of the attribute containing the specified object.
+                 [quohdr]
+      href     - Context-relative URL of the generated link
+    </info>
+    <attribute>
+      <name>name</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>page</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+  
+  <tag>
+    <name>linkQuohdr</name>
+    <tagclass>com.bureaueye.beacon.taglib.quotation.LinkQuohdrTag</tagclass>
+    <info>
+      Generate a URL-encoded hyperlink to the a URL made up of the
+      specified base value, plus optional query parameters that
+      select the specified object.
+      name     - Name of the attribute containing the specified object.
+                 [quohdr]
+      href     - Context-relative URL of the generated link
+    </info>
+    <attribute>
+      <name>name</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>page</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+
+  <tag>
+    <name>linkQuoprodLineItem</name>
+    <tagclass>com.bureaueye.beacon.taglib.quotation.LinkQuoprodLineItemTag</tagclass>
+    <info>
+      Generate a URL-encoded hyperlink to the a URL made up of the
+      specified base value, plus optional query parameters that
+      select the specified object.
+      name     - Name of the attribute containing the specified object.
+                 [quoprod]
+      href     - Context-relative URL of the generated link
+    </info>
+    <attribute>
+      <name>name</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>page</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+  <tag>
+    <name>linkQuoprodCreate</name>
+    <tagclass>com.bureaueye.beacon.taglib.quotation.LinkQuoprodCreateTag</tagclass>
+    <info>
+      Generate a URL-encoded hyperlink to the a URL made up of the
+      specified base value, plus optional query parameters that
+      select the specified object.
+      name     - Name of the attribute containing the specified object.
+                 [quoprod]
+      href     - Context-relative URL of the generated link
+    </info>
+    <attribute>
+      <name>name</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>page</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+    
+  <tag>
+    <name>linkQuochargeLineItem</name>
+    <tagclass>com.bureaueye.beacon.taglib.quotation.LinkQuochargeLineItemTag</tagclass>
+    <info>
+      Generate a URL-encoded hyperlink to the a URL made up of the
+      specified base value, plus optional query parameters that
+      select the specified object.
+      name     - Name of the attribute containing the specified object.
+                 [Quocharge]
+      href     - Context-relative URL of the generated link
+    </info>
+    <attribute>
+      <name>name</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>page</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+  <tag>
+    <name>linkQuochargeCreate</name>
+    <tagclass>com.bureaueye.beacon.taglib.quotation.LinkQuochargeCreateTag</tagclass>
+    <info>
+      Generate a URL-encoded hyperlink to the a URL made up of the
+      specified base value, plus optional query parameters that
+      select the specified object.
+      name     - Name of the attribute containing the specified object.
+                 [quocharge]
+      href     - Context-relative URL of the generated link
+    </info>
+    <attribute>
+      <name>name</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>page</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+  
+  <tag>
+    <name>linkQuomovLineItem</name>
+    <tagclass>com.bureaueye.beacon.taglib.quotation.LinkQuomovLineItemTag</tagclass>
+    <info>
+      Generate a URL-encoded hyperlink to the a URL made up of the
+      specified base value, plus optional query parameters that
+      select the specified object.
+      name     - Name of the attribute containing the specified object.
+                 [Quomov]
+      href     - Context-relative URL of the generated link
+    </info>
+    <attribute>
+      <name>name</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>page</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+  <tag>
+    <name>linkQuomovCreate</name>
+    <tagclass>com.bureaueye.beacon.taglib.quotation.LinkQuomovCreateTag</tagclass>
+    <info>
+      Generate a URL-encoded hyperlink to the a URL made up of the
+      specified base value, plus optional query parameters that
+      select the specified object.
+      name     - Name of the attribute containing the specified object.
+                 [quomov]
+      href     - Context-relative URL of the generated link
+    </info>
+    <attribute>
+      <name>name</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>page</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+  <tag>
+    <name>linkQuomovQuocostLineItem</name>
+    <tagclass>com.bureaueye.beacon.taglib.quotation.LinkQuomovQuocostLineItemTag</tagclass>
+    <info>
+      Generate a URL-encoded hyperlink to the a URL made up of the
+      specified base value, plus optional query parameters that
+      select the specified object.
+      name     - Name of the attribute containing the specified object.
+                 [Quomov to Quomovcost]
+      href     - Context-relative URL of the generated link
+    </info>
+    <attribute>
+      <name>name</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>page</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+  <tag>
+    <name>linkQuomovcostLineItem</name>
+    <tagclass>com.bureaueye.beacon.taglib.quotation.LinkQuomovcostLineItemTag</tagclass>
+    <info>
+      Generate a URL-encoded hyperlink to the a URL made up of the
+      specified base value, plus optional query parameters that
+      select the specified object.
+      name     - Name of the attribute containing the specified object.
+                 [Quomovcost]
+      href     - Context-relative URL of the generated link
+    </info>
+    <attribute>
+      <name>name</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>page</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+  <tag>
+    <name>linkQuomovcostCreate</name>
+    <tagclass>com.bureaueye.beacon.taglib.quotation.LinkQuomovcostCreateTag</tagclass>
+    <info>
+      Generate a URL-encoded hyperlink to the a URL made up of the
+      specified base value, plus optional query parameters that
+      select the specified object.
+      name     - Name of the attribute containing the specified object.
+                 [Quomovcost]
+      href     - Context-relative URL of the generated link
+    </info>
+    <attribute>
+      <name>name</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>page</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>  
+  
+    <tag>
+    <name>linkQuocostLineItem</name>
+    <tagclass>com.bureaueye.beacon.taglib.quotation.LinkQuocostLineItemTag</tagclass>
+    <info>
+      Generate a URL-encoded hyperlink to the a URL made up of the
+      specified base value, plus optional query parameters that
+      select the specified object.
+      name     - Name of the attribute containing the specified object.
+                 [Quocost]
+      href     - Context-relative URL of the generated link
+    </info>
+    <attribute>
+      <name>name</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>page</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+  <tag>
+    <name>linkQuocostCreate</name>
+    <tagclass>com.bureaueye.beacon.taglib.quotation.LinkQuocostCreateTag</tagclass>
+    <info>
+      Generate a URL-encoded hyperlink to the a URL made up of the
+      specified base value, plus optional query parameters that
+      select the specified object.
+      name     - Name of the attribute containing the specified object.
+                 [Quocost]
+      href     - Context-relative URL of the generated link
+    </info>
+    <attribute>
+      <name>name</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>page</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>  
+  
+  
+  <tag>
+    <name>linkQuonoteLineItem</name>
+    <tagclass>com.bureaueye.beacon.taglib.quotation.LinkQuonoteLineItemTag</tagclass>
+    <info>
+      Generate a URL-encoded hyperlink to the a URL made up of the
+      specified base value, plus optional query parameters that
+      select the specified object.
+      name     - Name of the attribute containing the specified object.
+                 [Quonote]
+      href     - Context-relative URL of the generated link
+    </info>
+    <attribute>
+      <name>name</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>page</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+  <tag>
+    <name>linkQuonoteCreate</name>
+    <tagclass>com.bureaueye.beacon.taglib.quotation.LinkQuonoteCreateTag</tagclass>
+    <info>
+      Generate a URL-encoded hyperlink to the a URL made up of the
+      specified base value, plus optional query parameters that
+      select the specified object.
+      name     - Name of the attribute containing the specified object.
+                 [Quonote]
+      href     - Context-relative URL of the generated link
+    </info>
+    <attribute>
+      <name>name</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>page</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+  
+   <tag>
+    <name>linkWorkflowLineItem</name>
+    <tagclass>com.bureaueye.beacon.taglib.quotation.LinkWorkflowLineItemTag</tagclass>
+    <info>
+      Generate a URL-encoded hyperlink to the a URL made up of the
+      specified base value, plus optional query parameters that
+      select the specified object.
+      name     - Name of the attribute containing the specified object.
+                 [Workflow]
+      href     - Context-relative URL of the generated link
+    </info>
+    <attribute>
+      <name>name</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>page</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+       
+  
+      
+  
+  <tag>
+    <name>linkCustomertariffhdrLineItem</name>
+    <tagclass>com.bureaueye.beacon.taglib.standard.LinkCustomertariffhdrLineItemTag</tagclass>
+    <info>
+      Generate a URL-encoded hyperlink to the a URL made up of the
+      specified base value, plus optional query parameters that
+      select the specified object.
+      name     - Name of the attribute containing the specified object.
+                 [customertariffhdr]
+      href     - Context-relative URL of the generated link
+    </info>
+    <attribute>
+      <name>name</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>page</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+
+  <tag>
+    <name>linkCustomertariffdtlLineItem</name>
+    <tagclass>com.bureaueye.beacon.taglib.standard.LinkCustomertariffdtlLineItemTag</tagclass>
+    <info>
+      Generate a URL-encoded hyperlink to the a URL made up of the
+      specified base value, plus optional query parameters that
+      select the specified object.
+      name     - Name of the attribute containing the specified object.
+                 [customertariffdtl]
+      href     - Context-relative URL of the generated link
+    </info>
+    <attribute>
+      <name>name</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>page</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+  <tag>
+    <name>linkCustomertariffdtlCreate</name>
+    <tagclass>com.bureaueye.beacon.taglib.standard.LinkCustomertariffdtlCreateTag</tagclass>
+    <info>
+      Generate a URL-encoded hyperlink to the a URL made up of the
+      specified base value, plus optional query parameters that
+      select the specified object.
+      name     - Name of the attribute containing the specified object.
+                 [customertariffdtl]
+      href     - Context-relative URL of the generated link
+    </info>
+    <attribute>
+      <name>name</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>page</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+    
+
+  <tag>
+    <name>linkVendortariffdtlLineItem</name>
+    <tagclass>com.bureaueye.beacon.taglib.standard.LinkVendortariffdtlLineItemTag</tagclass>
+    <info>
+      Generate a URL-encoded hyperlink to the a URL made up of the
+      specified base value, plus optional query parameters that
+      select the specified object.
+      name     - Name of the attribute containing the specified object.
+                 [vendortariffdtl]
+      href     - Context-relative URL of the generated link
+    </info>
+    <attribute>
+      <name>name</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>page</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+  <tag>
+    <name>linkVendortariffdtlCreate</name>
+    <tagclass>com.bureaueye.beacon.taglib.standard.LinkVendortariffdtlCreateTag</tagclass>
+    <info>
+      Generate a URL-encoded hyperlink to the a URL made up of the
+      specified base value, plus optional query parameters that
+      select the specified object.
+      name     - Name of the attribute containing the specified object.
+                 [vendortariffdtl]
+      href     - Context-relative URL of the generated link
+    </info>
+    <attribute>
+      <name>name</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>page</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+
+  <tag>
+    <name>linkVendortariffhdrLineItem</name>
+    <tagclass>com.bureaueye.beacon.taglib.standard.LinkVendortariffhdrLineItemTag</tagclass>
+    <info>
+      Generate a URL-encoded hyperlink to the a URL made up of the
+      specified base value, plus optional query parameters that
+      select the specified object.
+      name     - Name of the attribute containing the specified object.
+                 [vendortariffhdr]
+      href     - Context-relative URL of the generated link
+    </info>
+    <attribute>
+      <name>name</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>page</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+ 
+ 
+   <tag>
+    <name>linkEDIOutboundLineItem</name>
+    <tagclass>com.bureaueye.beacon.taglib.edi.LinkEDIOutboundLineItemTag</tagclass>
+    <info>
+      Generate a URL-encoded hyperlink to the a URL made up of the
+      specified base value, plus optional query parameters that
+      select the specified object.
+      name     - Name of the attribute containing the specified object.
+                 [EDIOutbound]
+      href     - Context-relative URL of the generated link
+    </info>
+    <attribute>
+      <name>name</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>page</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+   <tag>
+    <name>linkEDIInboundLineItem</name>
+    <tagclass>com.bureaueye.beacon.taglib.edi.LinkEDIInboundLineItemTag</tagclass>
+    <info>
+      Generate a URL-encoded hyperlink to the a URL made up of the
+      specified base value, plus optional query parameters that
+      select the specified object.
+      name     - Name of the attribute containing the specified object.
+                 [EDIInbound]
+      href     - Context-relative URL of the generated link
+    </info>
+    <attribute>
+      <name>name</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>page</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+  
+    
+        
+  <tag>
+    <name>linkUnittestLineItem</name>
+    <tagclass>com.bureaueye.beacon.taglib.standard.LinkUnittestLineItemTag</tagclass>
+    <info>
+      Generate a URL-encoded hyperlink to the a URL made up of the
+      specified base value, plus optional query parameters that
+      select the specified object.
+      name     - Name of the attribute containing the specified object.
+                 [unittest]
+      href     - Context-relative URL of the generated link
+    </info>
+    <attribute>
+      <name>name</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>page</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+  <tag>
+    <name>linkUnittestCreate</name>
+    <tagclass>com.bureaueye.beacon.taglib.standard.LinkUnittestCreateTag</tagclass>
+    <info>
+      Generate a URL-encoded hyperlink to the a URL made up of the
+      specified base value, plus optional query parameters that
+      select the specified object.
+      name     - Name of the attribute containing the specified object.
+                 [unittest]
+      href     - Context-relative URL of the generated link
+    </info>
+    <attribute>
+      <name>name</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>page</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+  
+
+  <tag>
+    <name>linkUnitfitLineItem</name>
+    <tagclass>com.bureaueye.beacon.taglib.standard.LinkUnitfitLineItemTag</tagclass>
+    <info>
+      Generate a URL-encoded hyperlink to the a URL made up of the
+      specified base value, plus optional query parameters that
+      select the specified object.
+      name     - Name of the attribute containing the specified object.
+                 [unitfit]
+      href     - Context-relative URL of the generated link
+    </info>
+    <attribute>
+      <name>name</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>page</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+  <tag>
+    <name>linkUnitfitCreate</name>
+    <tagclass>com.bureaueye.beacon.taglib.standard.LinkUnitfitCreateTag</tagclass>
+    <info>
+      Generate a URL-encoded hyperlink to the a URL made up of the
+      specified base value, plus optional query parameters that
+      select the specified object.
+      name     - Name of the attribute containing the specified object.
+                 [unitfit]
+      href     - Context-relative URL of the generated link
+    </info>
+    <attribute>
+      <name>name</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>page</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+
+
+
+ <tag>
+    <name>linkUnitmandrLineItem</name>
+    <tagclass>com.bureaueye.beacon.taglib.standard.LinkUnitmandrLineItemTag</tagclass>
+    <info>
+      Generate a URL-encoded hyperlink to the a URL made up of the
+      specified base value, plus optional query parameters that
+      select the specified object.
+      name     - Name of the attribute containing the specified object.
+                 [unitmandr]
+      href     - Context-relative URL of the generated link
+    </info>
+    <attribute>
+      <name>name</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>page</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+  <tag>
+    <name>linkUnitmandrCreate</name>
+    <tagclass>com.bureaueye.beacon.taglib.standard.LinkUnitmandrCreateTag</tagclass>
+    <info>
+      Generate a URL-encoded hyperlink to the a URL made up of the
+      specified base value, plus optional query parameters that
+      select the specified object.
+      name     - Name of the attribute containing the specified object.
+                 [unitmandr]
+      href     - Context-relative URL of the generated link
+    </info>
+    <attribute>
+      <name>name</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>page</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+  
+  
+  
+  <tag>
+    <name>linkCcyexLineItem</name>
+    <tagclass>com.bureaueye.beacon.taglib.standard.LinkCcyexLineItemTag</tagclass>
+    <info>
+      Generate a URL-encoded hyperlink to the a URL made up of the
+      specified base value, plus optional query parameters that
+      select the specified object.
+      name     - Name of the attribute containing the specified object.
+                 [Ccyex]
+      href     - Context-relative URL of the generated link
+    </info>
+    <attribute>
+      <name>name</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>page</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+  
+  
+  
+  <!-- salesinvoice taglibs -->
+  <tag>
+    <name>linkSihdrLineItem</name>
+    <tagclass>com.bureaueye.beacon.taglib.salesinvoice.LinkSihdrLineItemTag</tagclass>
+    <info>
+      Generate a URL-encoded hyperlink to the a URL made up of the
+      specified base value, plus optional query parameters that
+      select the specified object.
+      name     - Name of the attribute containing the specified object.
+                 [sihdr]
+      href     - Context-relative URL of the generated link
+    </info>
+    <attribute>
+      <name>name</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>page</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+  
+  <tag>
+    <name>linkSidtlLineItem</name>
+    <tagclass>com.bureaueye.beacon.taglib.salesinvoice.LinkSidtlLineItemTag</tagclass>
+    <info>
+      Generate a URL-encoded hyperlink to the a URL made up of the
+      specified base value, plus optional query parameters that
+      select the specified object.
+      name     - Name of the attribute containing the specified object.
+                 [sidtl]
+      href     - Context-relative URL of the generated link
+    </info>
+    <attribute>
+      <name>name</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>page</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+  
+  <tag>
+    <name>linkSihdrCreate</name>
+    <tagclass>com.bureaueye.beacon.taglib.salesinvoice.LinkSihdrCreateTag</tagclass>
+    <info>
+      Generate a URL-encoded hyperlink to the a URL made up of the
+      specified base value, plus optional query parameters that
+      select the specified object.
+      name     - Name of the attribute containing the specified object.
+                 [sihdr]
+      href     - Context-relative URL of the generated link
+    </info>
+    <attribute>
+      <name>name</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>page</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+  
+  <tag>
+    <name>linkSidtlCreate</name>
+    <tagclass>com.bureaueye.beacon.taglib.salesinvoice.LinkSidtlCreateTag</tagclass>
+    <info>
+      Generate a URL-encoded hyperlink to the a URL made up of the
+      specified base value, plus optional query parameters that
+      select the specified object.
+      name     - Name of the attribute containing the specified object.
+                 [sidtl]
+      href     - Context-relative URL of the generated link
+    </info>
+    <attribute>
+      <name>name</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>page</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+  
+       
+  
+  
+    <tag>
+    <name>linkProductLineItem</name>
+    <tagclass>com.bureaueye.beacon.taglib.standard.LinkProductLineItemTag</tagclass>
+    <info>
+      Generate a URL-encoded hyperlink to the a URL made up of the
+      specified base value, plus optional query parameters that
+      select the specified object.
+      name     - Name of the attribute containing the specified object.
+                 [product]
+      href     - Context-relative URL of the generated link
+    </info>
+    <attribute>
+      <name>name</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>page</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+  
+  
+  
+  
+  
+  <tag>
+    <name>linkUsermenuLineItem</name>
+    <tagclass>com.bureaueye.beacon.taglib.standard.LinkUsermenuLineItemTag</tagclass>
+    <info>
+      Generate a URL-encoded hyperlink to the a URL made up of the
+      specified base value, plus optional query parameters that
+      select the specified object.
+      name     - Name of the attribute containing the specified object.
+                 [usermenu]
+      href     - Context-relative URL of the generated link
+    </info>
+    <attribute>
+      <name>name</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>page</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+  
+  <tag>
+    <name>linkUsermenuCreate</name>
+    <tagclass>com.bureaueye.beacon.taglib.standard.LinkUsermenuCreateTag</tagclass>
+    <info>
+      Generate a URL-encoded hyperlink to the a URL made up of the
+      specified base value, plus optional query parameters that
+      select the specified object.
+      name     - Name of the attribute containing the specified object.
+                 [usermenu]
+      href     - Context-relative URL of the generated link
+    </info>
+    <attribute>
+      <name>name</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>page</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+
+  <tag>
+    <name>linkUserLineItem</name>
+    <tagclass>com.bureaueye.beacon.taglib.standard.LinkUserLineItemTag</tagclass>
+    <info>
+      Generate a URL-encoded hyperlink to the a URL made up of the
+      specified base value, plus optional query parameters that
+      select the specified object.
+      name     - Name of the attribute containing the specified object.
+                 [user]
+      href     - Context-relative URL of the generated link
+    </info>
+    <attribute>
+      <name>name</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>page</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+
+
+
+
+  <tag>
+    <name>linkUsergroupmenuLineItem</name>
+    <tagclass>com.bureaueye.beacon.taglib.standard.LinkUsergroupmenuLineItemTag</tagclass>
+    <info>
+      Generate a URL-encoded hyperlink to the a URL made up of the
+      specified base value, plus optional query parameters that
+      select the specified object.
+      name     - Name of the attribute containing the specified object.
+                 [Usergroupmenu]
+      href     - Context-relative URL of the generated link
+    </info>
+    <attribute>
+      <name>name</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>page</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+  
+  <tag>
+    <name>linkUsergroupmenuCreate</name>
+    <tagclass>com.bureaueye.beacon.taglib.standard.LinkUsergroupmenuCreateTag</tagclass>
+    <info>
+      Generate a URL-encoded hyperlink to the a URL made up of the
+      specified base value, plus optional query parameters that
+      select the specified object.
+      name     - Name of the attribute containing the specified object.
+                 [usergroupmenu]
+      href     - Context-relative URL of the generated link
+    </info>
+    <attribute>
+      <name>name</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>page</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+
+  <tag>
+    <name>linkUsergroupLineItem</name>
+    <tagclass>com.bureaueye.beacon.taglib.standard.LinkUsergroupLineItemTag</tagclass>
+    <info>
+      Generate a URL-encoded hyperlink to the a URL made up of the
+      specified base value, plus optional query parameters that
+      select the specified object.
+      name     - Name of the attribute containing the specified object.
+                 [usergroup]
+      href     - Context-relative URL of the generated link
+    </info>
+    <attribute>
+      <name>name</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>page</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+  
+
+  <tag>
+    <name>linkAIOutLineItem</name>
+    <tagclass>com.bureaueye.beacon.taglib.account.LinkAIOutLineItemTag</tagclass>
+    <info>
+      Generate a URL-encoded hyperlink to the a URL made up of the
+      specified base value, plus optional query parameters that
+      select the specified object.
+      name     - Name of the attribute containing the specified object.
+                 [AIOut]
+      href     - Context-relative URL of the generated link
+    </info>
+    <attribute>
+      <name>name</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>page</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+
+
+
+
+    <tag>
+    <name>linkQuofileLineItem</name>
+    <tagclass>com.bureaueye.beacon.taglib.quotation.LinkQuofileLineItemTag</tagclass>
+    <info>
+      Generate a URL-encoded hyperlink to the a URL made up of the
+      specified base value, plus optional query parameters that
+      select the specified object.
+      name     - Name of the attribute containing the specified object.
+                 [quofile]
+      href     - Context-relative URL of the generated link
+    </info>
+    <attribute>
+      <name>name</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>page</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+  <tag>
+    <name>linkQuofileCreate</name>
+    <tagclass>com.bureaueye.beacon.taglib.quotation.LinkQuofileCreateTag</tagclass>
+    <info>
+      Generate a URL-encoded hyperlink to the a URL made up of the
+      specified base value, plus optional query parameters that
+      select the specified object.
+      name     - Name of the attribute containing the specified object.
+                 [quofile]
+      href     - Context-relative URL of the generated link
+    </info>
+    <attribute>
+      <name>name</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>page</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+
+
+
+
+    <tag>
+    <name>linkQuonotecustLineItem</name>
+    <tagclass>com.bureaueye.beacon.taglib.quotation.LinkQuonotecustLineItemTag</tagclass>
+    <info>
+      Generate a URL-encoded hyperlink to the a URL made up of the
+      specified base value, plus optional query parameters that
+      select the specified object.
+      name     - Name of the attribute containing the specified object.
+                 [quonotecust]
+      href     - Context-relative URL of the generated link
+    </info>
+    <attribute>
+      <name>name</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>page</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+  <tag>
+    <name>linkQuonotecustCreate</name>
+    <tagclass>com.bureaueye.beacon.taglib.quotation.LinkQuonotecustCreateTag</tagclass>
+    <info>
+      Generate a URL-encoded hyperlink to the a URL made up of the
+      specified base value, plus optional query parameters that
+      select the specified object.
+      name     - Name of the attribute containing the specified object.
+                 [quonotecust]
+      href     - Context-relative URL of the generated link
+    </info>
+    <attribute>
+      <name>name</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>page</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+
+
+                      
+</taglib>
+

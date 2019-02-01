@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "file:///C:/BUREAUEYE/xml/struts-config_1_3.dtd">
+<struts-config>
+
+  <display-name>offhireeqpotc</display-name>
+  <description>This is the Struts configuration file for the offhire equipment otc</description>
+  
+  <form-beans>
+    <form-bean name="OffhireeqpotcForm" type="com.bureaueye.genesys.form.offhire.OffhireeqpotcForm"/>
+    <form-bean name="ListOffhireeqpotcForm" type="com.bureaueye.beacon.form.ListForm"/>
+  </form-beans>
+  
+  <global-forwards>
+    <forward name="Offhireeqpotc" path="/pages/offhire/Offhireeqpotc.jsp"/>
+  </global-forwards>
+  
+  <action-mappings>
+  
+    <action path="/EditOffhireeqpotc" type="com.bureaueye.genesys.action.offhire.EditOffhireeqpotcAction" name="OffhireeqpotcForm" scope="request" validate="false">
+      <forward name="failure" path="/pages/offhire/ListOffhireeqpotc.jsp"/>
+      <forward name="success" path="/pages/offhire/Offhireeqpotc.jsp"/>
+    </action>
+    
+    <action path="/SaveOffhireeqpotc" type="com.bureaueye.genesys.action.offhire.SaveOffhireeqpotcAction" name="OffhireeqpotcForm" scope="request" cancellable="true" input="Offhireeqpotc">
+      <forward name="success" path="/ListOffhireeqpotc.do"/>
+    </action>
+    
+    <action path="/ListOffhireeqpotc" type="com.bureaueye.genesys.action.offhire.ListOffhireeqpotcAction" name="ListOffhireeqpotcForm" scope="session" validate="false" parameter="ListOffhireForm,ListOffhireeqpForm">
+      <forward name="success" path="/pages/offhire/ListOffhireeqpotc.jsp"/>
+    </action>
+    
+  </action-mappings>
+  
+</struts-config>

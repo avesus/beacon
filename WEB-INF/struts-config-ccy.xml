@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "file:///C:/BUREAUEYE/xml/struts-config_1_3.dtd">
+<struts-config>
+  <display-name>currency</display-name>
+  <description>This is the Struts configuration file for the ccy.</description>
+  <form-beans>
+    <form-bean name="CcyForm" type="com.bureaueye.beacon.form.standard.CcyForm"/>
+    <form-bean name="ListCcyForm" type="com.bureaueye.beacon.form.ListForm"/>
+  </form-beans>
+  <global-forwards>
+    <forward name="Ccy" path="/pages/standard/Ccy.jsp"/>
+  </global-forwards>
+  <action-mappings>
+    <action path="/EditCcy" type="com.bureaueye.beacon.action.standard.EditCcyAction" name="CcyForm" scope="request" validate="false">
+      <forward name="failure" path="/pages/standard/ListCcy.jsp"/>
+      <forward name="success" path="/pages/standard/Ccy.jsp"/>
+    </action>
+    <action path="/SaveCcy" type="com.bureaueye.beacon.action.standard.SaveCcyAction" name="CcyForm" scope="request" cancellable="true" input="Ccy">
+      <forward name="success" path="/ListCcy.do"/>
+    </action>
+    <action path="/ListCcy" type="com.bureaueye.beacon.action.standard.ListCcyAction" name="ListCcyForm" scope="session" validate="false">
+      <forward name="success" path="/pages/standard/ListCcy.jsp"/>
+    </action>
+  </action-mappings>
+</struts-config>

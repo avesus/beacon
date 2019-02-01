@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "file:///C:/BUREAUEYE/xml/struts-config_1_3.dtd">
+<struts-config>
+	<display-name>unit</display-name>
+	<description>This is the Struts configuration file for the unit</description>
+	<form-beans>
+		<form-bean name="UnitForm" type="com.bureaueye.beacon.form.standard.UnitForm"/>
+		<form-bean name="ListUnitForm" type="com.bureaueye.beacon.form.ListForm"/>
+    	<form-bean name="ListUnitProducthistoryForm" type="com.bureaueye.beacon.form.ListForm"/>		
+	</form-beans>
+	<global-forwards>
+		<forward name="Unit" path="/pages/standard/Unit.jsp"/>
+	</global-forwards>
+	<action-mappings>
+		<action path="/EditUnit" type="com.bureaueye.beacon.action.standard.EditUnitAction" name="UnitForm" scope="request" validate="false">
+			<forward name="failure" path="/pages/standard/ListUnit.jsp"/>
+			<forward name="success" path="/pages/standard/Unit.jsp"/>
+		</action>
+		<action path="/SaveUnit" type="com.bureaueye.beacon.action.standard.SaveUnitAction" name="UnitForm" scope="request" cancellable="true" input="Unit">
+			<forward name="success" path="/ListUnit.do"/>
+		</action>
+		<action path="/ListUnit" type="com.bureaueye.beacon.action.standard.ListUnitAction" name="ListUnitForm" scope="session" validate="false">
+			<forward name="success" path="/pages/standard/ListUnit.jsp"/>
+		</action>
+		<action path="/ListUnitProducthistory" type="com.bureaueye.beacon.action.standard.ListUnitProducthistoryAction" name="ListUnitProducthistoryForm" scope="request" validate="false" parameter="ListUnitForm">
+			<forward name="success" path="/pages/standard/ListUnitProducthistory.jsp"/>
+		</action>
+    <action path="/ReportUnitMove" type="com.bureaueye.beacon.action.report.ReportUnitMoveAction" name="ListForm" scope="request" validate="false">
+          <forward name="success" path="/pages/report/ReportUnitMove.jsp"/>
+          <forward name="failure" path="/pages/report/ReportUnitMove.jsp"/>
+    </action>  		
+    <action path="/ReportUnitStatus" type="com.bureaueye.beacon.action.report.ReportUnitStatusAction" name="ListForm" scope="request" validate="false">
+          <forward name="success" path="/pages/report/ReportUnitStatus.jsp"/>
+          <forward name="failure" path="/pages/report/ReportUnitStatus.jsp"/>
+    </action> 
+	</action-mappings>
+</struts-config>

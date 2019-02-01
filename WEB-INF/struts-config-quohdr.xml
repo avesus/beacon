@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="ISO-8859-1"?> 
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "file:///C:/BUREAUEYE/xml/struts-config_1_3.dtd">
+          
+<struts-config>
+
+
+  <display-name>quohdr</display-name>
+  <description>This is the Struts configuration file for the quohdr using the wildcard syntax.</description>
+  
+  
+  <form-beans> 
+    <form-bean name="QuohdrForm" type="com.bureaueye.beacon.form.quotation.QuohdrForm"/>
+    <form-bean name="ListQuohdrForm" type="com.bureaueye.beacon.form.ListForm"/>
+    <form-bean name="ListForm" type="com.bureaueye.beacon.form.ListForm"/>    
+    <form-bean name="ListQuohdrExchgdateForm" type="com.bureaueye.beacon.form.ListForm"/>             
+  </form-beans>
+  
+  
+  <global-forwards>
+  </global-forwards>
+  
+  
+  <action-mappings>
+  
+	<action path="/ListQuohdrMain" forward="/pages/quotation/ListQuohdrMain.jsp"/> 
+                  
+    <!-- Matches all edit actions -->
+    <action path="/EditQuohdr" type="com.bureaueye.beacon.action.quotation.EditQuohdrAction" name="QuohdrForm" scope="session" validate="false">
+      		<forward name="failure" path="/ListQuohdr.do"/>
+			<forward name="success" path="/pages/quotation/Quohdr1.jsp"/>
+    </action>
+    
+    <action path="/SaveQuohdr" type="com.bureaueye.beacon.action.quotation.SaveQuohdrAction" name="QuohdrForm" scope="session" cancellable="true" input="quohdr1">
+     		<forward name="success" path="/ListQuohdr.do"/>
+			<forward name="quohdr1" path="/pages/quotation/Quohdr1.jsp"/>
+			<forward name="quohdr2" path="/pages/quotation/Quohdr2.jsp"/>
+			<forward name="quohdr3" path="/pages/quotation/Quohdr3.jsp"/>	      
+    </action>
+    
+    <action path="/ListQuohdr" type="com.bureaueye.beacon.action.quotation.ListQuohdrAction" name="ListQuohdrForm" scope="session" validate="false">
+    		<forward name="success" path="/pages/quotation/ListQuohdrMain.jsp"/>
+    </action>
+    
+    <action path="/PrintQuotation" type="com.bureaueye.beacon.action.quotation.print.PrintQuotationAction" name="ListForm" scope="session" validate="false" parameter="ListQuohdrForm">
+    </action> 
+         
+    <action path="/PrintCustomerQuotation" type="com.bureaueye.beacon.action.quotation.print.PrintCustomerQuotationAction" name="ListForm" scope="session" validate="false" parameter="ListQuohdrForm">
+    </action> 
+        
+    <action path="/ReportQuotationExpiry" type="com.bureaueye.beacon.action.quotation.report.ReportQuotationExpiry" name="ListForm" scope="session" validate="false" parameter="ListQuohdrForm">
+    </action>  
+    
+    <action path="/ListQuohdrExchgdate" type="com.bureaueye.beacon.action.quotation.ListQuohdrExchgdateAction" name="ListQuohdrExchgdateForm" scope="session" validate="false">
+    		<forward name="success" path="/pages/quotation/ListQuohdrExchgdateMain.jsp"/>
+    </action> 
+          
+  </action-mappings>
+  
+  
+</struts-config>

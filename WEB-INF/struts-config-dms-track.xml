@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "file:///C:/BUREAUEYE/xml/struts-config_1_3.dtd">
+<struts-config>
+  <display-name>track</display-name>
+  <description>This is the Struts configuration file for the store</description>
+  <form-beans>
+    <form-bean name="ListTrackForm" type="com.bureaueye.beacondms.form.dms.ListTrackForm"/>
+    <form-bean name="TrackForm" type="com.bureaueye.beacondms.form.dms.TrackForm"/>   
+    <form-bean name="MailForm" type="com.bureaueye.beacondms.form.dms.MailForm"/>  
+  </form-beans>
+  
+  <global-forwards>
+    <forward name="Track" path="/pages/dms/Track.jsp"/>  
+  </global-forwards>
+  
+  <action-mappings>
+  
+  
+    <action path="/ListTrackMain" forward="/pages/dms/ListTrackMain.jsp"/> 
+                  
+    <!-- Matches all edit actions -->
+    <action path="/ListTrack" type="com.bureaueye.beacondms.action.dms.ListTrackAction" name="ListTrackForm" scope="session" validate="false">
+      <forward name="success" path="/pages/dms/ListTrackMain.jsp"/>
+      <forward name="trackmail" path="/EditTrackMail.do"/>
+    </action>
+    <action path="/EditTrack" type="com.bureaueye.beacondms.action.dms.EditTrackAction" name="TrackForm" scope="session" validate="false">
+      <forward name="failure" path="/pages/dms/ListTrackMain.jsp"/>
+      <forward name="success" path="/pages/dms/Track.jsp"/>      
+    </action>
+     <action path="/SaveTrack" type="com.bureaueye.beacondms.action.dms.SaveTrackAction" name="TrackForm" scope="session" cancellable="true" input="Track">
+      <forward name="success" path="/ListTrack.do"/>
+    </action>
+  
+    <action path="/DisplayDocumentversion" type="com.bureaueye.beacondms.action.dms.DisplayDocumentversionAction" scope="request" validate="false">
+    </action>     
+ 
+    <action path="/DisplayDocument" type="com.bureaueye.beacondms.action.dms.DisplayDocumentAction" scope="request" validate="false">
+    </action>  
+        
+    
+    <action path="/EditTrackMail" type="com.bureaueye.beacondms.action.dms.EditTrackMailAction" name="ListTrackForm" scope="session" validate="false">
+      <forward name="success" path="/pages/dms/TrackMail.jsp"/>
+    </action>
+     <action path="/SaveTrackMail" type="com.bureaueye.beacondms.action.dms.SaveTrackMailAction" name="ListTrackForm" scope="session" validate="false">
+      <forward name="success" path="/pages/dms/ListTrackMain.jsp"/>
+    </action>          	
+    	
+
+    
+       	
+  </action-mappings>
+  
+</struts-config>

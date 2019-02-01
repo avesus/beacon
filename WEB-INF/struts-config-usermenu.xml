@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "file:///C:/BUREAUEYE/xml/struts-config_1_3.dtd">
+<struts-config>
+  <display-name>usermenu</display-name>
+  <description>This is the Struts configuration file for the user menus</description>
+
+  <form-beans>
+    <form-bean name="UsermenuForm" type="com.bureaueye.beacon.form.standard.UsermenuForm"/>
+    <form-bean name="ListUsermenuForm" type="com.bureaueye.beacon.form.ListForm"/>
+  </form-beans>
+
+  <global-forwards>
+    <forward name="Usermenu" path="/pages/standard/Usermenu.jsp"/>
+  </global-forwards>
+
+  <action-mappings>
+
+    <action path="/EditUsermenu" type="com.bureaueye.beacon.action.standard.EditUsermenuAction" name="UsermenuForm" scope="request" validate="false">
+      <forward name="failure" path="/pages/standard/ListUsermenu.jsp"/>
+      <forward name="success" path="/pages/standard/Usermenu.jsp"/>
+    </action>
+    <action path="/SaveUsermenu" type="com.bureaueye.beacon.action.standard.SaveUsermenuAction" name="UsermenuForm" scope="request" cancellable="true" input="Usermenu">
+      <forward name="success" path="/ListUsermenu.do"/>
+    </action>
+    <action path="/ListUsermenu" type="com.bureaueye.beacon.action.standard.ListUsermenuAction" name="ListUsermenuForm" scope="session" validate="false" parameter="ListUserForm">
+      <forward name="success" path="/pages/standard/ListUsermenu.jsp"/>
+    </action>
+    
+  </action-mappings>
+</struts-config>

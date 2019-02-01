@@ -1,0 +1,134 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.bureaueye.beacon.model.standard">
+	<class name="Vendortariffdtl" table="vendortariffdtl">
+<meta attribute="sync-DAO">true</meta>	
+		<id
+			column="VENDTARFDTL_ID"
+			name="VendtarfdtlId"
+			type="integer"
+		>
+			<generator class="native" />
+		</id>
+		<property
+			column="systemlogprogram"
+			length="50"
+			name="Systemlogprogram"
+			not-null="false"
+			type="string"
+		 />
+		<property
+			column="systemlogaction"
+			length="10"
+			name="Systemlogaction"
+			not-null="false"
+			type="string"
+		 />
+		<property
+			column="tovalue"
+			length="11"
+			name="Tovalue"
+			not-null="false"
+			type="integer"
+		 />
+		<property
+			column="systemloguserid"
+			length="10"
+			name="Systemloguserid"
+			not-null="false"
+			type="string"
+		 />
+		<property
+			column="systemlogdate"
+			length="10"
+			name="Systemlogdate"
+			not-null="false"
+			type="date"
+		 />
+		<property
+			column="VENDTARFHDR_ID"
+			length="10"
+			name="VendtarfhdrId"
+			not-null="false"
+			type="string"
+		 />
+		<property
+			column="lumpsum"
+			length="11"
+			name="Lumpsum"
+			not-null="false"
+			type="big_decimal"
+		 />
+		<property
+			column="createuserid"
+			length="10"
+			name="Createuserid"
+			not-null="false"
+			type="string"
+		 />
+		<property
+			column="xinactive"
+			length="1"
+			name="Xinactive"
+			not-null="false"
+			type="string"
+		 />
+		<property
+			column="rowid"
+			length="11"
+			name="Rowid"
+			not-null="false"
+			type="integer"
+		 />
+		<property
+			column="fromvalue"
+			length="11"
+			name="Fromvalue"
+			not-null="false"
+			type="integer"
+		 />
+		<property
+			column="createdate"
+			length="10"
+			name="Createdate"
+			not-null="false"
+			type="date"
+		 />
+		<property
+			column="systemlogtime"
+			length="10"
+			name="Systemlogtime"
+			not-null="false"
+			type="string"
+		 />
+		<property
+			column="createtime"
+			length="30"
+			name="Createtime"
+			not-null="false"
+			type="string"
+		 />
+		<property
+			column="xlock"
+			length="20"
+			name="Xlock"
+			not-null="false"
+			type="string"
+		 />
+		<property
+			column="unitrate"
+			length="11"
+			name="Unitrate"
+			not-null="false"
+			type="big_decimal"
+		 />
+	</class>
+	<query name="findVendortariffdtlsTotalResults">select count(*) from Vendortariffdtl vendortariffdtl where vendortariffdtl.VendtarfhdrId = :vendtarfhdrid</query>
+	
+	<query name="findVendortariffdtlsByHdrId">from Vendortariffdtl vendortariffdtl where vendortariffdtl.VendtarfhdrId = :vendtarfhdrid order by FromValue, ToValue</query>
+	
+	
+</hibernate-mapping>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "file:///C:/BUREAUEYE/xml/struts-config_1_3.dtd">
+<struts-config>
+  <display-name>report</display-name>
+  <description></description>
+  
+  <form-beans>
+    <form-bean name="ListReportForm" type="com.bureaueye.beacon.form.ListForm"/>   
+    <form-bean name="ListFasttrackForm" type="com.bureaueye.beacon.form.ListForm"/>    
+    <form-bean name="ListTimetrackForm" type="com.bureaueye.beacon.form.ListForm"/>
+    
+    <form-bean name="ReportLocationinventoryForm" type="com.bureaueye.beacon.form.report.ReportLocationinventoryForm"/>
+    <form-bean name="ReportForm" type="com.bureaueye.beacon.form.report.ReportForm"/>          
+    
+  </form-beans>
+  
+  <action-mappings>  
+  
+    <action path="/ListFasttrack" type="com.bureaueye.beacon.action.report.ListFasttrackAction" name="ListFasttrackForm" scope="session" validate="false">
+      <forward name="success" path="/pages/report/ListFasttrack.jsp"/>
+    </action>
+
+    <action path="/ListTimetrack" type="com.bureaueye.beacon.action.report.ListTimetrackAction" name="ListTimetrackForm" scope="session" validate="false">
+      <forward name="success" path="/pages/report/ListTimetrack.jsp"/>
+    </action>
+
+    <action path="/ReportLocationinventory" type="com.bureaueye.beacon.action.report.ReportLocationinventoryAction" name="ReportLocationinventoryForm" scope="session" validate="false">
+      <forward name="success" path="/pages/report/ReportLocationinventory.jsp"/>
+      <forward name="summary" path="/pages/report/ReportLocationinventory.jsp"/>      
+      <forward name="detail" path="/pages/report/ReportLocationinventoryDetail.jsp"/>      
+    </action>
+
+
+ 
+ 
+    <action path="/ReportTimesheet" type="com.bureaueye.beacon.action.report.ReportTimesheetAction" name="ListReportForm" scope="request" validate="false">
+          <forward name="success" path="/pages/report/ReportTimesheet.jsp"/>
+          <forward name="failure" path="/pages/report/ReportTimesheet.jsp"/>
+    </action> 
+
+
+    <action path="/ReportManifest" type="com.bureaueye.beacon.action.report.ReportManifestAction" name="ListReportForm" scope="request" validate="false">
+          <forward name="success" path="/pages/report/ReportManifest.jsp"/>
+          <forward name="failure" path="/pages/report/ReportManifest.jsp"/>
+    </action>
+
+
+
+    <action path="/ReportKnowledgebase" type="com.bureaueye.beacon.action.report.ReportKnowledgebaseAction" name="ListReportForm" scope="request" validate="false">
+          <forward name="success" path="/pages/report/ReportKnowledgebase.jsp"/>
+          <forward name="failure" path="/pages/report/ReportKnowledgebase.jsp"/>
+    </action> 
+        
+ 
+    <action path="/ReportBookingsailing" type="com.bureaueye.beacon.action.report.ReportBookingsailingAction" name="ReportForm" scope="session" validate="false">
+      <forward name="success" path="/pages/report/ReportBookingsailing.jsp"/>  
+      <forward name="summary" path="/pages/report/ReportBookingsailing.jsp"/>      
+      <forward name="detail" path="/pages/report/ReportBookingsailingDetail.jsp"/>        
+    </action>
+       
+ 
+    <action path="/ReportCustomerrevenueByVessel" type="com.bureaueye.beacon.action.report.ReportCustomerrevenueAction" name="ListReportForm" scope="request" validate="false">
+          <forward name="success" path="/pages/report/ReportCustomerrevenueByVessel.jsp"/>
+          <forward name="failure" path="/pages/report/ReportCustomerrevenueByVessel.jsp"/>
+    </action> 
+    
+                                             
+  </action-mappings>
+  
+</struts-config>

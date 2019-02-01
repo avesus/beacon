@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "file:///C:/BUREAUEYE/xml/struts-config_1_3.dtd">
+<struts-config>
+  <display-name>Financehdr</display-name>
+  <description>This is the Struts configuration file for the Financehdr.</description>
+  
+  <form-beans>
+    <form-bean name="ListBillingviewForm" type="com.bureaueye.beacon.form.ListForm"/> 
+    <form-bean name="ListFinancehdrForm" type="com.bureaueye.beacon.form.ListForm"/>
+    <form-bean name="FinancehdrForm" type="com.bureaueye.genesys.form.finance.FinancehdrForm"/>         
+  </form-beans>
+
+  <global-forwards>
+    <forward name="Financehdr" path="/pages/finance/Financehdr.jsp"/>
+  </global-forwards>
+    
+  <action-mappings>          
+
+    <action path="/EditFinancehdr" type="com.bureaueye.genesys.action.finance.EditFinancehdrAction" name="FinancehdrForm" scope="request" validate="false">
+      <forward name="failure" path="/pages/finance/ListFinancehdrMain.jsp"/>
+      <forward name="success" path="/pages/finance/Financehdr.jsp"/>
+    </action>
+ 
+    <action path="/SaveFinancehdr" type="com.bureaueye.genesys.action.finance.SaveFinancehdrAction" name="FinancehdrForm" scope="request" cancellable="true" input="Financehdr">
+      <forward name="success" path="/ListFinancehdr.do"/>
+    </action>  
+
+    <action path="/ListFinancehdr" type="com.bureaueye.genesys.action.finance.ListFinancehdrAction" name="ListFinancehdrForm" scope="session" validate="false">
+      <forward name="success" path="/pages/finance/ListFinancehdrMain.jsp"/>
+    </action>
+
+    <action path="/PrintFinancehdr" type="com.bureaueye.genesys.action.finance.print.PrintFinancehdrAction" name="ListFinancehdrForm" scope="session" validate="false" parameter="ListFinancehdrForm">
+    </action>   
+    
+    
+    <action path="/ListBillingview" type="com.bureaueye.genesys.action.finance.ListBillingviewAction" name="ListBillingviewForm" scope="request" validate="false">
+      <forward name="success" path="/pages/finance/ListBillingview.jsp"/>
+    </action>  
+
+    <action path="/PrintBillingview" type="com.bureaueye.genesys.action.finance.print.PrintBillingviewAction" name="ListBillingviewForm" scope="session" validate="false" parameter="ListBillingviewForm">
+    </action>            
+ 
+        
+  </action-mappings>
+  
+</struts-config>

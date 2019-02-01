@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "file:///C:/BUREAUEYE/xml/struts-config_1_3.dtd">
+<struts-config>
+
+  <display-name>Generate Xtemplate</display-name>
+  <description>This is the Struts configuration file for the Generate Xtemplate records</description>
+  
+  <form-beans> 
+  
+    <form-bean name="GenerateXtemplateForm" type="com.bureaueye.beacon.form.quotation.GenerateXtemplateForm"/>  
+    
+  </form-beans>
+  
+  
+  <global-forwards>
+  
+    <forward name="GenerateXtemplate" path="/pages/quotation/GenerateXtemplate.jsp"/>
+       
+  </global-forwards>
+  
+  
+  <action-mappings>
+    
+    <action path="/GenerateXtemplate1" type="com.bureaueye.beacon.action.quotation.GenerateXtemplate1Action" name="GenerateXtemplateForm" scope="session" validate="false">
+      <forward name="success" path="/pages/quotation/GenerateXtemplate.jsp"/>
+      <forward name="failure" path="/pages/quotation/GenerateXtemplate.jsp"/>      
+    </action>       	  
+       	
+  </action-mappings>
+  
+  
+</struts-config>

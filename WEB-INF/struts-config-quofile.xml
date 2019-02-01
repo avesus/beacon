@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "file:///C:/BUREAUEYE/xml/struts-config_1_3.dtd">
+<struts-config>
+  <display-name>quofile</display-name>
+  <description>This is the Struts configuration file for the quotation file</description>
+  <form-beans>
+    <form-bean name="QuofileForm" type="com.bureaueye.beacon.form.quotation.QuofileForm"/>
+    <form-bean name="ListQuofileForm" type="com.bureaueye.beacon.form.ListForm"/>
+  </form-beans>
+  <global-forwards>
+    <forward name="Quofile" path="/pages/quotation/Quofile.jsp"/>
+  </global-forwards>
+  <action-mappings>
+    <action path="/EditQuofile" type="com.bureaueye.beacon.action.quotation.EditQuofileAction" name="QuofileForm" scope="request" validate="false">
+      <forward name="failure" path="/pages/quotation/ListQuofile.jsp"/>
+      <forward name="success" path="/pages/quotation/Quofile.jsp"/>
+    </action>
+    <action path="/SaveQuofile" type="com.bureaueye.beacon.action.quotation.SaveQuofileAction" name="QuofileForm" scope="request" cancellable="true" input="Quofile">
+      <forward name="success" path="/ListQuofile.do"/>
+    </action>
+    <action path="/ListQuofile" type="com.bureaueye.beacon.action.quotation.ListQuofileAction" name="ListQuofileForm" scope="session" validate="false" parameter="ListQuohdrForm">
+      <forward name="success" path="/pages/quotation/ListQuofile.jsp"/>
+    </action>
+  </action-mappings>
+</struts-config>

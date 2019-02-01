@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "file:///C:/BUREAUEYE/xml/struts-config_1_3.dtd">
+<struts-config>
+  <display-name>jobmov</display-name>
+  <description>This is the Struts configuration file for the job movement</description>
+  <form-beans>
+    <form-bean name="JobmovForm" type="com.bureaueye.beacon.form.job.JobmovForm"/>
+    <form-bean name="ListJobmovForm" type="com.bureaueye.beacon.form.ListForm"/>
+    <form-bean name="ListFasttrackForm" type="com.bureaueye.beacon.form.ListForm"/>
+    <form-bean name="MultipleUpdateForm" type="com.bureaueye.beacon.form.job.MultipleUpdateForm"/>    
+  </form-beans>
+  <global-forwards>
+    <forward name="Jobmov" path="/pages/job/Jobmov.jsp"/>
+    <forward name="MultipleUpdate1" path="/pages/job/MultipleUpdate.jsp"/>    
+  </global-forwards>
+  <action-mappings>
+    <action path="/EditJobmov" type="com.bureaueye.beacon.action.job.EditJobmovAction" name="JobmovForm" scope="session" validate="false">
+      <forward name="failure" path="/pages/job/ListJobmov.jsp"/>
+      <forward name="success" path="/pages/job/Jobmov.jsp"/>
+    </action>
+    <action path="/SaveJobmov" type="com.bureaueye.beacon.action.job.SaveJobmovAction" name="JobmovForm" scope="session" cancellable="true" input="Jobmov">
+      <forward name="success" path="/ListJobmov.do"/>
+      <forward name="multipleupdate1" path="/MultipleUpdate1.do"/>      
+    </action>
+    <action path="/ListJobmov" type="com.bureaueye.beacon.action.job.ListJobmovAction" name="ListJobmovForm" scope="session" validate="false" parameter="ListOrderhdrForm,ListJobhdrForm">
+      <forward name="success" path="/pages/job/ListJobmov.jsp"/>
+    </action>
+
+
+    <action path="/MultipleUpdate1" type="com.bureaueye.beacon.action.job.MultipleUpdate1Action" name="MultipleUpdateForm" scope="session">
+      <forward name="success" path="/pages/job/MultipleUpdate.jsp"/>
+      <forward name="failure" path="/ListJobmov.do"/>      
+    </action>
+     <action path="/MultipleUpdate2" type="com.bureaueye.beacon.action.job.MultipleUpdate2Action" name="MultipleUpdateForm" scope="session" validate="false" input="MultipleUpdate1">
+      <forward name="success" path="/ListJobmov.do"/>
+      <forward name="failure" path="/pages/job/ListJobmov.jsp"/>      
+    </action>   
+         
+     
+     <action path="/TimetrackEditJobmov" type="com.bureaueye.beacon.action.job.EditJobmovAction" name="JobmovForm" scope="request" validate="false">
+      <forward name="failure" path="/pages/report/ListTimetrack.jsp"/>
+      <forward name="success" path="/pages/job/TimetrackJobmov.jsp"/>
+    </action>
+    
+        
+  </action-mappings>
+</struts-config>

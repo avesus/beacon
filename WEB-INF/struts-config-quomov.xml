@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="ISO-8859-1"?> 
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "file:///C:/BUREAUEYE/xml/struts-config_1_3.dtd">
+<struts-config>
+  <display-name>quomov</display-name>
+  <description>This is the Struts configuration file for the quotation movements</description>
+  <form-beans>
+    <form-bean name="QuomovForm" type="com.bureaueye.beacon.form.quotation.QuomovForm"/>
+    <form-bean name="ListQuomovForm" type="com.bureaueye.beacon.form.ListForm"/>
+  </form-beans>
+  <global-forwards>
+    <forward name="Quomov" path="/pages/quotation/Quomov.jsp"/>
+  </global-forwards>
+  <action-mappings>
+    <action path="/EditQuomov" type="com.bureaueye.beacon.action.quotation.EditQuomovAction" name="QuomovForm" scope="request" validate="false" parameter="Quomov">
+      <forward name="failure" path="/pages/quotation/ListQuomov.jsp"/>
+      <forward name="success" path="/pages/quotation/Quomov.jsp"/>
+    </action>
+    <action path="/SaveQuomov" type="com.bureaueye.beacon.action.quotation.SaveQuomovAction" name="QuomovForm" scope="request" cancellable="true" input="Quomov">
+      <forward name="success" path="/ListQuomov.do"/>
+    </action>
+    <action path="/ListQuomov" type="com.bureaueye.beacon.action.quotation.ListQuomovAction" name="ListQuomovForm" scope="session" validate="false" parameter="ListQuohdrForm">
+      <forward name="success" path="/pages/quotation/ListQuomov.jsp"/>
+    </action>
+  </action-mappings>
+</struts-config>

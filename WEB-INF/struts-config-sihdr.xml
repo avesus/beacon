@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "file:///C:/BUREAUEYE/xml/struts-config_1_3.dtd">
+<struts-config>
+  <display-name>sihdr</display-name>
+  <description>This is the Struts configuration file for the Sales Invoice Header.</description>
+  
+  <form-beans>
+    <form-bean name="ListSihdrForm" type="com.bureaueye.beacon.form.ListForm"/>
+    <form-bean name="SihdrForm" type="com.bureaueye.beacon.form.salesinvoice.SihdrForm"/>     
+  </form-beans>
+  
+  <global-forwards>
+    <forward name="Sihdr" path="/pages/salesinvoice/Sihdr.jsp"/>
+  </global-forwards>
+  
+  <action-mappings> 
+  
+    <action path="/EditSihdr" type="com.bureaueye.beacon.action.salesinvoice.EditSihdrAction" name="SihdrForm" scope="request" validate="false">
+      <forward name="failure" path="/pages/salesinvoice/ListSihdrMain.jsp"/>
+      <forward name="success" path="/pages/salesinvoice/Sihdr.jsp"/>
+    </action>
+ 
+    <action path="/SaveSihdr" type="com.bureaueye.beacon.action.salesinvoice.SaveSihdrAction" name="SihdrForm" scope="request" cancellable="true" input="Sihdr">
+      <forward name="success" path="/ListSihdr.do"/>
+    </action>  
+
+    <action path="/ListSihdr" type="com.bureaueye.beacon.action.salesinvoice.ListSihdrAction" name="ListSihdrForm" scope="session" validate="false">
+      <forward name="success" path="/pages/salesinvoice/ListSihdrMain.jsp"/>
+      <forward name="email" path="/pages/salesinvoice/EmailSalesinvoice.jsp"/>
+    </action>
+
+    <action path="/PrintSalesinvoice" type="com.bureaueye.beacon.action.salesinvoice.PrintSalesinvoiceAction" name="ListSihdrForm" scope="session" validate="false" parameter="ListSihdrForm">
+    </action>            
+   
+   
+   
+
+    <action path="/EmailSalesinvoice" type="com.bureaueye.beacon.action.salesinvoice.EmailSalesinvoiceAction" name="ListSihdrForm" scope="session" validate="false" cancellable="true" parameter="ListSihdrForm">
+      <forward name="success" path="/ListSihdr.do"/>
+    </action>
+    
+     
+  </action-mappings>
+  
+</struts-config>

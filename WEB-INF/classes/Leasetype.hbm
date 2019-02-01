@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.bureaueye.beacon.model.standard">
+	<class name="Leasetype" table="leasetype">
+<meta attribute="sync-DAO">true</meta>	
+		<id
+			column="LEASETYPE_ID"
+			name="LeasetypeId"
+			type="integer"
+		>
+			<generator class="native" />
+		</id>
+		<property
+			column="leasetypekey"
+			length="10"
+			name="Leasetypekey"
+			not-null="false"
+			type="string"
+		 />
+		<property
+			column="ldesc"
+			length="40"
+			name="Ldesc"
+			not-null="false"
+			type="string"
+		 />
+	</class>
+</hibernate-mapping>

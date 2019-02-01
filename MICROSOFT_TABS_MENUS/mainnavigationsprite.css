@@ -1,0 +1,132 @@
+.MainNavigationSprite { overflow:hidden; background-image:url('mainnavigationsprite.png'); vertical-align:middle; }
+.DCMainNavigationSprite { overflow:hidden; background-image:url('dcmainnavigationsprite.png'); vertical-align:middle; }
+.vertLineTop { background-position:0px 0px; width: 6px; height: 147px; }
+.vertLineBottom { background-position:-6px 0px; width: 6px; height: 147px; }
+.OLL { background-position:-12px 0px; width: 144px; height: 42px; }
+.ExS { background-position:-156px 0px; width: 177px; height: 39px; }
+.secNavBtnSelected .Password { background-position:0px -147px; width: 32px; height: 32px; }
+.RBAC32 { background-position:-32px -147px; width: 32px; height: 32px; }
+.secNavBtnLnkContent:Hover .Password { background-position:-64px -147px; width: 32px; height: 32px; }
+
+.secNavBtnSelected .Oof { background-position:-96px -147px; width: 32px; height: 32px; }
+.Password { background-position:-128px -147px; width: 32px; height: 32px; }
+.secNavBtnLnkContent:Hover .RBAC32 { background-position:-160px -147px; width: 32px; height: 32px; }
+.Resource32 { background-position:-192px -147px; width: 32px; height: 32px; }
+.secNavBtnLnkContent:Hover .Resource32 { background-position:-224px -147px; width: 32px; height: 32px; }
+.secNavBtnSelected .Resource32 { background-position:-256px -147px; width: 32px; height: 32px; }
+.secNavBtnSelected .Regional32 { background-position:-288px -147px; width: 32px; height: 32px; }
+
+.secNavBtnSelected .RBAC32 { background-position:-320px -147px; width: 32px; height: 32px; }
+.Regional32 { background-position:0px -179px; width: 32px; height: 32px; }
+.secNavBtnLnkContent:Hover .Regional32 { background-position:-32px -179px; width: 32px; height: 32px; }
+
+.MailboxSearch32 { background-position:-64px -179px; width: 32px; height: 32px; }
+.secNavBtnLnkContent:Hover .MailboxSearch32 { background-position:-96px -179px; width: 32px; height: 32px; }
+.secNavBtnSelected .MailboxSearch32 { background-position:-128px -179px; width: 32px; height: 32px; }
+.secNavBtnSelected .JunkMail { background-position:-160px -179px; width: 32px; height: 32px; }
+.secNavBtnSelected .JournalRules { background-position:-192px -179px; width: 32px; height: 32px; }
+.JunkMail { background-position:-224px -179px; width: 32px; height: 32px; }
+.secNavBtnLnkContent:Hover .JunkMail { background-position:-256px -179px; width: 32px; height: 32px; }
+.MessageTracking32 { background-position:-288px -179px; width: 32px; height: 32px; }
+.secNavBtnSelected .MobileDevices32 { background-position:-320px -179px; width: 32px; height: 32px; }
+.Oof { background-position:0px -211px; width: 32px; height: 32px; }
+.secNavBtnLnkContent:Hover .Oof { background-position:-32px -211px; width: 32px; height: 32px; }
+.secNavBtnLnkContent:Hover .MobileDevices32 { background-position:-64px -211px; width: 32px; height: 32px; }
+.secNavBtnLnkContent:Hover .MessageTracking32 { background-position:-96px -211px; width: 32px; height: 32px; }
+.secNavBtnSelected .MessageTracking32 { background-position:-128px -211px; width: 32px; height: 32px; }
+.MobileDevices32 { background-position:-160px -211px; width: 32px; height: 32px; }
+.secNavBtnLnkContent:Hover .UMDialPlans { background-position:-192px -211px; width: 32px; height: 32px; }
+.secNavBtnSelected .UMDialPlans { background-position:-224px -211px; width: 32px; height: 32px; }
+.UMIPGateways { background-position:-256px -211px; width: 32px; height: 32px; }
+.UMDialPlans { background-position:-288px -211px; width: 32px; height: 32px; }
+.TransportRules { background-position:-320px -211px; width: 32px; height: 32px; }
+.secNavBtnLnkContent:Hover .TransportRules { background-position:0px -243px; width: 32px; height: 32px; }
+.secNavBtnSelected .TransportRules { background-position:-32px -243px; width: 32px; height: 32px; }
+.secNavBtnLnkContent:Hover .UMIPGateways { background-position:-64px -243px; width: 32px; height: 32px; }
+.Voicemail32 { background-position:-96px -243px; width: 32px; height: 32px; }
+.secNavBtnLnkContent:Hover .Voicemail32 { background-position:-128px -243px; width: 32px; height: 32px; }
+.secNavBtnSelected .Voicemail32 { background-position:-160px -243px; width: 32px; height: 32px; }
+.secNavBtnSelected .Users32 { background-position:-192px -243px; width: 32px; height: 32px; }
+.secNavBtnSelected .UMIPGateways { background-position:-224px -243px; width: 32px; height: 32px; }
+.Users32 { background-position:-256px -243px; width: 32px; height: 32px; }
+.secNavBtnLnkContent:Hover .Users32 { background-position:-288px -243px; width: 32px; height: 32px; }
+.secNavBtnLnkContent:Hover .RetentionPolicy { background-position:-320px -243px; width: 32px; height: 32px; }
+.secNavBtnSelected .RetentionPolicy { background-position:0px -275px; width: 32px; height: 32px; }
+.Signature32 { background-position:-32px -275px; width: 32px; height: 32px; }
+.RetentionPolicy { background-position:-64px -275px; width: 32px; height: 32px; }
+.Reports { background-position:-96px -275px; width: 32px; height: 32px; }
+.secNavBtnLnkContent:Hover .Reports { background-position:-128px -275px; width: 32px; height: 32px; }
+.secNavBtnSelected .Reports { background-position:-160px -275px; width: 32px; height: 32px; }
+.secNavBtnLnkContent:Hover .Signature32 { background-position:-192px -275px; width: 32px; height: 32px; }
+.TextMessaging32 { background-position:-224px -275px; width: 32px; height: 32px; }
+.secNavBtnLnkContent:Hover .TextMessaging32 { background-position:-256px -275px; width: 32px; height: 32px; }
+.secNavBtnSelected .TextMessaging32 { background-position:-288px -275px; width: 32px; height: 32px; }
+.secNavBtnSelected .Spelling32 { background-position:-320px -275px; width: 32px; height: 32px; }
+.secNavBtnSelected .Signature32 { background-position:0px -307px; width: 32px; height: 32px; }
+.Spelling32 { background-position:-32px -307px; width: 32px; height: 32px; }
+.secNavBtnLnkContent:Hover .Spelling32 { background-position:-64px -307px; width: 32px; height: 32px; }
+.secNavBtnLnkContent:Hover .JournalRules { background-position:-96px -307px; width: 32px; height: 32px; }
+.secNavBtnSelected .BadWords { background-position:-128px -307px; width: 32px; height: 32px; }
+.Calendar { background-position:-160px -307px; width: 32px; height: 32px; }
+.secNavBtnLnkContent:Hover .Calendar { background-position:-192px -307px; width: 32px; height: 32px; }
+.secNavBtnLnkContent:Hover .BadWords { background-position:-224px -307px; width: 32px; height: 32px; }
+.secNavBtnLnkContent:Hover .Auditing32 { background-position:-256px -307px; width: 32px; height: 32px; }
+.secNavBtnSelected .Auditing32 { background-position:-288px -307px; width: 32px; height: 32px; }
+.BadWords { background-position:-320px -307px; width: 32px; height: 32px; }
+.secNavBtnSelected .Calendar { background-position:0px -339px; width: 32px; height: 32px; }
+.secNavBtnLnkContent:Hover .ConnectedAccounts { background-position:-32px -339px; width: 32px; height: 32px; }
+.secNavBtnSelected .ConnectedAccounts { background-position:-64px -339px; width: 32px; height: 32px; }
+.Contacts32 { background-position:-96px -339px; width: 32px; height: 32px; }
+.ConnectedAccounts { background-position:-128px -339px; width: 32px; height: 32px; }
+.ClosedCampus { background-position:-160px -339px; width: 32px; height: 32px; }
+.secNavBtnLnkContent:Hover .ClosedCampus { background-position:-192px -339px; width: 32px; height: 32px; }
+.secNavBtnSelected .ClosedCampus { background-position:-224px -339px; width: 32px; height: 32px; }
+.Auditing32 { background-position:-256px -339px; width: 32px; height: 32px; }
+.secNavBtnLnkContent:Hover .ActiveSyncAccess32 { background-position:-288px -339px; width: 32px; height: 32px; }
+.secNavBtnSelected .ActiveSyncAccess32 { background-position:-320px -339px; width: 32px; height: 32px; }
+.ActiveSyncPolicy32 { background-position:0px -371px; width: 32px; height: 32px; }
+.ActiveSyncAccess32 { background-position:-32px -371px; width: 32px; height: 32px; }
+.Account32 { background-position:-64px -371px; width: 32px; height: 32px; }
+.secNavBtnLnkContent:Hover .Account32 { background-position:-96px -371px; width: 32px; height: 32px; }
+.secNavBtnSelected .Account32 { background-position:-128px -371px; width: 32px; height: 32px; }
+.secNavBtnLnkContent:Hover .ActiveSyncPolicy32 { background-position:-160px -371px; width: 32px; height: 32px; }
+.AdminRoleGroups { background-position:-192px -371px; width: 32px; height: 32px; }
+.secNavBtnLnkContent:Hover .AdminRoleGroups { background-position:-224px -371px; width: 32px; height: 32px; }
+.secNavBtnSelected .AdminRoleGroups { background-position:-256px -371px; width: 32px; height: 32px; }
+.secNavBtnSelected .Addresses32 { background-position:-288px -371px; width: 32px; height: 32px; }
+.secNavBtnSelected .ActiveSyncPolicy32 { background-position:-320px -371px; width: 32px; height: 32px; }
+.Addresses32 { background-position:0px -403px; width: 32px; height: 32px; }
+.secNavBtnLnkContent:Hover .Addresses32 { background-position:-32px -403px; width: 32px; height: 32px; }
+.secNavBtnSelected .Groups32 { background-position:-64px -403px; width: 32px; height: 32px; }
+.InboxRules { background-position:-96px -403px; width: 32px; height: 32px; }
+.secNavBtnLnkContent:Hover .InboxRules { background-position:-128px -403px; width: 32px; height: 32px; }
+.secNavBtnLnkContent:Hover .Groups32 { background-position:-160px -403px; width: 32px; height: 32px; }
+.secNavBtnSelected .GeneralOptions32 { background-position:-192px -403px; width: 32px; height: 32px; }
+.Groups32 { background-position:-224px -403px; width: 32px; height: 32px; }
+.JournalRules { background-position:-256px -403px; width: 32px; height: 32px; }
+.IPSafelists { background-position:-288px -403px; width: 32px; height: 32px; }
+.secNavBtnLnkContent:Hover .IPSafelists { background-position:-320px -403px; width: 32px; height: 32px; }
+.secNavBtnSelected .IPSafelists { background-position:0px -435px; width: 32px; height: 32px; }
+.secNavBtnSelected .Information32 { background-position:-32px -435px; width: 32px; height: 32px; }
+.secNavBtnSelected .InboxRules { background-position:-64px -435px; width: 32px; height: 32px; }
+.Information32 { background-position:-96px -435px; width: 32px; height: 32px; }
+.secNavBtnLnkContent:Hover .Information32 { background-position:-128px -435px; width: 32px; height: 32px; }
+.EmailMigration32 { background-position:-160px -435px; width: 32px; height: 32px; }
+.secNavBtnSelected .Domains { background-position:-192px -435px; width: 32px; height: 32px; }
+.secNavBtnSelected .EmailMigration32 { background-position:-224px -435px; width: 32px; height: 32px; }
+.secNavBtnLnkContent:Hover .EmailMigration32 { background-position:-256px -435px; width: 32px; height: 32px; }
+.secNavBtnSelected .Contacts32 { background-position:-288px -435px; width: 32px; height: 32px; }
+.secNavBtnLnkContent:Hover .Contacts32 { background-position:-320px -435px; width: 32px; height: 32px; }
+.secNavBtnLnkContent:Hover .Domains { background-position:0px -467px; width: 32px; height: 32px; }
+.Domains { background-position:-32px -467px; width: 32px; height: 32px; }
+.secNavBtnSelected .Encryption { background-position:-64px -467px; width: 32px; height: 32px; }
+.GeneralOptions32 { background-position:-96px -467px; width: 32px; height: 32px; }
+.secNavBtnLnkContent:Hover .GeneralOptions32 { background-position:-128px -467px; width: 32px; height: 32px; }
+.Encryption { background-position:-160px -467px; width: 32px; height: 32px; }
+.secNavBtnLnkContent:Hover .Encryption { background-position:-192px -467px; width: 32px; height: 32px; }
+.EsoBarEdge { background-position:-224px -467px; width: 1px; height: 29px; }
+.MyProfile { background-position:-225px -467px; width: 28px; height: 28px; }
+.MyGroups { background-position:-253px -467px; width: 28px; height: 28px; }
+.UsersGroups { background-position:-281px -467px; width: 28px; height: 28px; }
+.A-MV { background-position:-309px -467px; width: 16px; height: 16px; }
+.B-MV { background-position:-325px -467px; width: 16px; height: 16px; }

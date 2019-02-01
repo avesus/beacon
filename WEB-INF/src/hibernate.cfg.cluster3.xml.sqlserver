@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration
+    PUBLIC "-//Hibernate/Hibernate Configuration DTD//EN"
+    "hibernate-configuration-3.0.dtd">
+ 
+<hibernate-configuration>
+	<session-factory>
+		<!-- local connection properties -->
+		<property name="hibernate.connection.datasource">
+			java:comp/env/jdbc/beacon
+		</property>
+
+		<!-- property name="hibernate.connection.pool_size"></property -->
+		<!-- dialect for MySQL -->
+		<property name="dialect">
+			org.hibernate.dialect.SQLServerDialect
+		</property>
+		<property name="hibernate.show_sql">false</property>
+		<property name="hibernate.use_outer_join">true</property>
+		<!--
+			<property name="hibernate.transaction.factory_class">
+			org.hibernate.transaction.JTATransactionFactory
+			</property>
+			<property name="jta.UserTransaction">
+			java:comp/UserTransaction
+			</property>
+		//-->
+
+
+		<mapping resource="Address.hbm" />
+		<mapping resource="Addresscontact.hbm" />
+		<mapping resource="Location.hbm" />	
+		
+		<mapping resource="Customertoport.hbm" />		
+		<mapping resource="Customertoplant.hbm" />
+		<mapping resource="Customertoproduct.hbm" />
+		<mapping resource="Customertoshipper.hbm" />
+		<mapping resource="Customertoshipline.hbm" />
+		<mapping resource="Customertobroker.hbm" />
+		<mapping resource="Customertoconsignee.hbm" />
+		<mapping resource="Customertoforwardagent.hbm" />
+		
+				<mapping resource="Vessel.hbm" />
+						
+	
+	
+
+		<mapping resource="City.hbm" />		
+		<mapping resource="Country.hbm" />	
+		
+		<mapping resource="Systemlog.hbm" />
+		<mapping resource="Systemlogconfig.hbm" />				
+
+		<mapping resource="Ccy.hbm" />		
+		<mapping resource="Ccyex.hbm" />
+		
+		<mapping resource="Product.hbm" />				
+																					
+	</session-factory>
+	
+	
+	
+</hibernate-configuration>

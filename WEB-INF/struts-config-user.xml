@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "file:///C:/BUREAUEYE/xml/struts-config_1_3.dtd">
+<struts-config>
+	<display-name>user</display-name>
+	<description>This is the Struts configuration file for the user</description>
+	<form-beans>
+		<form-bean name="UserForm" type="com.bureaueye.beacon.form.standard.UserForm"/>
+		<form-bean name="ListUserForm" type="com.bureaueye.beacon.form.ListForm"/>		
+	</form-beans>
+
+	<global-forwards>
+		<forward name="User" path="/pages/standard/User.jsp"/>
+	</global-forwards>
+
+	<action-mappings>
+
+		<action path="/EditUser" type="com.bureaueye.beacon.action.standard.EditUserAction" name="UserForm" scope="request" validate="false">
+			<forward name="failure" path="/pages/standard/ListUser.jsp"/>
+			<forward name="success" path="/pages/standard/User.jsp"/>
+		</action>
+		<action path="/SaveUser" type="com.bureaueye.beacon.action.standard.SaveUserAction" name="UserForm" scope="request" cancellable="true" input="User">
+			<forward name="success" path="/ListUser.do"/>
+		</action>
+		<action path="/ListUser" type="com.bureaueye.beacon.action.standard.ListUserAction" name="ListUserForm" scope="session" validate="false">
+			<forward name="success" path="/pages/standard/ListUser.jsp"/>
+		</action>
+
+	</action-mappings>
+</struts-config>

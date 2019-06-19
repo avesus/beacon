@@ -8,7 +8,7 @@
    	username="" 
    	password="" 
    	driverClassName="org.gjt.mm.mysql.Driver"
-   	url="jdbc:mysql://localhost:3307/beacon_wsi"
+   	url="jdbc:mysql://localhost:3307/beacon_bureaueye"
    	maxActive="8" 
    	maxIdle="4"/>   
 </Context>

@@ -8,7 +8,7 @@
    	username="sa" 
    	password="money" 
    	driverClassName="com.microsoft.sqlserver.jdbc.SQLServerDriver"
-   	url="jdbc:sqlserver://192.168.1.12;instanceName=SQLEXPRESS;databaseName=beacon_wsi;SelectMethod=cursor;"
+   	url="jdbc:sqlserver://localhost;instanceName=SQLEXPRESS;databaseName=beacon_wsi;SelectMethod=cursor;"
    	maxActive="8" 
    	maxIdle="4"/>   
 </Context>

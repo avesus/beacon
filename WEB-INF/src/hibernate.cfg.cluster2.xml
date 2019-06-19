@@ -13,7 +13,7 @@
 		<!-- property name="hibernate.connection.pool_size"></property -->
 		<!-- dialect for MySQL -->
 		<property name="dialect">
-			org.hibernate.dialect.MySQLDialect
+			org.hibernate.dialect.SQLServerDialect
 		</property>
 		<property name="hibernate.show_sql">false</property>
 		<property name="hibernate.use_outer_join">true</property>
@@ -32,7 +32,7 @@
 		<mapping resource="Vendortariffhdr.hbm" />	
 		<mapping resource="Vendortariffdtl.hbm" />
 		<mapping resource="Vendortarifflumpsum.hbm" />				
-		<mapping resource="Vendortariffavg.hbm" />																
+		<mapping resource="Vendortariffavg.hbm" />																	
 
 		<mapping resource="Addrtype.hbm" />
 		
@@ -70,7 +70,8 @@
 		<mapping resource="Usergroupmenu.hbm" />	
 		<mapping resource="Useraccess.hbm" />	
 		<mapping resource="Userdashboard.hbm" />	
-		<mapping resource="Userlistform.hbm" />							
+			<mapping resource="Userlistform.hbm" />	
+								
 				
 		<mapping resource="Systemcode.hbm" />		
 		<mapping resource="Systemmappingcode.hbm" />	
@@ -100,11 +101,7 @@
 
 		<mapping resource="Category.hbm" />	
 		<mapping resource="Subcategory.hbm" />	
-
-		<mapping resource="Shipmethod.hbm" />		
-		<mapping resource="Sectiontemplate.hbm" />	
-		<mapping resource="Costtemplate.hbm" />
-																		
+																
 																												
 	</session-factory>
 	

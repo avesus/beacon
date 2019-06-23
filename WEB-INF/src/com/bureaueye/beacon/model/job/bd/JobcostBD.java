@@ -662,7 +662,9 @@ public final class JobcostBD extends BaseBD {
 				" where jobhdr.JobhdrId = jobcost.JobhdrId"+				
 				" and jobcost.Vendoraddrkey = '"+id+"'"+
 				" and jobcost.Ccykey = '"+id2+"'"+				
-				" group by "+order;						
+				" group by "+order+
+				" order by "+order					
+				;						
 			queryResult = session
 			.createQuery(queryString)
 			.setMaxResults(maxResults)

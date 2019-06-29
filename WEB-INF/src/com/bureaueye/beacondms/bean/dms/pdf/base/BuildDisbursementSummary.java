@@ -722,7 +722,8 @@ public final class BuildDisbursementSummary
 
 
 
-			label.setPhrase(new Phrase("Amount (USD)",fontBold));
+			//label.setPhrase(new Phrase("Amount (USD)",fontBold));
+			label.setPhrase(new Phrase("Amount ("+getTagValue("ordccykey",elementOrdhdr1)+")",fontBold));
 			label.setHorizontalAlignment(Element.ALIGN_RIGHT);
 			_wrapper.addCell(label);
 

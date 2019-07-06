@@ -439,6 +439,10 @@ public class DBToXml  implements Serializable {
 				"<jobno>"+PROP_CDATA_START+jobhdrdto.getMovref()+PROP_CDATA_END+"</jobno>"
 				;
 
+				this.ordhdr=this.ordhdr+
+				"<ordccykey>"+PROP_CDATA_START+orderhdrdao.getCcykey()+PROP_CDATA_END+"</ordccykey>"
+				;
+				
 				//Ordlogis05//shipper&customer
 				this.setAddress(orderhdrdao.getShipperaddrkey(),"ordlogis05",sessionFactoryClusterMap);
 				this.ordhdr=this.ordhdr+this.getAddress();	

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context path="/beacon" docBase="beacon"
+        debug="5" reloadable="true" crossContext="true">
+  <Resource 
+  	name="jdbc/beacon" 
+  	auth="Container" 
+  	type="javax.sql.DataSource"
+   	username="sa" 
+   	password="money" 
+   	driverClassName="com.microsoft.sqlserver.jdbc.SQLServerDriver"
+   	url="jdbc:sqlserver://WSISQL01\WSISQL01;databaseName=beacon_wsi;SelectMethod=cursor;"
+   	maxActive="8" 
+   	maxIdle="4"/>   
+</Context>
+
+
+

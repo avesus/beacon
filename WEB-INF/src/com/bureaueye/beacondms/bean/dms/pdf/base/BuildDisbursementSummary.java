@@ -808,7 +808,9 @@ public final class BuildDisbursementSummary
 				//label.setPhrase(new Phrase("Balance due "+getTagValue("name",elementCustomer)+" (U.S. Funds):",font));			
 			}
 			else {
-				label.setPhrase(new Phrase("Balance due World Shipping, Inc. (U.S. Funds):",font));				
+				//label.setPhrase(new Phrase("Balance due World Shipping, Inc. (U.S. Funds):",font));				
+				label.setPhrase(new Phrase("Balance due World Shipping, Inc. ("+
+						getTagValue("ordccykey",elementOrdhdr1)+" Funds):",font));	
 			}
 			label.setHorizontalAlignment(Element.ALIGN_LEFT);
 			wrapper.addCell(label);
